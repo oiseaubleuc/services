@@ -87,6 +87,7 @@ export default {
   contact: {
     title: "Contact us",
     subtitle: "Let's discuss your project and find the ideal solution",
+    whatsappMessage: "For quick responsiveness, don't hesitate to start a conversation on WhatsApp",
     form: {
       name: "Name",
       namePlaceholder: "Your name",
