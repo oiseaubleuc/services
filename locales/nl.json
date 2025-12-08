@@ -1,0 +1,80 @@
+{
+  "nav": {
+    "services": "Diensten",
+    "about": "Over ons",
+    "contact": "Contact"
+  },
+  "hero": {
+    "title": "Full Stack Diensten",
+    "titleHighlight": "Professioneel",
+    "subtitle": "Transformeer uw ideeën in moderne en performante webapplicaties",
+    "ctaPrimary": "Neem contact op",
+    "ctaSecondary": "Ontdek onze diensten"
+  },
+  "services": {
+    "title": "Onze Diensten",
+    "subtitle": "Complete oplossingen voor al uw ontwikkelingsbehoeften",
+    "frontend": {
+      "title": "Frontend Ontwikkeling",
+      "description": "Moderne en reactieve gebruikersinterfaces met React, Next.js, Vue.js en de nieuwste technologieën."
+    },
+    "backend": {
+      "title": "Backend Ontwikkeling",
+      "description": "Robuuste en schaalbare API's met Node.js, Python, Java en microservices architecturen."
+    },
+    "database": {
+      "title": "Databases",
+      "description": "Ontwerp en optimalisatie van SQL en NoSQL databases voor optimale prestaties."
+    },
+    "devops": {
+      "title": "DevOps & Cloud",
+      "description": "Implementatie, CI/CD, containerisatie en cloud infrastructuur voor efficiënte productie-implementatie."
+    },
+    "architecture": {
+      "title": "Full Stack Architectuur",
+      "description": "Ontwerp van complete architecturen, van database tot gebruikersinterface."
+    },
+    "consulting": {
+      "title": "Consulting & Opleiding",
+      "description": "Technische ondersteuning, code audits en opleiding voor uw teams over best practices."
+    }
+  },
+  "about": {
+    "title": "Over HohoServices",
+    "subtitle": "Uw vertrouwde partner voor full stack ontwikkeling",
+    "expertise": {
+      "title": "Technische expertise",
+      "description1": "We beheersen de volledige technologie stack, van frontend tot backend, via databases en cloud infrastructuur.",
+      "description2": "Ons ervaren team begeleidt u bij de realisatie van uw projecten met moderne, performante en schaalbare oplossingen.",
+      "feature1": "Geavanceerde technologieën",
+      "feature2": "Schone en onderhoudbare code",
+      "feature3": "Respect voor best practices",
+      "feature4": "Ondersteuning en onderhoud"
+    },
+    "mission": {
+      "title": "Onze missie",
+      "description": "Superieure full stack ontwikkelingsdiensten leveren, waarbij technische expertise en begrip van zakelijke behoeften worden gecombineerd. We transformeren uw ideeën in performante digitale oplossingen die uw bedrijf naar succes leiden."
+    }
+  },
+  "contact": {
+    "title": "Neem contact op",
+    "subtitle": "Laten we uw project bespreken en de ideale oplossing vinden",
+    "form": {
+      "name": "Naam",
+      "namePlaceholder": "Uw naam",
+      "email": "Email",
+      "emailPlaceholder": "uw@email.com",
+      "message": "Bericht",
+      "messagePlaceholder": "Vertel ons over uw project...",
+      "submit": "Bericht verzenden",
+      "success": "Bedankt voor uw bericht! We nemen binnenkort contact met u op."
+    }
+  },
+  "footer": {
+    "description": "Professionele full stack ontwikkelingsdiensten om uw ideeën in werkelijkheid om te zetten.",
+    "quickLinks": "Snelle links",
+    "contact": "Contact",
+    "copyright": "Alle rechten voorbehouden."
+  }
+}
+

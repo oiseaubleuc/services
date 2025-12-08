@@ -1,0 +1,80 @@
+{
+  "nav": {
+    "services": "Services",
+    "about": "About",
+    "contact": "Contact"
+  },
+  "hero": {
+    "title": "Full Stack Services",
+    "titleHighlight": "Professional",
+    "subtitle": "Transform your ideas into modern and performant web applications",
+    "ctaPrimary": "Contact us",
+    "ctaSecondary": "Discover our services"
+  },
+  "services": {
+    "title": "Our Services",
+    "subtitle": "Complete solutions for all your development needs",
+    "frontend": {
+      "title": "Frontend Development",
+      "description": "Modern and reactive user interfaces with React, Next.js, Vue.js and the latest technologies."
+    },
+    "backend": {
+      "title": "Backend Development",
+      "description": "Robust and scalable APIs with Node.js, Python, Java and microservices architectures."
+    },
+    "database": {
+      "title": "Databases",
+      "description": "Design and optimization of SQL and NoSQL databases for optimal performance."
+    },
+    "devops": {
+      "title": "DevOps & Cloud",
+      "description": "Deployment, CI/CD, containerization and cloud infrastructure for efficient production deployment."
+    },
+    "architecture": {
+      "title": "Full Stack Architecture",
+      "description": "Design of complete architectures, from database to user interface."
+    },
+    "consulting": {
+      "title": "Consulting & Training",
+      "description": "Technical support, code audits and training for your teams on best practices."
+    }
+  },
+  "about": {
+    "title": "About HohoServices",
+    "subtitle": "Your trusted partner for full stack development",
+    "expertise": {
+      "title": "Technical expertise",
+      "description1": "We master the entire technology stack, from frontend to backend, through databases and cloud infrastructure.",
+      "description2": "Our experienced team accompanies you in the realization of your projects with modern, performant and scalable solutions.",
+      "feature1": "Cutting-edge technologies",
+      "feature2": "Clean and maintainable code",
+      "feature3": "Respect for best practices",
+      "feature4": "Support and maintenance"
+    },
+    "mission": {
+      "title": "Our mission",
+      "description": "Provide superior quality full stack development services, combining technical expertise and understanding of business needs. We transform your ideas into performant digital solutions that propel your business to success."
+    }
+  },
+  "contact": {
+    "title": "Contact us",
+    "subtitle": "Let's discuss your project and find the ideal solution",
+    "form": {
+      "name": "Name",
+      "namePlaceholder": "Your name",
+      "email": "Email",
+      "emailPlaceholder": "your@email.com",
+      "message": "Message",
+      "messagePlaceholder": "Tell us about your project...",
+      "submit": "Send message",
+      "success": "Thank you for your message! We will get back to you soon."
+    }
+  },
+  "footer": {
+    "description": "Professional full stack development services to transform your ideas into reality.",
+    "quickLinks": "Quick links",
+    "contact": "Contact",
+    "copyright": "All rights reserved."
+  }
+}
+

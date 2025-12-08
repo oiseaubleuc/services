@@ -1,0 +1,80 @@
+{
+  "nav": {
+    "services": "Services",
+    "about": "À propos",
+    "contact": "Contact"
+  },
+  "hero": {
+    "title": "Services Full Stack",
+    "titleHighlight": "Professionnels",
+    "subtitle": "Transformez vos idées en applications web modernes et performantes",
+    "ctaPrimary": "Contactez-nous",
+    "ctaSecondary": "Découvrir nos services"
+  },
+  "services": {
+    "title": "Nos Services",
+    "subtitle": "Des solutions complètes pour tous vos besoins de développement",
+    "frontend": {
+      "title": "Développement Frontend",
+      "description": "Interfaces utilisateur modernes et réactives avec React, Next.js, Vue.js et les dernières technologies."
+    },
+    "backend": {
+      "title": "Développement Backend",
+      "description": "APIs robustes et scalables avec Node.js, Python, Java et architectures microservices."
+    },
+    "database": {
+      "title": "Bases de données",
+      "description": "Conception et optimisation de bases de données SQL et NoSQL pour des performances optimales."
+    },
+    "devops": {
+      "title": "DevOps & Cloud",
+      "description": "Déploiement, CI/CD, containerisation et infrastructure cloud pour une mise en production efficace."
+    },
+    "architecture": {
+      "title": "Architecture Full Stack",
+      "description": "Conception d'architectures complètes, de la base de données à l'interface utilisateur."
+    },
+    "consulting": {
+      "title": "Consulting & Formation",
+      "description": "Accompagnement technique, audits de code et formation de vos équipes aux meilleures pratiques."
+    }
+  },
+  "about": {
+    "title": "À propos de HohoServices",
+    "subtitle": "Votre partenaire de confiance pour le développement full stack",
+    "expertise": {
+      "title": "Expertise technique",
+      "description1": "Nous maîtrisons l'ensemble de la stack technologique, du frontend au backend, en passant par les bases de données et l'infrastructure cloud.",
+      "description2": "Notre équipe expérimentée vous accompagne dans la réalisation de vos projets avec des solutions modernes, performantes et évolutives.",
+      "feature1": "Technologies de pointe",
+      "feature2": "Code propre et maintenable",
+      "feature3": "Respect des meilleures pratiques",
+      "feature4": "Support et maintenance"
+    },
+    "mission": {
+      "title": "Notre mission",
+      "description": "Fournir des services de développement full stack de qualité supérieure, en combinant expertise technique et compréhension des besoins métier. Nous transformons vos idées en solutions numériques performantes qui propulsent votre entreprise vers le succès."
+    }
+  },
+  "contact": {
+    "title": "Contactez-nous",
+    "subtitle": "Discutons de votre projet et trouvons la solution idéale",
+    "form": {
+      "name": "Nom",
+      "namePlaceholder": "Votre nom",
+      "email": "Email",
+      "emailPlaceholder": "votre@email.com",
+      "message": "Message",
+      "messagePlaceholder": "Parlez-nous de votre projet...",
+      "submit": "Envoyer le message",
+      "success": "Merci pour votre message ! Nous vous répondrons bientôt."
+    }
+  },
+  "footer": {
+    "description": "Services de développement full stack professionnels pour transformer vos idées en réalité.",
+    "quickLinks": "Liens rapides",
+    "contact": "Contact",
+    "copyright": "Tous droits réservés."
+  }
+}
+
