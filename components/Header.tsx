@@ -157,8 +157,8 @@ export default function Header() {
                                             setIsMenuOpen(false)
                                         }}
                                         className={`px-3 py-1.5 rounded-lg text-sm transition-colors ${language === lang.code
-                                                ? 'bg-white text-gray-900 font-medium'
-                                                : 'bg-white/20 text-white hover:bg-white/30'
+                                            ? 'bg-white text-gray-900 font-medium'
+                                            : 'bg-white/20 text-white hover:bg-white/30'
                                             }`}
                                     >
                                         {lang.name}

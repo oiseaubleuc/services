@@ -2,7 +2,8 @@ export default {
     nav: {
         services: "Services",
         about: "About",
-        contact: "Contact"
+        contact: "Contact",
+        appointment: "Appointment"
     },
     hero: {
         title: "HohoServices",
@@ -125,6 +126,10 @@ export default {
     contact: {
         title: "Contact us",
         subtitle: "Let's discuss your project and find the ideal solution",
+        tabs: {
+            message: "Message",
+            appointment: "Appointment"
+        },
         whatsappMessage: "For quick responsiveness, don't hesitate to start a conversation on WhatsApp",
         form: {
             name: "Name",
@@ -152,6 +157,19 @@ export default {
             submit: "Send message",
             success: "Thank you for your message! We will get back to you soon."
         }
+    },
+    appointment: {
+        title: "Book an appointment",
+        subtitle: "Choose a date and time that works for you",
+        selectDate: "Select a date",
+        selectTime: "Select a time",
+        contactInfo: "Your information",
+        message: "Message (optional)",
+        messagePlaceholder: "Briefly describe your project...",
+        confirm: "Confirm appointment",
+        submitting: "Submitting...",
+        success: "Appointment confirmed! You will receive an email with the Google Meet link.",
+        error: "An error occurred. Please try again."
     },
     footer: {
         description: "Professional services to create your custom website or application.",

@@ -2,7 +2,8 @@ export default {
   nav: {
     services: "Diensten",
     about: "Over ons",
-    contact: "Contact"
+    contact: "Contact",
+    appointment: "Afspraak"
   },
   hero: {
     title: "HohoServices",
@@ -125,7 +126,11 @@ export default {
   contact: {
     title: "Neem contact op",
     subtitle: "Laten we uw project bespreken en de ideale oplossing vinden",
-      whatsappMessage: "Voor snelle reactie, aarzel niet om een gesprek te starten via WhatsApp",
+    tabs: {
+      message: "Bericht",
+      appointment: "Afspraak"
+    },
+    whatsappMessage: "Voor snelle reactie, aarzel niet om een gesprek te starten via WhatsApp",
     form: {
       name: "Naam",
       namePlaceholder: "Uw naam",
@@ -152,6 +157,19 @@ export default {
       submit: "Bericht verzenden",
       success: "Bedankt voor uw bericht! We nemen binnenkort contact met u op."
     }
+  },
+  appointment: {
+    title: "Afspraak maken",
+    subtitle: "Kies een datum en tijd die u uitkomt",
+    selectDate: "Selecteer een datum",
+    selectTime: "Selecteer een tijd",
+    contactInfo: "Uw gegevens",
+    message: "Bericht (optioneel)",
+    messagePlaceholder: "Beschrijf kort uw project...",
+    confirm: "Afspraak bevestigen",
+    submitting: "Verzenden...",
+    success: "Afspraak bevestigd! U ontvangt een e-mail met de Google Meet-link.",
+    error: "Er is een fout opgetreden. Probeer het opnieuw."
   },
   footer: {
     description: "Professionele diensten om uw website of applicatie op maat te maken.",

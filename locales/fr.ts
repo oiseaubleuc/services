@@ -2,7 +2,8 @@ export default {
     nav: {
         services: "Services",
         about: "À propos",
-        contact: "Contact"
+        contact: "Contact",
+        appointment: "Rendez-vous"
     },
     hero: {
         title: "HohoServices",
@@ -125,6 +126,10 @@ export default {
     contact: {
         title: "Contactez-nous",
         subtitle: "Discutons de votre projet et trouvons la solution idéale",
+        tabs: {
+            message: "Message",
+            appointment: "Rendez-vous"
+        },
         whatsappMessage: "Pour une réactivité rapide, n'hésitez pas à lancer une conversation sur WhatsApp",
         form: {
             name: "Nom",
@@ -152,6 +157,19 @@ export default {
             submit: "Envoyer le message",
             success: "Merci pour votre message ! Nous vous répondrons bientôt."
         }
+    },
+    appointment: {
+        title: "Prendre rendez-vous",
+        subtitle: "Choisissez une date et une heure qui vous convient",
+        selectDate: "Sélectionnez une date",
+        selectTime: "Sélectionnez une heure",
+        contactInfo: "Vos informations",
+        message: "Message (optionnel)",
+        messagePlaceholder: "Décrivez brièvement votre projet...",
+        confirm: "Confirmer le rendez-vous",
+        submitting: "Envoi en cours...",
+        success: "Rendez-vous confirmé ! Vous recevrez un email avec le lien Google Meet.",
+        error: "Une erreur est survenue. Veuillez réessayer."
     },
     footer: {
         description: "Services professionnels pour créer votre site web ou application sur mesure.",
