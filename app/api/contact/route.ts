@@ -162,7 +162,7 @@ ${message}
         })
 
         return NextResponse.json(
-            { message: 'Message envoyé avec succès' },
+            { success: true, message: 'Message envoyé avec succès' },
             { status: 200 }
         )
     } catch (error: any) {

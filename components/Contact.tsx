@@ -79,19 +79,22 @@ export default function Contact() {
         body: JSON.stringify(formData),
       })
 
-      const data = await response.json()
+      const data = await response.json().catch(() => ({ error: 'Erreur lors de la lecture de la réponse' }))
 
-      if (response.ok) {
-        setSubmitStatus('success')
-        setFormData({ name: '', email: '', phone: '', projectType: '', message: '' })
-        setTimeout(() => setSubmitStatus('idle'), 5000)
-      } else {
+      if (!response.ok || data.error) {
         setSubmitStatus('error')
-        console.error('Erreur:', data.error)
+        console.error('Erreur:', data.error || `Erreur ${response.status}`)
+        return
       }
-    } catch (error) {
+
+      // Succès
+      setSubmitStatus('success')
+      setFormData({ name: '', email: '', phone: '', projectType: '', message: '' })
+      setTimeout(() => setSubmitStatus('idle'), 5000)
+    } catch (error: any) {
       setSubmitStatus('error')
       console.error('Erreur lors de l\'envoi:', error)
+      console.error('Détails:', error.message)
     } finally {
       setIsSubmitting(false)
     }
@@ -121,23 +124,27 @@ export default function Contact() {
         }),
       })
 
-      const data = await response.json()
+      const data = await response.json().catch(() => ({ error: 'Erreur lors de la lecture de la réponse' }))
 
-      if (response.ok) {
-        setAppointmentStatus('success')
-        setAppointmentData({ name: '', email: '', phone: '', message: '' })
-        setSelectedDate(null)
-        setSelectedTime('')
-        setTimeout(() => {
-          setAppointmentStatus('idle')
-          router.push('/')
-        }, 5000)
-      } else {
+      if (!response.ok || data.error) {
         setAppointmentStatus('error')
+        console.error('Erreur:', data.error || `Erreur ${response.status}`)
+        return
       }
-    } catch (error) {
+
+      // Succès
+      setAppointmentStatus('success')
+      setAppointmentData({ name: '', email: '', phone: '', message: '' })
+      setSelectedDate(null)
+      setSelectedTime('')
+      setTimeout(() => {
+        setAppointmentStatus('idle')
+        router.push('/')
+      }, 5000)
+    } catch (error: any) {
       setAppointmentStatus('error')
-      console.error('Erreur:', error)
+      console.error('Erreur lors de la réservation:', error)
+      console.error('Détails:', error.message)
     } finally {
       setIsSubmittingAppointment(false)
     }
@@ -492,12 +499,17 @@ export default function Contact() {
             </div>
           )}
 
-          {(submitStatus === 'error' || appointmentStatus === 'error') && (
+          {submitStatus === 'error' && (
             <div className="mt-4 p-4 bg-red-500/20 border border-red-500/50 rounded-xl text-red-300 text-sm text-center">
-              {activeTab === 'message' 
-                ? 'Une erreur est survenue. Veuillez réessayer ou nous contacter directement.'
-                : t('appointment.error')
-              }
+              <p className="font-medium mb-1">Erreur lors de l'envoi</p>
+              <p className="text-xs opacity-90">Vérifiez votre connexion et réessayez. Si le problème persiste, contactez-nous directement.</p>
+            </div>
+          )}
+          
+          {appointmentStatus === 'error' && (
+            <div className="mt-4 p-4 bg-red-500/20 border border-red-500/50 rounded-xl text-red-300 text-sm text-center">
+              <p className="font-medium mb-1">{t('appointment.error')}</p>
+              <p className="text-xs opacity-90">Vérifiez que tous les champs sont remplis et réessayez.</p>
             </div>
           )}
           

@@ -426,7 +426,7 @@ ${message}
         })
 
         return NextResponse.json(
-            { message: 'Rendez-vous confirmé avec succès' },
+            { success: true, message: 'Rendez-vous confirmé avec succès' },
             { status: 200 }
         )
     } catch (error: any) {
