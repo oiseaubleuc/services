@@ -5,62 +5,100 @@ export default {
     contact: "Contact"
   },
   hero: {
-    title: "Full Stack Diensten",
-    titleHighlight: "Professioneel",
-    subtitle: "Transformeer uw ideeën in moderne en performante webapplicaties",
+    title: "HohoServices",
+    titleHighlight: "Uw vertrouwde partner",
+    subtitle: "Bouw uw digitale toekomst",
+    tagline: "We creëren krachtige, schaalbare weboplossingen die uw bedrijf vooruit helpen",
     ctaPrimary: "Neem contact op",
     ctaSecondary: "Ontdek onze diensten"
   },
   services: {
     title: "Onze Diensten",
-    subtitle: "Complete oplossingen voor al uw ontwikkelingsbehoeften",
+    subtitle: "Alles wat u nodig heeft voor uw online project",
     learnMore: "Meer weten",
     showLess: "Minder tonen",
     detailsTitle: "Details van onze diensten",
     detailsSubtitle: "Ontdek in detail wat we voor u kunnen doen",
+    tabs: {
+      individual: "Particulier",
+      business: "Bedrijf"
+    },
+    individual: {
+      title: "Voor Particulieren",
+      subtitle: "Eenvoudige en toegankelijke oplossingen voor uw persoonlijke project",
+      website: {
+        title: "Persoonlijke website",
+        shortDescription: "Maak uw professionele en moderne website.",
+        details: "Elegante en moderne websites, aangepast aan alle apparaten. Snel, veilig en geoptimaliseerd voor Google. Volledige begeleiding van ontwerp tot online gaan."
+      },
+      portfolio: {
+        title: "Portfolio & presentatie",
+        shortDescription: "Toon uw werk en talent.",
+        details: "Moderne en elegante portfolio's om uw creaties in de schijnwerpers te zetten. Aangepast aan uw behoeften: fotogalerij, projectbeschrijvingen en contactformulier."
+      },
+      ecommerce: {
+        title: "Online winkel",
+        shortDescription: "Verkoop uw producten online eenvoudig en veilig.",
+        details: "Complete en veilige online winkels. Uw klanten kunnen bekijken, aan winkelwagen toevoegen en veilig betalen. Integratie van veelvoorkomende betaalmethoden. Eenvoudig beheer, zelfs zonder technische kennis."
+      },
+      more: {
+        title: "Meer",
+        shortDescription: "Onze specialiteit: excelleren in op maat gemaakte websites aangepast aan uw behoeften.",
+        details: "Onze specialiteit: websites op aanvraag. We creëren precies wat u nodig heeft, zonder ons te beperken tot vooraf gedefinieerde oplossingen. Elk project is uniek en aangepast aan uw specifieke behoeften."
+      }
+    },
+    business: {
+      title: "Voor Bedrijven",
+      subtitle: "Geavanceerde technische oplossingen voor bedrijven en startups",
+      more: {
+        title: "Meer",
+        shortDescription: "Onze specialiteit: excelleren in op maat gemaakte oplossingen aangepast aan uw bedrijf.",
+        details: "Onze specialiteit: websites en applicaties op maat voor bedrijven. Gepersonaliseerde oplossingen aangepast aan uw specifieke bedrijfsbehoeften. Expertise om uw succes te stimuleren."
+      }
+    },
     frontend: {
-      title: "Frontend Ontwikkeling",
+      title: "Frontend ontwikkeling",
       shortDescription: "Moderne en reactieve gebruikersinterfaces.",
       description: "Moderne en reactieve gebruikersinterfaces met React, Next.js, Vue.js en de nieuwste technologieën.",
-      details: "We creëren uitzonderlijke gebruikerservaringen met de modernste frameworks. Onze expertise omvat React, Next.js, Vue.js, Angular, evenals designbibliotheken zoals Tailwind CSS, Material-UI en vele anderen. We focussen op prestaties, toegankelijkheid en optimale gebruikerservaring."
+      details: "Moderne gebruikersinterfaces met React, Next.js, Vue.js en Angular. Focus op prestaties, toegankelijkheid en optimale gebruikerservaring."
     },
     backend: {
-      title: "Backend Ontwikkeling",
+      title: "Backend ontwikkeling",
       shortDescription: "Robuuste en schaalbare API's voor uw applicaties.",
       description: "Robuuste en schaalbare API's met Node.js, Python, Java en microservices architecturen.",
-      details: "We ontwikkelen performante en veilige backends die miljoenen verzoeken aankunnen. Onze oplossingen omvatten RESTful en GraphQL architecturen, database-integratie, authenticatiebeheer en implementatie van caching- en queue-systemen om prestaties te optimaliseren."
+      details: "Performante en veilige backends die miljoenen verzoeken aankunnen. RESTful en GraphQL architecturen, database-integratie, authenticatie en caching-systemen."
     },
     database: {
       title: "Databases",
       shortDescription: "Ontwerp en optimalisatie van databases.",
       description: "Ontwerp en optimalisatie van SQL en NoSQL databases voor optimale prestaties.",
-      details: "We ontwerpen en optimaliseren uw databases om optimale prestaties te garanderen. Of het nu PostgreSQL, MySQL, MongoDB, Redis of andere oplossingen zijn, we implementeren efficiënte schema's, geoptimaliseerde indexen en replicatiestrategieën om de beschikbaarheid en prestaties van uw gegevens te waarborgen."
+      details: "Ontwerp en optimalisatie van SQL en NoSQL databases. Efficiënte schema's, geoptimaliseerde indexen en replicatiestrategieën om beschikbaarheid en prestaties te waarborgen."
     },
     devops: {
-      title: "DevOps & Cloud",
+      title: "DevOps & cloud",
       shortDescription: "Geautomatiseerde implementatie en cloud infrastructuur.",
       description: "Implementatie, CI/CD, containerisatie en cloud infrastructuur voor efficiënte productie-implementatie.",
-      details: "We automatiseren uw implementaties en optimaliseren uw cloud infrastructuur. Onze diensten omvatten CI/CD pipeline configuratie met GitHub Actions, GitLab CI of Jenkins, containerisatie met Docker en Kubernetes, evenals implementatie op AWS, Azure, Google Cloud of andere cloud platforms."
+      details: "Geautomatiseerde implementaties en cloud infrastructuur optimalisatie. CI/CD configuratie, containerisatie met Docker en Kubernetes, implementatie op AWS, Azure, Google Cloud."
     },
     architecture: {
-      title: "Full Stack Architectuur",
+      title: "Full stack architectuur",
       shortDescription: "Ontwerp van complete en schaalbare architecturen.",
       description: "Ontwerp van complete architecturen, van database tot gebruikersinterface.",
-      details: "We ontwerpen complete en schaalbare full stack architecturen die zich aanpassen aan de groei van uw bedrijf. We plannen uw applicatie-architectuur van A tot Z, waarbij we elke laag optimaliseren om schaalbaarheid, onderhoudbaarheid en optimale prestaties te garanderen."
+      details: "Complete en schaalbare full stack architecturen aangepast aan de groei van uw bedrijf. Optimalisatie van elke laag voor schaalbaarheid, onderhoudbaarheid en optimale prestaties."
     },
     consulting: {
-      title: "Consulting & Opleiding",
+      title: "Consulting & opleiding",
       shortDescription: "Technische ondersteuning en teamopleiding.",
       description: "Technische ondersteuning, code audits en opleiding voor uw teams over best practices.",
-      details: "We ondersteunen uw teams met diepgaande code audits, architectuurbeoordelingen en gepersonaliseerde trainingen. We delen beste ontwikkelingspraktijken, ontwerppatronen en agile methodologieën om productiviteit en codekwaliteit te verbeteren."
+      details: "Code audits, architectuurbeoordelingen en gepersonaliseerde trainingen. Delen van beste praktijken, ontwerppatronen en agile methodologieën om productiviteit en kwaliteit te verbeteren."
     }
   },
   about: {
     title: "Over HohoServices",
-    subtitle: "Uw vertrouwde partner voor full stack ontwikkeling",
+    subtitle: "Uw betrouwbare partner voor uw webprojecten",
     expertise: {
       title: "Onze expertise",
-      description1: "Met jarenlange ervaring in full stack ontwikkeling hebben we tal van bedrijven begeleid bij de realisatie van hun digitale projecten.",
+      description1: "Met jarenlange ervaring hebben we vele bedrijven en particulieren begeleid bij de realisatie van hun webprojecten.",
       description2: "Onze aanpak gericht op kwaliteit en excellentie stelt ons in staat oplossingen te leveren die perfect voldoen aan de verwachtingen van onze klanten, of het nu gaat om innovatieve startups of gevestigde bedrijven.",
       feature1: "Gegarandeerde kwaliteit",
       feature2: "Erkende expertise",
@@ -69,7 +107,7 @@ export default {
     },
     mission: {
       title: "Onze toewijding",
-      description: "We verbinden ons ertoe diensten van de hoogste kwaliteit te leveren, met focus op klanttevredenheid en het succes van uw projecten. Onze expertise en toewijding maken ons de ideale partner om uw ideeën om te zetten in digitale werkelijkheid."
+      description: "We verbinden ons ertoe diensten van de hoogste kwaliteit te leveren, met focus op klanttevredenheid en het succes van uw projecten. Onze expertise en toewijding maken ons de ideale partner om uw ideeën om te zetten in digitale oplossingen."
     },
     trust: {
       title: "Vertrouwen",
@@ -77,7 +115,7 @@ export default {
     },
     pricing: {
       title: "Transparante prijzen",
-      description: "Duidelijke en concurrerende tarieven, geen verrassingen. We bieden oplossingen aangepast aan uw budget met uitstekende prijs-kwaliteitverhouding."
+      description: "Duidelijke en concurrerende tarieven, zonder verrassingen. Redelijke prijzen met een uitstekende prijs-kwaliteitverhouding."
     },
     reactivity: {
       title: "Reactiviteit",
@@ -87,12 +125,14 @@ export default {
   contact: {
     title: "Neem contact op",
     subtitle: "Laten we uw project bespreken en de ideale oplossing vinden",
-    whatsappMessage: "Voor snelle reactiviteit, aarzel niet om een gesprek te starten op WhatsApp",
+      whatsappMessage: "Voor snelle reactie, aarzel niet om een gesprek te starten via WhatsApp",
     form: {
       name: "Naam",
       namePlaceholder: "Uw naam",
       email: "Email",
       emailPlaceholder: "uw@email.com",
+      phone: "Telefoon",
+      phonePlaceholder: "Uw telefoonnummer (optioneel)",
       projectType: "In welk domein heeft u een website nodig?",
       projectTypePlaceholder: "Selecteer uw domein",
       projectTypes: {
@@ -114,7 +154,7 @@ export default {
     }
   },
   footer: {
-    description: "Professionele full stack ontwikkelingsdiensten om uw ideeën in werkelijkheid om te zetten.",
+    description: "Professionele diensten om uw website of applicatie op maat te maken.",
     quickLinks: "Snelle links",
     contact: "Contact",
     copyright: "Alle rechten voorbehouden."

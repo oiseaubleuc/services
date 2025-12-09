@@ -15,6 +15,7 @@ const inter = Inter({
 export const metadata: Metadata = {
   title: 'HohoServices - Services Full Stack',
   description: 'Services de développement full stack professionnels',
+  viewport: 'width=device-width, initial-scale=1, maximum-scale=5',
 }
 
 export default function RootLayout({
@@ -23,7 +24,10 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="fr" className="smooth-scroll">
+    <html lang="en" className="smooth-scroll">
+      <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
+      </head>
       <body className={`${inter.className} antialiased`}>
         <LanguageProvider>
           <AnimatedBackground />

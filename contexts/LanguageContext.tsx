@@ -15,15 +15,15 @@ interface LanguageContextType {
 
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined)
 
-const translationsMap: Record<Language, typeof frTranslations> = {
+const translationsMap: Record<Language, typeof enTranslations> = {
   fr: frTranslations,
   en: enTranslations,
   nl: nlTranslations,
 }
 
 export function LanguageProvider({ children }: { children: ReactNode }) {
-  const [language, setLanguageState] = useState<Language>('fr')
-  const [translations, setTranslations] = useState<typeof frTranslations>(frTranslations)
+  const [language, setLanguageState] = useState<Language>('en')
+  const [translations, setTranslations] = useState<typeof enTranslations>(enTranslations)
 
   useEffect(() => {
     // Charger les traductions selon la langue
@@ -36,6 +36,9 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
       const savedLanguage = localStorage.getItem('language') as Language
       if (savedLanguage && ['fr', 'en', 'nl'].includes(savedLanguage)) {
         setLanguageState(savedLanguage)
+      } else {
+        // Si aucune langue sauvegardée, utiliser l'anglais par défaut
+        setLanguageState('en')
       }
     }
   }, [])

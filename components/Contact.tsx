@@ -8,16 +8,44 @@ export default function Contact() {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
+    phone: '',
     projectType: '',
     message: '',
   })
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle')
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    // Ici vous pouvez ajouter la logique d'envoi du formulaire
-    console.log('Formulaire soumis:', formData)
-    alert(t('contact.form.success'))
-    setFormData({ name: '', email: '', projectType: '', message: '' })
+    setIsSubmitting(true)
+    setSubmitStatus('idle')
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      })
+
+      const data = await response.json()
+
+      if (response.ok) {
+        setSubmitStatus('success')
+        setFormData({ name: '', email: '', phone: '', projectType: '', message: '' })
+        // Réinitialiser le statut après 5 secondes
+        setTimeout(() => setSubmitStatus('idle'), 5000)
+      } else {
+        setSubmitStatus('error')
+        console.error('Erreur:', data.error)
+      }
+    } catch (error) {
+      setSubmitStatus('error')
+      console.error('Erreur lors de l\'envoi:', error)
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
@@ -31,21 +59,21 @@ export default function Contact() {
   const whatsappNumber = '32456862580' // +32 456 86 25 80
 
   return (
-    <section id="contact" className="py-32 relative">
-      <div className="max-w-3xl mx-auto px-6 lg:px-12 relative z-10">
-        <div className="text-center mb-20">
-          <h2 className="text-5xl md:text-6xl font-semibold text-white mb-6 tracking-tight">
+    <section id="contact" className="py-16 sm:py-24 lg:py-32 relative">
+      <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-12 relative z-10">
+        <div className="text-center mb-12 sm:mb-16 lg:mb-20">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold text-white mb-4 sm:mb-6 tracking-tight px-4">
             {t('contact.title')}
           </h2>
-          <p className="text-2xl text-gray-300 font-light">
+          <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-300 font-light px-4">
             {t('contact.subtitle')}
           </p>
         </div>
         
-        <div className="bg-white/10 backdrop-blur-lg p-12 rounded-3xl border border-white/20">
-          <form onSubmit={handleSubmit} className="space-y-8">
+        <div className="bg-white/10 backdrop-blur-lg p-6 sm:p-8 lg:p-12 rounded-2xl sm:rounded-3xl border border-white/20">
+          <form onSubmit={handleSubmit} className="space-y-6 sm:space-y-8">
             <div>
-              <label htmlFor="name" className="block text-sm font-medium text-white mb-3">
+              <label htmlFor="name" className="block text-sm font-medium text-white mb-2 sm:mb-3">
                 {t('contact.form.name')}
               </label>
               <input
@@ -55,13 +83,13 @@ export default function Contact() {
                 value={formData.name}
                 onChange={handleChange}
                 required
-                className="w-full px-5 py-4 text-lg border border-white/30 rounded-xl focus:ring-2 focus:ring-white focus:border-transparent bg-white/10 text-white placeholder-gray-400 transition-all duration-200"
+                className="w-full px-4 sm:px-5 py-3 sm:py-4 text-base sm:text-lg border border-white/30 rounded-xl focus:ring-2 focus:ring-white focus:border-transparent bg-white/10 text-white placeholder-gray-400 transition-all duration-200"
                 placeholder={t('contact.form.namePlaceholder')}
               />
             </div>
             
             <div>
-              <label htmlFor="email" className="block text-sm font-medium text-white mb-3">
+              <label htmlFor="email" className="block text-sm font-medium text-white mb-2 sm:mb-3">
                 {t('contact.form.email')}
               </label>
               <input
@@ -71,13 +99,28 @@ export default function Contact() {
                 value={formData.email}
                 onChange={handleChange}
                 required
-                className="w-full px-5 py-4 text-lg border border-white/30 rounded-xl focus:ring-2 focus:ring-white focus:border-transparent bg-white/10 text-white placeholder-gray-400 transition-all duration-200"
+                className="w-full px-4 sm:px-5 py-3 sm:py-4 text-base sm:text-lg border border-white/30 rounded-xl focus:ring-2 focus:ring-white focus:border-transparent bg-white/10 text-white placeholder-gray-400 transition-all duration-200"
                 placeholder={t('contact.form.emailPlaceholder')}
               />
             </div>
             
             <div>
-              <label htmlFor="projectType" className="block text-sm font-medium text-white mb-3">
+              <label htmlFor="phone" className="block text-sm font-medium text-white mb-2 sm:mb-3">
+                {t('contact.form.phone')}
+              </label>
+              <input
+                type="tel"
+                id="phone"
+                name="phone"
+                value={formData.phone}
+                onChange={handleChange}
+                className="w-full px-4 sm:px-5 py-3 sm:py-4 text-base sm:text-lg border border-white/30 rounded-xl focus:ring-2 focus:ring-white focus:border-transparent bg-white/10 text-white placeholder-gray-400 transition-all duration-200"
+                placeholder={t('contact.form.phonePlaceholder')}
+              />
+            </div>
+            
+            <div>
+              <label htmlFor="projectType" className="block text-sm font-medium text-white mb-2 sm:mb-3">
                 {t('contact.form.projectType')}
               </label>
               <div className="relative">
@@ -87,7 +130,7 @@ export default function Contact() {
                   value={formData.projectType}
                   onChange={handleChange}
                   required
-                  className="w-full px-5 py-4 text-lg border border-white/30 rounded-xl focus:ring-2 focus:ring-white focus:border-transparent bg-white/10 text-white transition-all duration-200 appearance-none cursor-pointer pr-12"
+                  className="w-full px-4 sm:px-5 py-3 sm:py-4 text-base sm:text-lg border border-white/30 rounded-xl focus:ring-2 focus:ring-white focus:border-transparent bg-white/10 text-white transition-all duration-200 appearance-none cursor-pointer pr-10 sm:pr-12"
                 >
                   <option value="" className="bg-gray-900 text-gray-400">{t('contact.form.projectTypePlaceholder')}</option>
                   <option value="healthcare" className="bg-gray-900">{t('contact.form.projectTypes.healthcare')}</option>
@@ -101,8 +144,8 @@ export default function Contact() {
                   <option value="saas" className="bg-gray-900">{t('contact.form.projectTypes.saas')}</option>
                   <option value="other" className="bg-gray-900">{t('contact.form.projectTypes.other')}</option>
                 </select>
-                <div className="absolute inset-y-0 right-0 flex items-center pr-5 pointer-events-none">
-                  <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <div className="absolute inset-y-0 right-0 flex items-center pr-3 sm:pr-5 pointer-events-none">
+                  <svg className="w-4 h-4 sm:w-5 sm:h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                   </svg>
                 </div>
@@ -110,7 +153,7 @@ export default function Contact() {
             </div>
             
             <div>
-              <label htmlFor="message" className="block text-sm font-medium text-white mb-3">
+              <label htmlFor="message" className="block text-sm font-medium text-white mb-2 sm:mb-3">
                 {t('contact.form.message')}
               </label>
               <textarea
@@ -119,23 +162,45 @@ export default function Contact() {
                 value={formData.message}
                 onChange={handleChange}
                 required
-                rows={8}
-                className="w-full px-5 py-4 text-lg border border-white/30 rounded-xl focus:ring-2 focus:ring-white focus:border-transparent bg-white/10 text-white placeholder-gray-400 transition-all duration-200 resize-none"
+                rows={6}
+                className="w-full px-4 sm:px-5 py-3 sm:py-4 text-base sm:text-lg border border-white/30 rounded-xl focus:ring-2 focus:ring-white focus:border-transparent bg-white/10 text-white placeholder-gray-400 transition-all duration-200 resize-none"
                 placeholder={t('contact.form.messagePlaceholder')}
               />
             </div>
             
             <button
               type="submit"
-              className="w-full bg-white text-gray-900 px-8 py-4 rounded-full text-lg font-medium hover:bg-gray-100 transition-all duration-200 hover:scale-[1.02] active:scale-[0.98]"
+              disabled={isSubmitting}
+              className={`w-full bg-white text-gray-900 px-6 sm:px-8 py-3 sm:py-4 rounded-full text-base sm:text-lg font-medium transition-all duration-200 hover:scale-[1.02] active:scale-[0.98] ${
+                isSubmitting 
+                  ? 'opacity-50 cursor-not-allowed' 
+                  : 'hover:bg-gray-100'
+              }`}
             >
-              {t('contact.form.submit')}
+              {isSubmitting ? 'Envoi...' : t('contact.form.submit')}
             </button>
+            
+            {submitStatus === 'success' && (
+              <div className="fixed top-20 left-1/2 transform -translate-x-1/2 z-50 animate-slide-down">
+                <div className="bg-green-500 text-white px-6 sm:px-8 py-4 sm:py-5 rounded-xl shadow-2xl flex items-center gap-3 sm:gap-4 min-w-[280px] sm:min-w-[320px] max-w-[90vw] border border-green-400">
+                  <svg className="w-6 h-6 sm:w-7 sm:h-7 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                  </svg>
+                  <p className="text-sm sm:text-base font-medium">{t('contact.form.success')}</p>
+                </div>
+              </div>
+            )}
+            
+            {submitStatus === 'error' && (
+              <div className="mt-4 p-4 bg-red-500/20 border border-red-500/50 rounded-xl text-red-300 text-sm text-center">
+                Une erreur est survenue. Veuillez réessayer ou nous contacter directement.
+              </div>
+            )}
           </form>
           
           {/* WhatsApp - Option de contact rapide */}
-          <div className="mt-8 pt-8 border-t border-white/10 flex flex-col items-center gap-3">
-            <p className="text-sm text-gray-400 font-light text-center">
+          <div className="mt-6 sm:mt-8 pt-6 sm:pt-8 border-t border-white/10 flex flex-col items-center gap-2 sm:gap-3">
+            <p className="text-xs sm:text-sm text-gray-400 font-light text-center px-4">
               {t('contact.whatsappMessage')}
             </p>
             <a
