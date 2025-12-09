@@ -71,6 +71,8 @@ export default function Contact() {
     setSubmitStatus('idle')
 
     try {
+      console.log('Envoi du formulaire:', formData)
+      
       const response = await fetch('/api/contact', {
         method: 'POST',
         headers: {
@@ -79,15 +81,32 @@ export default function Contact() {
         body: JSON.stringify(formData),
       })
 
-      const data = await response.json().catch(() => ({ error: 'Erreur lors de la lecture de la réponse' }))
+      console.log('Réponse reçue, status:', response.status, 'ok:', response.ok)
 
-      if (!response.ok || data.error) {
+      let data
+      try {
+        data = await response.json()
+        console.log('Données parsées:', data)
+      } catch (parseError) {
+        console.error('Erreur parsing JSON:', parseError)
         setSubmitStatus('error')
-        console.error('Erreur:', data.error || `Erreur ${response.status}`)
+        return
+      }
+
+      if (!response.ok) {
+        setSubmitStatus('error')
+        console.error('Erreur HTTP:', response.status, data.error || data.message)
+        return
+      }
+
+      if (data.error) {
+        setSubmitStatus('error')
+        console.error('Erreur dans la réponse:', data.error)
         return
       }
 
       // Succès
+      console.log('Succès!', data)
       setSubmitStatus('success')
       setFormData({ name: '', email: '', phone: '', projectType: '', message: '' })
       setTimeout(() => setSubmitStatus('idle'), 5000)
@@ -112,27 +131,48 @@ export default function Contact() {
     setAppointmentStatus('idle')
 
     try {
+      const appointmentPayload = {
+        ...appointmentData,
+        date: selectedDate.toISOString(),
+        time: selectedTime,
+      }
+      
+      console.log('Envoi du rendez-vous:', appointmentPayload)
+      
       const response = await fetch('/api/appointment', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({
-          ...appointmentData,
-          date: selectedDate.toISOString(),
-          time: selectedTime,
-        }),
+        body: JSON.stringify(appointmentPayload),
       })
 
-      const data = await response.json().catch(() => ({ error: 'Erreur lors de la lecture de la réponse' }))
+      console.log('Réponse reçue, status:', response.status, 'ok:', response.ok)
 
-      if (!response.ok || data.error) {
+      let data
+      try {
+        data = await response.json()
+        console.log('Données parsées:', data)
+      } catch (parseError) {
+        console.error('Erreur parsing JSON:', parseError)
         setAppointmentStatus('error')
-        console.error('Erreur:', data.error || `Erreur ${response.status}`)
+        return
+      }
+
+      if (!response.ok) {
+        setAppointmentStatus('error')
+        console.error('Erreur HTTP:', response.status, data.error || data.message)
+        return
+      }
+
+      if (data.error) {
+        setAppointmentStatus('error')
+        console.error('Erreur dans la réponse:', data.error)
         return
       }
 
       // Succès
+      console.log('Succès!', data)
       setAppointmentStatus('success')
       setAppointmentData({ name: '', email: '', phone: '', message: '' })
       setSelectedDate(null)
