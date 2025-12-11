@@ -431,14 +431,17 @@ ${message}
         )
     } catch (error: any) {
         console.error('Erreur lors de la réservation:', error)
+        console.error('Stack:', error.stack)
         
         let errorMessage = 'Erreur lors de la réservation'
         if (error.code === 'EAUTH') {
-            errorMessage = 'Erreur d\'authentification Gmail'
+            errorMessage = 'Erreur d\'authentification Gmail. Vérifiez votre mot de passe d\'application dans .env.local'
+        } else if (error.message) {
+            errorMessage = `Erreur: ${error.message}`
         }
         
         return NextResponse.json(
-            { error: errorMessage },
+            { error: errorMessage, details: process.env.NODE_ENV === 'development' ? error.message : undefined },
             { status: 500 }
         )
     }

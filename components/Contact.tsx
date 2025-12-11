@@ -122,8 +122,22 @@ export default function Contact() {
   const handleAppointmentSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     
-    if (!selectedDate || !selectedTime) {
+    // Validation côté client
+    if (!selectedDate) {
       setAppointmentStatus('error')
+      alert('Veuillez sélectionner une date')
+      return
+    }
+    
+    if (!selectedTime) {
+      setAppointmentStatus('error')
+      alert('Veuillez sélectionner une heure')
+      return
+    }
+    
+    if (!appointmentData.name || !appointmentData.email) {
+      setAppointmentStatus('error')
+      alert('Veuillez remplir au moins votre nom et votre email')
       return
     }
 
@@ -213,25 +227,25 @@ export default function Contact() {
   const whatsappNumber = '32456862580'
 
   return (
-    <section id="contact" className="py-16 sm:py-24 lg:py-32 relative">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-12 relative z-10">
-        <div className="text-center mb-12 sm:mb-16 lg:mb-20">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold text-white mb-4 sm:mb-6 tracking-tight px-4">
+    <section id="contact" className="py-12 sm:py-16 md:py-20 lg:py-24 xl:py-32 relative">
+      <div className="max-w-4xl mx-auto px-3 sm:px-4 md:px-6 lg:px-12 relative z-10">
+        <div className="text-center mb-8 sm:mb-12 md:mb-16 lg:mb-20">
+          <h2 className="text-2xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold text-white mb-3 sm:mb-4 md:mb-6 tracking-tight px-2 sm:px-4">
             {t('contact.title')}
           </h2>
-          <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-300 font-light px-4">
+          <p className="text-sm xs:text-base sm:text-lg md:text-xl lg:text-2xl text-gray-300 font-light px-4">
             {t('contact.subtitle')}
           </p>
         </div>
         
-        <div className="bg-white/10 backdrop-blur-lg p-6 sm:p-8 lg:p-12 rounded-2xl sm:rounded-3xl border border-white/20">
+        <div className="bg-white/10 backdrop-blur-lg p-4 sm:p-6 md:p-8 lg:p-12 rounded-xl sm:rounded-2xl md:rounded-3xl border border-white/20">
           {/* Onglets style Apple */}
-          <div className="mb-8 flex justify-center">
-            <div className="inline-flex items-center bg-white/5 backdrop-blur-sm rounded-full p-1 sm:p-1.5 border border-white/10">
+          <div className="mb-6 sm:mb-8 flex justify-center">
+            <div className="inline-flex items-center bg-white/5 backdrop-blur-sm rounded-full p-0.5 sm:p-1 md:p-1.5 border border-white/10">
               <button
                 type="button"
                 onClick={() => setActiveTab('message')}
-                className={`px-4 sm:px-6 py-2 sm:py-2.5 rounded-full text-xs sm:text-sm font-medium transition-all duration-200 ${
+                className={`px-3 xs:px-4 sm:px-5 md:px-6 py-1.5 sm:py-2 md:py-2.5 rounded-full text-xs sm:text-sm font-medium transition-all duration-200 ${
                   activeTab === 'message'
                     ? 'bg-white text-gray-900 shadow-sm'
                     : 'text-gray-300 hover:text-white'
@@ -242,7 +256,7 @@ export default function Contact() {
               <button
                 type="button"
                 onClick={() => setActiveTab('appointment')}
-                className={`px-4 sm:px-6 py-2 sm:py-2.5 rounded-full text-xs sm:text-sm font-medium transition-all duration-200 ${
+                className={`px-3 xs:px-4 sm:px-5 md:px-6 py-1.5 sm:py-2 md:py-2.5 rounded-full text-xs sm:text-sm font-medium transition-all duration-200 ${
                   activeTab === 'appointment'
                     ? 'bg-white text-gray-900 shadow-sm'
                     : 'text-gray-300 hover:text-white'
@@ -255,9 +269,9 @@ export default function Contact() {
 
           {/* Formulaire de contact */}
           {activeTab === 'message' && (
-            <form onSubmit={handleContactSubmit} className="space-y-6 sm:space-y-8 animate-fade-in-up">
+            <form onSubmit={handleContactSubmit} className="space-y-4 sm:space-y-6 md:space-y-8 animate-fade-in-up">
               <div>
-                <label htmlFor="name" className="block text-sm font-medium text-white mb-2 sm:mb-3">
+                <label htmlFor="name" className="block text-xs sm:text-sm font-medium text-white mb-1.5 sm:mb-2 md:mb-3">
                   {t('contact.form.name')}
                 </label>
                 <input
@@ -267,13 +281,13 @@ export default function Contact() {
                   value={formData.name}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 sm:px-5 py-3 sm:py-4 text-base sm:text-lg border border-white/30 rounded-xl focus:ring-2 focus:ring-white focus:border-transparent bg-white/10 text-white placeholder-gray-400 transition-all duration-200"
+                  className="w-full px-3 xs:px-4 sm:px-5 py-2.5 sm:py-3 md:py-4 text-sm xs:text-base sm:text-lg border border-white/30 rounded-lg sm:rounded-xl focus:ring-2 focus:ring-white focus:border-transparent bg-white/10 text-white placeholder-gray-400 transition-all duration-200"
                   placeholder={t('contact.form.namePlaceholder')}
                 />
               </div>
               
               <div>
-                <label htmlFor="email" className="block text-sm font-medium text-white mb-2 sm:mb-3">
+                <label htmlFor="email" className="block text-xs sm:text-sm font-medium text-white mb-1.5 sm:mb-2 md:mb-3">
                   {t('contact.form.email')}
                 </label>
                 <input
@@ -283,13 +297,13 @@ export default function Contact() {
                   value={formData.email}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 sm:px-5 py-3 sm:py-4 text-base sm:text-lg border border-white/30 rounded-xl focus:ring-2 focus:ring-white focus:border-transparent bg-white/10 text-white placeholder-gray-400 transition-all duration-200"
+                  className="w-full px-3 xs:px-4 sm:px-5 py-2.5 sm:py-3 md:py-4 text-sm xs:text-base sm:text-lg border border-white/30 rounded-lg sm:rounded-xl focus:ring-2 focus:ring-white focus:border-transparent bg-white/10 text-white placeholder-gray-400 transition-all duration-200"
                   placeholder={t('contact.form.emailPlaceholder')}
                 />
               </div>
               
               <div>
-                <label htmlFor="phone" className="block text-sm font-medium text-white mb-2 sm:mb-3">
+                <label htmlFor="phone" className="block text-xs sm:text-sm font-medium text-white mb-1.5 sm:mb-2 md:mb-3">
                   {t('contact.form.phone')}
                 </label>
                 <input
@@ -298,13 +312,13 @@ export default function Contact() {
                   name="phone"
                   value={formData.phone}
                   onChange={handleChange}
-                  className="w-full px-4 sm:px-5 py-3 sm:py-4 text-base sm:text-lg border border-white/30 rounded-xl focus:ring-2 focus:ring-white focus:border-transparent bg-white/10 text-white placeholder-gray-400 transition-all duration-200"
+                  className="w-full px-3 xs:px-4 sm:px-5 py-2.5 sm:py-3 md:py-4 text-sm xs:text-base sm:text-lg border border-white/30 rounded-lg sm:rounded-xl focus:ring-2 focus:ring-white focus:border-transparent bg-white/10 text-white placeholder-gray-400 transition-all duration-200"
                   placeholder={t('contact.form.phonePlaceholder')}
                 />
               </div>
               
               <div>
-                <label htmlFor="projectType" className="block text-sm font-medium text-white mb-2 sm:mb-3">
+                <label htmlFor="projectType" className="block text-xs sm:text-sm font-medium text-white mb-1.5 sm:mb-2 md:mb-3">
                   {t('contact.form.projectType')}
                 </label>
                 <div className="relative">
@@ -314,7 +328,7 @@ export default function Contact() {
                     value={formData.projectType}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 sm:px-5 py-3 sm:py-4 text-base sm:text-lg border border-white/30 rounded-xl focus:ring-2 focus:ring-white focus:border-transparent bg-white/10 text-white transition-all duration-200 appearance-none cursor-pointer pr-10 sm:pr-12"
+                    className="w-full px-3 xs:px-4 sm:px-5 py-2.5 sm:py-3 md:py-4 text-sm xs:text-base sm:text-lg border border-white/30 rounded-lg sm:rounded-xl focus:ring-2 focus:ring-white focus:border-transparent bg-white/10 text-white transition-all duration-200 appearance-none cursor-pointer pr-8 sm:pr-10 md:pr-12"
                   >
                     <option value="" className="bg-gray-900 text-gray-400">{t('contact.form.projectTypePlaceholder')}</option>
                     <option value="healthcare" className="bg-gray-900">{t('contact.form.projectTypes.healthcare')}</option>
@@ -337,7 +351,7 @@ export default function Contact() {
               </div>
               
               <div>
-                <label htmlFor="message" className="block text-sm font-medium text-white mb-2 sm:mb-3">
+                <label htmlFor="message" className="block text-xs sm:text-sm font-medium text-white mb-1.5 sm:mb-2 md:mb-3">
                   {t('contact.form.message')}
                 </label>
                 <textarea
@@ -346,8 +360,8 @@ export default function Contact() {
                   value={formData.message}
                   onChange={handleChange}
                   required
-                  rows={6}
-                  className="w-full px-4 sm:px-5 py-3 sm:py-4 text-base sm:text-lg border border-white/30 rounded-xl focus:ring-2 focus:ring-white focus:border-transparent bg-white/10 text-white placeholder-gray-400 transition-all duration-200 resize-none"
+                  rows={5}
+                  className="w-full px-3 xs:px-4 sm:px-5 py-2.5 sm:py-3 md:py-4 text-sm xs:text-base sm:text-lg border border-white/30 rounded-lg sm:rounded-xl focus:ring-2 focus:ring-white focus:border-transparent bg-white/10 text-white placeholder-gray-400 transition-all duration-200 resize-none"
                   placeholder={t('contact.form.messagePlaceholder')}
                 />
               </div>
@@ -355,7 +369,7 @@ export default function Contact() {
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className={`w-full bg-white text-gray-900 px-6 sm:px-8 py-3 sm:py-4 rounded-full text-base sm:text-lg font-medium transition-all duration-200 hover:scale-[1.02] active:scale-[0.98] ${
+                className={`w-full bg-white text-gray-900 px-5 xs:px-6 sm:px-8 py-2.5 sm:py-3 md:py-4 rounded-full text-xs xs:text-sm sm:text-base md:text-lg font-medium transition-all duration-200 hover:scale-[1.02] active:scale-[0.98] ${
                   isSubmitting 
                     ? 'opacity-50 cursor-not-allowed' 
                     : 'hover:bg-gray-100'
@@ -368,13 +382,13 @@ export default function Contact() {
 
           {/* Formulaire de rendez-vous */}
           {activeTab === 'appointment' && (
-            <form onSubmit={handleAppointmentSubmit} className="space-y-8 animate-fade-in-up">
+            <form onSubmit={handleAppointmentSubmit} className="space-y-6 sm:space-y-8 animate-fade-in-up">
               {/* Sélection de la date */}
               <div>
-                <label className="block text-sm font-medium text-white mb-4">
+                <label className="block text-xs sm:text-sm font-medium text-white mb-3 sm:mb-4">
                   {t('appointment.selectDate')}
                 </label>
-                <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-3">
+                <div className="grid grid-cols-2 xs:grid-cols-3 sm:grid-cols-4 md:grid-cols-5 gap-2 sm:gap-3">
                   {availableDates.map((date) => {
                     const isSelected = selectedDate?.getTime() === date.getTime()
                     return (
@@ -382,19 +396,19 @@ export default function Contact() {
                         key={date.toISOString()}
                         type="button"
                         onClick={() => handleDateSelect(date)}
-                        className={`px-4 py-3 rounded-xl text-sm font-medium transition-all duration-200 ${
+                        className={`px-2 xs:px-3 sm:px-4 py-2 sm:py-3 rounded-lg sm:rounded-xl text-xs xs:text-sm font-medium transition-all duration-200 ${
                           isSelected
                             ? 'bg-white text-gray-900'
                             : 'bg-white/10 text-white hover:bg-white/20 border border-white/20'
                         }`}
                       >
-                        <div className="text-xs text-gray-400 mb-1">
+                        <div className="text-[10px] xs:text-xs text-gray-400 mb-0.5 sm:mb-1">
                           {date.toLocaleDateString('fr-FR', { weekday: 'short' })}
                         </div>
-                        <div className="text-base font-semibold">
+                        <div className="text-sm xs:text-base font-semibold">
                           {date.getDate()}
                         </div>
-                        <div className="text-xs text-gray-400">
+                        <div className="text-[10px] xs:text-xs text-gray-400">
                           {date.toLocaleDateString('fr-FR', { month: 'short' })}
                         </div>
                       </button>
@@ -406,17 +420,17 @@ export default function Contact() {
               {/* Sélection de l'heure */}
               {selectedDate && (
                 <div className="animate-fade-in-up">
-                  <label className="block text-sm font-medium text-white mb-4">
+                  <label className="block text-xs sm:text-sm font-medium text-white mb-3 sm:mb-4">
                     {t('appointment.selectTime')}
                   </label>
-                  <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-7 gap-3">
+                  <div className="grid grid-cols-3 xs:grid-cols-4 sm:grid-cols-5 md:grid-cols-7 gap-2 sm:gap-3">
                     {timeSlots.map((slot) => (
                       <button
                         key={slot.time}
                         type="button"
                         onClick={() => setSelectedTime(slot.time)}
                         disabled={!slot.available}
-                        className={`px-4 py-3 rounded-xl text-sm font-medium transition-all duration-200 ${
+                        className={`px-2 xs:px-3 sm:px-4 py-2 sm:py-3 rounded-lg sm:rounded-xl text-xs xs:text-sm font-medium transition-all duration-200 ${
                           selectedTime === slot.time
                             ? 'bg-white text-gray-900'
                             : slot.available
@@ -432,14 +446,14 @@ export default function Contact() {
               )}
 
               {/* Informations de contact */}
-              {selectedDate && selectedTime && (
-                <div className="animate-fade-in-up space-y-6 pt-6 border-t border-white/10">
-                  <h3 className="text-lg font-semibold text-white mb-4">
+              {selectedDate && selectedTime ? (
+                <div className="animate-fade-in-up space-y-4 sm:space-y-6 pt-4 sm:pt-6 border-t border-white/10">
+                  <h3 className="text-base sm:text-lg font-semibold text-white mb-3 sm:mb-4">
                     {t('appointment.contactInfo')}
                   </h3>
                   
                   <div>
-                    <label htmlFor="appointment-name" className="block text-sm font-medium text-white mb-2">
+                    <label htmlFor="appointment-name" className="block text-xs sm:text-sm font-medium text-white mb-1.5 sm:mb-2">
                       {t('contact.form.name')}
                     </label>
                     <input
@@ -449,13 +463,13 @@ export default function Contact() {
                       value={appointmentData.name}
                       onChange={handleAppointmentChange}
                       required
-                      className="w-full px-4 sm:px-5 py-3 sm:py-4 text-base sm:text-lg border border-white/30 rounded-xl focus:ring-2 focus:ring-white focus:border-transparent bg-white/10 text-white placeholder-gray-400 transition-all duration-200"
+                      className="w-full px-3 xs:px-4 sm:px-5 py-2.5 sm:py-3 md:py-4 text-sm xs:text-base sm:text-lg border border-white/30 rounded-lg sm:rounded-xl focus:ring-2 focus:ring-white focus:border-transparent bg-white/10 text-white placeholder-gray-400 transition-all duration-200"
                       placeholder={t('contact.form.namePlaceholder')}
                     />
                   </div>
 
                   <div>
-                    <label htmlFor="appointment-email" className="block text-sm font-medium text-white mb-2">
+                    <label htmlFor="appointment-email" className="block text-xs sm:text-sm font-medium text-white mb-1.5 sm:mb-2">
                       {t('contact.form.email')}
                     </label>
                     <input
@@ -465,13 +479,13 @@ export default function Contact() {
                       value={appointmentData.email}
                       onChange={handleAppointmentChange}
                       required
-                      className="w-full px-4 sm:px-5 py-3 sm:py-4 text-base sm:text-lg border border-white/30 rounded-xl focus:ring-2 focus:ring-white focus:border-transparent bg-white/10 text-white placeholder-gray-400 transition-all duration-200"
+                      className="w-full px-3 xs:px-4 sm:px-5 py-2.5 sm:py-3 md:py-4 text-sm xs:text-base sm:text-lg border border-white/30 rounded-lg sm:rounded-xl focus:ring-2 focus:ring-white focus:border-transparent bg-white/10 text-white placeholder-gray-400 transition-all duration-200"
                       placeholder={t('contact.form.emailPlaceholder')}
                     />
                   </div>
 
                   <div>
-                    <label htmlFor="appointment-phone" className="block text-sm font-medium text-white mb-2">
+                    <label htmlFor="appointment-phone" className="block text-xs sm:text-sm font-medium text-white mb-1.5 sm:mb-2">
                       {t('contact.form.phone')}
                     </label>
                     <input
@@ -480,13 +494,13 @@ export default function Contact() {
                       name="phone"
                       value={appointmentData.phone}
                       onChange={handleAppointmentChange}
-                      className="w-full px-4 sm:px-5 py-3 sm:py-4 text-base sm:text-lg border border-white/30 rounded-xl focus:ring-2 focus:ring-white focus:border-transparent bg-white/10 text-white placeholder-gray-400 transition-all duration-200"
+                      className="w-full px-3 xs:px-4 sm:px-5 py-2.5 sm:py-3 md:py-4 text-sm xs:text-base sm:text-lg border border-white/30 rounded-lg sm:rounded-xl focus:ring-2 focus:ring-white focus:border-transparent bg-white/10 text-white placeholder-gray-400 transition-all duration-200"
                       placeholder={t('contact.form.phonePlaceholder')}
                     />
                   </div>
 
                   <div>
-                    <label htmlFor="appointment-message" className="block text-sm font-medium text-white mb-2">
+                    <label htmlFor="appointment-message" className="block text-xs sm:text-sm font-medium text-white mb-1.5 sm:mb-2">
                       {t('appointment.message')}
                     </label>
                     <textarea
@@ -495,16 +509,16 @@ export default function Contact() {
                       value={appointmentData.message}
                       onChange={handleAppointmentChange}
                       rows={4}
-                      className="w-full px-4 sm:px-5 py-3 sm:py-4 text-base sm:text-lg border border-white/30 rounded-xl focus:ring-2 focus:ring-white focus:border-transparent bg-white/10 text-white placeholder-gray-400 transition-all duration-200 resize-none"
+                      className="w-full px-3 xs:px-4 sm:px-5 py-2.5 sm:py-3 md:py-4 text-sm xs:text-base sm:text-lg border border-white/30 rounded-lg sm:rounded-xl focus:ring-2 focus:ring-white focus:border-transparent bg-white/10 text-white placeholder-gray-400 transition-all duration-200 resize-none"
                       placeholder={t('appointment.messagePlaceholder')}
                     />
                   </div>
 
                   <button
                     type="submit"
-                    disabled={isSubmittingAppointment}
-                    className={`w-full bg-white text-gray-900 px-6 sm:px-8 py-3 sm:py-4 rounded-full text-base sm:text-lg font-medium transition-all duration-200 hover:scale-[1.02] active:scale-[0.98] ${
-                      isSubmittingAppointment 
+                    disabled={isSubmittingAppointment || !selectedDate || !selectedTime || !appointmentData.name || !appointmentData.email}
+                    className={`w-full bg-white text-gray-900 px-5 xs:px-6 sm:px-8 py-2.5 sm:py-3 md:py-4 rounded-full text-xs xs:text-sm sm:text-base md:text-lg font-medium transition-all duration-200 hover:scale-[1.02] active:scale-[0.98] ${
+                      isSubmittingAppointment || !selectedDate || !selectedTime || !appointmentData.name || !appointmentData.email
                         ? 'opacity-50 cursor-not-allowed' 
                         : 'hover:bg-gray-100'
                     }`}
@@ -512,29 +526,33 @@ export default function Contact() {
                     {isSubmittingAppointment ? t('appointment.submitting') : t('appointment.confirm')}
                   </button>
                 </div>
-              )}
+              ) : selectedDate && !selectedTime ? (
+                <div className="mt-4 p-4 bg-yellow-500/20 border border-yellow-500/50 rounded-xl text-yellow-300 text-sm text-center">
+                  Veuillez sélectionner une heure
+                </div>
+              ) : null}
             </form>
           )}
 
           {/* Messages de statut */}
           {submitStatus === 'success' && (
-            <div className="fixed top-20 left-1/2 transform -translate-x-1/2 z-50 animate-slide-down">
-              <div className="bg-green-500 text-white px-6 sm:px-8 py-4 sm:py-5 rounded-xl shadow-2xl flex items-center gap-3 sm:gap-4 min-w-[280px] sm:min-w-[320px] max-w-[90vw] border border-green-400">
-                <svg className="w-6 h-6 sm:w-7 sm:h-7 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <div className="fixed top-16 sm:top-20 left-1/2 transform -translate-x-1/2 z-50 animate-slide-down">
+              <div className="bg-green-500 text-white px-4 xs:px-6 sm:px-8 py-3 sm:py-4 md:py-5 rounded-lg sm:rounded-xl shadow-2xl flex items-center gap-2 sm:gap-3 md:gap-4 min-w-[240px] xs:min-w-[280px] sm:min-w-[320px] max-w-[90vw] border border-green-400">
+                <svg className="w-5 h-5 xs:w-6 xs:h-6 sm:w-7 sm:h-7 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                 </svg>
-                <p className="text-sm sm:text-base font-medium">{t('contact.form.success')}</p>
+                <p className="text-xs xs:text-sm sm:text-base font-medium">{t('contact.form.success')}</p>
               </div>
             </div>
           )}
 
           {appointmentStatus === 'success' && (
-            <div className="fixed top-20 left-1/2 transform -translate-x-1/2 z-50 animate-slide-down">
-              <div className="bg-green-500 text-white px-6 sm:px-8 py-4 sm:py-5 rounded-xl shadow-2xl flex items-center gap-3 sm:gap-4 min-w-[280px] sm:min-w-[320px] max-w-[90vw] border border-green-400">
-                <svg className="w-6 h-6 sm:w-7 sm:h-7 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <div className="fixed top-16 sm:top-20 left-1/2 transform -translate-x-1/2 z-50 animate-slide-down">
+              <div className="bg-green-500 text-white px-4 xs:px-6 sm:px-8 py-3 sm:py-4 md:py-5 rounded-lg sm:rounded-xl shadow-2xl flex items-center gap-2 sm:gap-3 md:gap-4 min-w-[240px] xs:min-w-[280px] sm:min-w-[320px] max-w-[90vw] border border-green-400">
+                <svg className="w-5 h-5 xs:w-6 xs:h-6 sm:w-7 sm:h-7 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                 </svg>
-                <p className="text-sm sm:text-base font-medium">{t('appointment.success')}</p>
+                <p className="text-xs xs:text-sm sm:text-base font-medium">{t('appointment.success')}</p>
               </div>
             </div>
           )}
@@ -554,19 +572,19 @@ export default function Contact() {
           )}
           
           {/* WhatsApp - Option de contact rapide */}
-          <div className="mt-6 sm:mt-8 pt-6 sm:pt-8 border-t border-white/10 flex flex-col items-center gap-2 sm:gap-3">
-            <p className="text-xs sm:text-sm text-gray-400 font-light text-center px-4">
+          <div className="mt-4 sm:mt-6 md:mt-8 pt-4 sm:pt-6 md:pt-8 border-t border-white/10 flex flex-col items-center gap-2 sm:gap-3">
+            <p className="text-xs xs:text-sm text-gray-400 font-light text-center px-4">
               {t('contact.whatsappMessage')}
             </p>
             <a
               href={`https://wa.me/${whatsappNumber}`}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center w-10 h-10 bg-[#25D366] rounded-full hover:bg-[#20BA5A] transition-all duration-200 hover:scale-110 active:scale-95 shadow-md hover:shadow-lg"
+              className="inline-flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12 bg-[#25D366] rounded-full hover:bg-[#20BA5A] transition-all duration-200 hover:scale-110 active:scale-95 shadow-md hover:shadow-lg"
               aria-label="Contacter sur WhatsApp"
             >
               <svg
-                className="w-6 h-6 text-white"
+                className="w-5 h-5 sm:w-6 sm:h-6 text-white"
                 fill="currentColor"
                 viewBox="0 0 24 24"
                 xmlns="http://www.w3.org/2000/svg"

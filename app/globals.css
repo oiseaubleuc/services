@@ -36,7 +36,7 @@ body {
   }
   
   .glass-effect {
-    background: rgba(10, 10, 15, 0.8);
+    background: rgba(10, 10, 15, 0.95);
     backdrop-filter: saturate(180%) blur(20px);
     -webkit-backdrop-filter: saturate(180%) blur(20px);
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
@@ -75,5 +75,33 @@ body {
 
 .animate-fade-in-up {
   animation: fadeInUp 0.8s ease-out;
+}
+
+@keyframes rotatePlanet {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes orbitRocket {
+  from {
+    transform: rotate(0deg) translateX(100px) rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg) translateX(100px) rotate(-360deg);
+  }
+}
+
+.animate-rotate-planet {
+  animation: rotatePlanet 20s linear infinite;
+  transform-origin: 200px 200px;
+}
+
+.animate-orbit-rocket {
+  animation: orbitRocket 3s linear infinite;
+  transform-origin: 200px 200px;
 }
 
