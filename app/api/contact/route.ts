@@ -2,46 +2,55 @@ import { NextRequest, NextResponse } from 'next/server'
 import nodemailer from 'nodemailer'
 
 export async function POST(request: NextRequest) {
-    try {
-        const body = await request.json()
-        const { name, email, phone, projectType, message } = body
+  try {
+    const body = await request.json()
+    const { name, email, phone, projectType, message } = body
 
-        // Validation
-        if (!name || !email || !projectType || !message) {
-            return NextResponse.json(
-                { error: 'Tous les champs sont requis' },
-                { status: 400 }
-            )
-        }
+    // Validation
+    if (!name || !email || !projectType || !message) {
+      return NextResponse.json(
+        { error: 'Tous les champs sont requis' },
+        { status: 400 }
+      )
+    }
 
-        // Configuration email Gmail
-        const recipientEmail = process.env.CONTACT_EMAIL || 'hohoservicess@gmail.com'
-        const smtpUser = process.env.SMTP_USER || 'hohoservicess@gmail.com'
-        const smtpPassword = process.env.SMTP_PASSWORD
+    // Validation du format email
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+    if (!emailRegex.test(email)) {
+      return NextResponse.json(
+        { error: 'Format d\'email invalide' },
+        { status: 400 }
+      )
+    }
 
-        if (!smtpPassword) {
-            console.error('SMTP_PASSWORD n\'est pas configuré')
-            return NextResponse.json(
-                { error: 'Configuration email manquante. Veuillez configurer SMTP_PASSWORD dans .env.local' },
-                { status: 500 }
-            )
-        }
+    // Configuration email Gmail
+    const recipientEmail = process.env.CONTACT_EMAIL || 'hohoservicess@gmail.com'
+    const smtpUser = process.env.SMTP_USER || 'hohoservicess@gmail.com'
+    const smtpPassword = process.env.SMTP_PASSWORD
 
-        // Configuration du transporteur Gmail
-        // Nettoyer le mot de passe (enlever les espaces)
-        const cleanPassword = smtpPassword.trim().replace(/\s+/g, '')
+    if (!smtpPassword) {
+      console.error('SMTP_PASSWORD n\'est pas configuré')
+      return NextResponse.json(
+        { error: 'Configuration email manquante. Veuillez contacter l\'administrateur.' },
+        { status: 500 }
+      )
+    }
 
-        const transporter = nodemailer.createTransport({
-            service: 'gmail',
-            auth: {
-                user: smtpUser,
-                pass: cleanPassword,
-            },
-        })
+    // Configuration du transporteur Gmail
+    // Nettoyer le mot de passe (enlever les espaces)
+    const cleanPassword = smtpPassword.trim().replace(/\s+/g, '')
 
-        // Préparer le contenu de l'email style Apple
-        const emailSubject = `Nouveau contact HohoServices: ${projectType}`
-        const emailHtml = `
+    const transporter = nodemailer.createTransport({
+      service: 'gmail',
+      auth: {
+        user: smtpUser,
+        pass: cleanPassword,
+      },
+    })
+
+    // Préparer le contenu de l'email style Apple
+    const emailSubject = `Nouveau contact HohoServices: ${projectType}`
+    const emailHtml = `
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -152,32 +161,39 @@ ${message}
 </html>
     `
 
-        // Envoi de l'email
-        await transporter.sendMail({
-            from: `"HohoServices Contact" <${smtpUser}>`,
-            to: recipientEmail,
-            replyTo: email,
-            subject: emailSubject,
-            html: emailHtml,
-        })
+    // Envoi de l'email
+    await transporter.sendMail({
+      from: `"HohoServices Contact" <${smtpUser}>`,
+      to: recipientEmail,
+      replyTo: email,
+      subject: emailSubject,
+      html: emailHtml,
+    })
 
-        return NextResponse.json(
-            { success: true, message: 'Message envoyé avec succès' },
-            { status: 200 }
-        )
-    } catch (error: any) {
-        console.error('Erreur lors de l\'envoi du formulaire:', error)
+    return NextResponse.json(
+      { success: true, message: 'Message envoyé avec succès' },
+      { status: 200 }
+    )
+  } catch (error: any) {
+    console.error('Erreur lors de l\'envoi du formulaire:', error)
 
-        // Message d'erreur plus détaillé
-        let errorMessage = 'Erreur lors de l\'envoi du message'
-        if (error.code === 'EAUTH') {
-            errorMessage = 'Erreur d\'authentification Gmail. Vérifiez votre mot de passe d\'application dans .env.local'
-        }
-
-        return NextResponse.json(
-            { error: errorMessage },
-            { status: 500 }
-        )
+    // Message d'erreur plus détaillé
+    let errorMessage = 'Erreur lors de l\'envoi du message. Veuillez réessayer plus tard.'
+    if (error.code === 'EAUTH') {
+      errorMessage = 'Erreur d\'authentification email. Veuillez contacter l\'administrateur.'
+    } else if (error.code === 'ECONNECTION' || error.code === 'ETIMEDOUT') {
+      errorMessage = 'Erreur de connexion. Vérifiez votre connexion internet et réessayez.'
     }
+
+    // Log détaillé en développement uniquement
+    if (process.env.NODE_ENV === 'development') {
+      console.error('Détails de l\'erreur:', error)
+    }
+
+    return NextResponse.json(
+      { error: errorMessage },
+      { status: 500 }
+    )
+  }
 }
 

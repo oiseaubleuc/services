@@ -93,6 +93,28 @@ export async function POST(request: NextRequest) {
             )
         }
 
+        // Validation du format email
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+        if (!emailRegex.test(email)) {
+            return NextResponse.json(
+                { error: 'Format d\'email invalide' },
+                { status: 400 }
+            )
+        }
+
+        // Validation de la date (ne pas permettre les dates passées)
+        const appointmentDate = new Date(date)
+        const [hours, minutes] = time.split(':').map(Number)
+        appointmentDate.setHours(hours, minutes, 0, 0)
+        
+        const now = new Date()
+        if (appointmentDate < now) {
+            return NextResponse.json(
+                { error: 'La date et l\'heure du rendez-vous doivent être dans le futur' },
+                { status: 400 }
+            )
+        }
+
         // Configuration email Gmail
         const recipientEmail = process.env.CONTACT_EMAIL || 'hohoservicess@gmail.com'
         const smtpUser = process.env.SMTP_USER || 'hohoservicess@gmail.com'
@@ -101,15 +123,13 @@ export async function POST(request: NextRequest) {
         if (!smtpPassword) {
             console.error('SMTP_PASSWORD n\'est pas configuré')
             return NextResponse.json(
-                { error: 'Configuration email manquante' },
+                { error: 'Configuration email manquante. Veuillez contacter l\'administrateur.' },
                 { status: 500 }
             )
         }
 
         // Créer l'événement Google Calendar avec Google Meet
-        const appointmentDate = new Date(date)
-        const [hours, minutes] = time.split(':').map(Number)
-        appointmentDate.setHours(hours, minutes, 0, 0)
+        // appointmentDate est déjà défini dans la validation ci-dessus
         
         const endDate = new Date(appointmentDate)
         endDate.setHours(endDate.getHours() + 1) // Durée de 1 heure par défaut
@@ -433,15 +453,22 @@ ${message}
         console.error('Erreur lors de la réservation:', error)
         console.error('Stack:', error.stack)
         
-        let errorMessage = 'Erreur lors de la réservation'
+        let errorMessage = 'Erreur lors de la réservation. Veuillez réessayer plus tard.'
         if (error.code === 'EAUTH') {
-            errorMessage = 'Erreur d\'authentification Gmail. Vérifiez votre mot de passe d\'application dans .env.local'
-        } else if (error.message) {
+            errorMessage = 'Erreur d\'authentification email. Veuillez contacter l\'administrateur.'
+        } else if (error.code === 'ECONNECTION' || error.code === 'ETIMEDOUT') {
+            errorMessage = 'Erreur de connexion. Vérifiez votre connexion internet et réessayez.'
+        } else if (error.message && process.env.NODE_ENV === 'development') {
             errorMessage = `Erreur: ${error.message}`
         }
         
+        // Log détaillé en développement uniquement
+        if (process.env.NODE_ENV === 'development') {
+            console.error('Détails de l\'erreur:', error)
+        }
+        
         return NextResponse.json(
-            { error: errorMessage, details: process.env.NODE_ENV === 'development' ? error.message : undefined },
+            { error: errorMessage },
             { status: 500 }
         )
     }

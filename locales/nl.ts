@@ -88,10 +88,10 @@ export default {
       details: "Complete en schaalbare full stack architecturen aangepast aan de groei van uw bedrijf. Optimalisatie van elke laag voor schaalbaarheid, onderhoudbaarheid en optimale prestaties."
     },
     consulting: {
-      title: "Consulting & opleiding",
-      shortDescription: "Technische ondersteuning en teamopleiding.",
-      description: "Technische ondersteuning, code audits en opleiding voor uw teams over best practices.",
-      details: "Code audits, architectuurbeoordelingen en gepersonaliseerde trainingen. Delen van beste praktijken, ontwerppatronen en agile methodologieën om productiviteit en kwaliteit te verbeteren."
+      title: "Consulting",
+      shortDescription: "Technische ondersteuning en begeleiding.",
+      description: "Technische ondersteuning en code audits voor uw projecten.",
+      details: "Code audits, architectuurbeoordelingen en technische begeleiding. Delen van beste praktijken, ontwerppatronen en agile methodologieën om productiviteit en kwaliteit te verbeteren."
     }
   },
   about: {
@@ -100,14 +100,14 @@ export default {
     expertise: {
       title: "Onze expertise",
       description1: "Met jarenlange ervaring hebben we vele bedrijven en particulieren begeleid bij de realisatie van hun webprojecten.",
-      description2: "Onze aanpak gericht op kwaliteit en excellentie stelt ons in staat oplossingen te leveren die perfect voldoen aan de verwachtingen van onze klanten, of het nu gaat om innovatieve startups of gevestigde bedrijven.",
+      description2: "Onze aanpak gericht op kwaliteit stelt ons in staat oplossingen te leveren die perfect voldoen aan de verwachtingen van onze klanten, of het nu gaat om innovatieve startups of gevestigde bedrijven.",
       feature1: "Gegarandeerde kwaliteit",
       feature2: "Erkende expertise",
       feature3: "Tevreden klantenkring",
       feature4: "Gepersonaliseerde begeleiding"
     },
     mission: {
-      title: "Onze toewijding",
+      title: "Onze missie",
       description: "We verbinden ons ertoe diensten van de hoogste kwaliteit te leveren, met focus op klanttevredenheid en het succes van uw projecten. Onze expertise en toewijding maken ons de ideale partner om uw ideeën om te zetten in digitale oplossingen."
     },
     trust: {
@@ -170,6 +170,51 @@ export default {
     submitting: "Verzenden...",
     success: "Afspraak bevestigd! U ontvangt een e-mail met de Google Meet-link.",
     error: "Er is een fout opgetreden. Probeer het opnieuw."
+  },
+  expectations: {
+    title: "Wat u van ons mag verwachten",
+    subtitle: "We begrijpen uw verwachtingen en streven ernaar ze te overtreffen",
+    performance: {
+      title: "Uitzonderlijke prestaties",
+      description: "Uw website laadt razendsnel en presteert optimaal op alle apparaten. We optimaliseren elk detail voor de beste gebruikerservaring.",
+      highlight: "Snelheid is niet alleen een functie, het is een belofte"
+    },
+    design: {
+      title: "Modern en intuïtief design",
+      description: "Elk ontwerp wordt met zorg gemaakt om uw merk te versterken en uw gebruikers te betoveren. Schoonheid en functionaliteit gaan hand in hand.",
+      highlight: "Design dat niet alleen mooi is, maar ook werkt"
+    },
+    security: {
+      title: "Maximale beveiliging",
+      description: "Uw gegevens en die van uw klanten zijn volledig beschermd. We implementeren de beste beveiligingspraktijken om uw digitale aanwezigheid te beschermen.",
+      highlight: "Beveiliging is geen optie, het is een vereiste"
+    },
+    responsive: {
+      title: "Perfect op alle apparaten",
+      description: "Of het nu een telefoon, tablet of desktop is, uw website ziet er perfect uit en werkt vlekkeloos op elk schermformaat.",
+      highlight: "Responsive design dat echt responsive is"
+    },
+    support: {
+      title: "Ondersteuning wanneer u het nodig heeft",
+      description: "We staan klaar om u te helpen, van de eerste vraag tot lang na de lancering. Uw succes is onze prioriteit.",
+      highlight: "We zijn er voor u, elke stap van de weg"
+    }
+  },
+  valueProposition: {
+    title: "Waarom kiezen voor HohoServices?",
+    subtitle: "Drie pijlers die ons onderscheiden en uw project tot een succes maken",
+    quality: {
+      title: "Kwaliteit",
+      description: "Elk project wordt uitgevoerd met de hoogste normen. We accepteren geen compromissen als het gaat om de kwaliteit van code, design of gebruikerservaring."
+    },
+    innovation: {
+      title: " Innovatie",
+      description: "We blijven op de hoogte van de nieuwste technologieën en trends. Uw project profiteert van de modernste tools en best practices in de industrie."
+    },
+    partnership: {
+      title: "Partnerschap",
+      description: "We zijn niet alleen uw leverancier, we zijn uw partner. We luisteren naar uw behoeften, begrijpen uw visie en werken samen aan uw succes."
+    }
   },
   footer: {
     description: "Professionele diensten om uw website of applicatie op maat te maken.",

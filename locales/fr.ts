@@ -88,10 +88,10 @@ export default {
             details: "Architectures full stack complètes et évolutives adaptées à la croissance de votre entreprise. Optimisation de chaque couche pour scalabilité, maintenabilité et performances optimales."
         },
         consulting: {
-            title: "Consulting & formation",
-            shortDescription: "Accompagnement technique et formation de vos équipes.",
-            description: "Accompagnement technique, audits de code et formation de vos équipes aux meilleures pratiques.",
-            details: "Audits de code, revues d'architecture et formations personnalisées. Partage des meilleures pratiques, patterns de design et méthodologies agiles pour améliorer productivité et qualité."
+            title: "Consulting",
+            shortDescription: "Accompagnement technique et conseil.",
+            description: "Accompagnement technique et audits de code pour vos projets.",
+            details: "Audits de code, revues d'architecture et accompagnement technique. Partage des meilleures pratiques, patterns de design et méthodologies agiles pour améliorer productivité et qualité."
         }
     },
     about: {
@@ -170,6 +170,51 @@ export default {
         submitting: "Envoi en cours...",
         success: "Rendez-vous confirmé ! Vous recevrez un email avec le lien Google Meet.",
         error: "Une erreur est survenue. Veuillez réessayer."
+    },
+    expectations: {
+        title: "Ce que vous pouvez attendre de nous",
+        subtitle: "Nous comprenons vos attentes et nous nous efforçons de les dépasser",
+        performance: {
+            title: "Performances exceptionnelles",
+            description: "Votre site web charge à la vitesse de l'éclair et performe de manière optimale sur tous les appareils. Nous optimisons chaque détail pour la meilleure expérience utilisateur.",
+            highlight: "La rapidité n'est pas seulement une fonctionnalité, c'est une promesse"
+        },
+        design: {
+            title: "Design moderne et intuitif",
+            description: "Chaque design est créé avec soin pour renforcer votre marque et captiver vos utilisateurs. La beauté et la fonctionnalité vont de pair.",
+            highlight: "Un design qui n'est pas seulement beau, mais qui fonctionne"
+        },
+        security: {
+            title: "Sécurité maximale",
+            description: "Vos données et celles de vos clients sont entièrement protégées. Nous mettons en œuvre les meilleures pratiques de sécurité pour protéger votre présence numérique.",
+            highlight: "La sécurité n'est pas une option, c'est une exigence"
+        },
+        responsive: {
+            title: "Parfait sur tous les appareils",
+            description: "Que ce soit un téléphone, une tablette ou un ordinateur de bureau, votre site web a l'air parfait et fonctionne parfaitement sur toutes les tailles d'écran.",
+            highlight: "Un design responsive qui est vraiment responsive"
+        },
+        support: {
+            title: "Support quand vous en avez besoin",
+            description: "Nous sommes là pour vous aider, de la première question jusqu'à bien après le lancement. Votre succès est notre priorité.",
+            highlight: "Nous sommes là pour vous, à chaque étape"
+        }
+    },
+    valueProposition: {
+        title: "Pourquoi choisir HohoServices ?",
+        subtitle: "Trois piliers qui nous distinguent et font le succès de votre projet",
+        quality: {
+            title: "Qualité inébranlable",
+            description: "Chaque projet est réalisé selon les normes les plus élevées. Nous n'acceptons aucun compromis en ce qui concerne la qualité du code, du design ou de l'expérience utilisateur."
+        },
+        innovation: {
+            title: "Innovation continue",
+            description: "Nous restons à jour avec les dernières technologies et tendances. Votre projet bénéficie des outils les plus modernes et des meilleures pratiques de l'industrie."
+        },
+        partnership: {
+            title: "Véritable partenariat",
+            description: "Nous ne sommes pas seulement votre fournisseur, nous sommes votre partenaire. Nous écoutons vos besoins, comprenons votre vision et travaillons ensemble à votre succès."
+        }
     },
     footer: {
         description: "Services professionnels pour créer votre site web ou application sur mesure.",

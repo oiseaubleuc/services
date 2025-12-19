@@ -37,32 +37,33 @@ export default function Contact() {
   const [isSubmittingAppointment, setIsSubmittingAppointment] = useState(false)
   const [appointmentStatus, setAppointmentStatus] = useState<'idle' | 'success' | 'error'>('idle')
 
-  // Générer les dates disponibles (30 prochains jours)
+  // Générer les dates disponibles (5 prochains jours)
   const getAvailableDates = () => {
     const dates: Date[] = []
     const today = new Date()
     today.setHours(0, 0, 0, 0)
     
-    for (let i = 0; i < 30; i++) {
+    let daysAdded = 0
+    let i = 0
+    while (daysAdded < 5 && i < 14) {
       const date = new Date(today)
       date.setDate(today.getDate() + i)
       // Exclure les dimanches (0) et samedis (6)
       if (date.getDay() !== 0 && date.getDay() !== 6) {
         dates.push(date)
+        daysAdded++
       }
+      i++
     }
     return dates
   }
 
-  // Créneaux horaires disponibles
+  // Créneaux horaires disponibles (4 slots entre 13h et 19h)
   const timeSlots: TimeSlot[] = [
-    { time: '09:00', available: true },
-    { time: '10:00', available: true },
-    { time: '11:00', available: true },
-    { time: '14:00', available: true },
+    { time: '13:00', available: true },
     { time: '15:00', available: true },
-    { time: '16:00', available: true },
     { time: '17:00', available: true },
+    { time: '19:00', available: true },
   ]
 
   const handleContactSubmit = async (e: React.FormEvent) => {

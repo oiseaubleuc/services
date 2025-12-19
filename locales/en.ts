@@ -88,10 +88,10 @@ export default {
             details: "Complete and scalable full stack architectures adapted to your business growth. Optimization of each layer for scalability, maintainability and optimal performance."
         },
         consulting: {
-            title: "Consulting & training",
-            shortDescription: "Technical support and team training.",
-            description: "Technical support, code audits and training for your teams on best practices.",
-            details: "Code audits, architecture reviews and personalized training. Sharing best practices, design patterns and agile methodologies to improve productivity and quality."
+            title: "Consulting",
+            shortDescription: "Technical support and guidance.",
+            description: "Technical support and code audits for your projects.",
+            details: "Code audits, architecture reviews and technical guidance. Sharing best practices, design patterns and agile methodologies to improve productivity and quality."
         }
     },
     about: {
@@ -170,6 +170,51 @@ export default {
         submitting: "Submitting...",
         success: "Appointment confirmed! You will receive an email with the Google Meet link.",
         error: "An error occurred. Please try again."
+    },
+    expectations: {
+        title: "What you can expect from us",
+        subtitle: "We understand your expectations and strive to exceed them",
+        performance: {
+            title: "Exceptional performance",
+            description: "Your website loads at lightning speed and performs optimally on all devices. We optimize every detail for the best user experience.",
+            highlight: "Speed is not just a feature, it's a promise"
+        },
+        design: {
+            title: "Modern and intuitive design",
+            description: "Every design is crafted with care to strengthen your brand and captivate your users. Beauty and functionality go hand in hand.",
+            highlight: "Design that's not just beautiful, but works"
+        },
+        security: {
+            title: "Maximum security",
+            description: "Your data and that of your customers are fully protected. We implement the best security practices to protect your digital presence.",
+            highlight: "Security is not an option, it's a requirement"
+        },
+        responsive: {
+            title: "Perfect on all devices",
+            description: "Whether it's a phone, tablet or desktop, your website looks perfect and works flawlessly on every screen size.",
+            highlight: "Responsive design that's truly responsive"
+        },
+        support: {
+            title: "Support when you need it",
+            description: "We're here to help you, from the first question to long after launch. Your success is our priority.",
+            highlight: "We're here for you, every step of the way"
+        }
+    },
+    valueProposition: {
+        title: "Why choose HohoServices?",
+        subtitle: "Three pillars that set us apart and make your project a success",
+        quality: {
+            title: "Unwavering quality",
+            description: "Every project is executed to the highest standards. We accept no compromises when it comes to code quality, design or user experience."
+        },
+        innovation: {
+            title: "Continuous innovation",
+            description: "We stay up to date with the latest technologies and trends. Your project benefits from the most modern tools and best practices in the industry."
+        },
+        partnership: {
+            title: "True partnership",
+            description: "We're not just your supplier, we're your partner. We listen to your needs, understand your vision and work together for your success."
+        }
     },
     footer: {
         description: "Professional services to create your custom website or application.",

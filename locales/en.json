@@ -35,8 +35,8 @@
             "description": "Design of complete architectures, from database to user interface."
         },
         "consulting": {
-            "title": "Consulting & Training",
-            "description": "Technical support, code audits and training for your teams on best practices."
+            "title": "Consulting",
+            "description": "Technical support and code audits for your projects."
         }
     },
     "about": {
