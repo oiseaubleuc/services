@@ -13,7 +13,7 @@ const inter = Inter({
 })
 
 export const metadata: Metadata = {
-  title: 'HohoServices - Services Full Stack',
+  title: 'HohoSolutions - Services Full Stack',
   description: 'Services de développement full stack professionnels',
   viewport: 'width=device-width, initial-scale=1, maximum-scale=5',
 }

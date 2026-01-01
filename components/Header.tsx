@@ -42,7 +42,7 @@ export default function Header() {
                         <div className="relative w-12 h-12 xs:w-16 xs:h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 flex-shrink-0">
                             <Image
                                 src="/logoo.png"
-                                alt="HohoServices Logo"
+                                alt="HohoSolutions Logo"
                                 width={96}
                                 height={96}
                                 className="w-full h-full object-contain"
@@ -50,7 +50,7 @@ export default function Header() {
                             />
                         </div>
                         <span className="text-sm xs:text-base sm:text-lg md:text-xl font-semibold text-white tracking-tight truncate">
-                            HohoServices
+                            HohoSolutions
                         </span>
                     </Link>
 

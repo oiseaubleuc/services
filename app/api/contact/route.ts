@@ -49,7 +49,7 @@ export async function POST(request: NextRequest) {
     })
 
     // Préparer le contenu de l'email style Apple
-    const emailSubject = `Nouveau contact HohoServices: ${projectType}`
+    const emailSubject = `Nouveau contact HohoSolutions: ${projectType}`
     const emailHtml = `
 <!DOCTYPE html>
 <html lang="fr">
@@ -146,7 +146,7 @@ ${message}
                 <tr>
                   <td>
                     <div style="color: #86868b; font-size: 13px; font-weight: 400; line-height: 1.38;">
-                      HohoServices
+                      HohoSolutions
                     </div>
                   </td>
                 </tr>
@@ -163,7 +163,7 @@ ${message}
 
     // Envoi de l'email
     await transporter.sendMail({
-      from: `"HohoServices Contact" <${smtpUser}>`,
+      from: `"HohoSolutions Contact" <${smtpUser}>`,
       to: recipientEmail,
       replyTo: email,
       subject: emailSubject,

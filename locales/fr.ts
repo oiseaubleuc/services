@@ -6,7 +6,7 @@ export default {
         appointment: "Rendez-vous"
     },
     hero: {
-        title: "HohoServices",
+        title: "HohoSolutions",
         titleHighlight: "Votre partenaire de confiance",
         subtitle: "Construisez votre avenir digital",
         tagline: "Nous créons des solutions web puissantes et évolutives qui propulsent votre entreprise",
@@ -95,20 +95,29 @@ export default {
         }
     },
     about: {
-        title: "À propos de HohoServices",
+        title: "À propos de HohoSolutions",
         subtitle: "Votre partenaire de confiance pour vos projets web",
+        cta: "Travaillons ensemble",
+        story: {
+            title: "Notre histoire",
+            description: "HohoSolutions est né d'une passion pour les solutions web d'excellence. Avec des années d'expérience dans le monde numérique, nous nous sommes spécialisés dans la création de sites web et d'applications qui ne sont pas seulement beaux, mais qui produisent également des résultats. Nous croyons en une approche personnalisée où chaque client est unique et chaque projet est traité avec soin."
+        },
         expertise: {
             title: "Notre expertise",
             description1: "Avec des années d'expérience, nous avons accompagné de nombreuses entreprises et particuliers dans la réalisation de leurs projets web.",
-            description2: "Notre approche centrée sur la qualité et l'excellence nous permet de livrer des solutions qui répondent parfaitement aux attentes de nos clients, qu'il s'agisse de startups innovantes ou d'entreprises établies.",
+            description2: "Notre approche centrée sur la qualité nous permet de livrer des solutions qui répondent parfaitement aux attentes de nos clients, qu'il s'agisse de startups innovantes ou d'entreprises établies.",
             feature1: "Qualité garantie",
             feature2: "Expertise reconnue",
             feature3: "Clientèle satisfaite",
             feature4: "Accompagnement personnalisé"
         },
         mission: {
-            title: "Notre engagement",
+            title: "Notre mission",
             description: "Nous nous engageons à fournir des services de la plus haute qualité, en mettant l'accent sur la satisfaction client et la réussite de vos projets. Notre expertise et notre dévouement font de nous le partenaire idéal pour concrétiser vos idées en solutions digitales."
+        },
+        values: {
+            title: "Nos valeurs",
+            subtitle: "Les principes qui guident notre travail et définissent nos relations avec les clients"
         },
         trust: {
             title: "Confiance",
@@ -121,6 +130,11 @@ export default {
         reactivity: {
             title: "Réactivité",
             description: "Nos collaborateurs sont toujours disponibles et répondent rapidement à vos demandes. Communication fluide et suivi régulier de votre projet."
+        },
+        ctaSection: {
+            title: "Prêt à commencer ?",
+            description: "Créons ensemble votre vision numérique. Contactez-nous dès aujourd'hui.",
+            button: "Contactez-nous"
         }
     },
     contact: {
@@ -201,7 +215,7 @@ export default {
         }
     },
     valueProposition: {
-        title: "Pourquoi choisir HohoServices ?",
+        title: "Pourquoi choisir HohoSolutions ?",
         subtitle: "Trois piliers qui nous distinguent et font le succès de votre projet",
         quality: {
             title: "Qualité inébranlable",
@@ -214,6 +228,66 @@ export default {
         partnership: {
             title: "Véritable partenariat",
             description: "Nous ne sommes pas seulement votre fournisseur, nous sommes votre partenaire. Nous écoutons vos besoins, comprenons votre vision et travaillons ensemble à votre succès."
+        }
+    },
+    statistics: {
+        projects: {
+            value: "50",
+            label: "Projets réalisés"
+        },
+        clients: {
+            value: "30",
+            label: "Clients satisfaits"
+        },
+        satisfaction: {
+            value: "98",
+            label: "Satisfaction client"
+        },
+        experience: {
+            value: "3",
+            label: "Années d'expérience"
+        }
+    },
+    testimonials: {
+        title: "Ce que disent nos clients",
+        subtitle: "De vrais témoignages de clients satisfaits qui ont travaillé avec nous",
+        testimonial1: {
+            name: "Sarah Van Der Berg",
+            role: "PDG",
+            company: "TechStart BV",
+            text: "HohoSolutions a parfaitement compris notre vision et l'a transformée en un site web magnifique et fonctionnel. Leur professionnalisme et leur attention aux détails sont exceptionnels."
+        },
+        testimonial2: {
+            name: "Michael Janssen",
+            role: "Fondateur",
+            company: "Creative Solutions",
+            text: "Le site web qu'ils ont construit pour nous a complètement transformé notre présence en ligne. Nous constatons une augmentation significative des leads et de l'engagement."
+        },
+        testimonial3: {
+            name: "Emma De Vries",
+            role: "Responsable Marketing",
+            company: "Digital Innovations",
+            text: "Travailler avec HohoSolutions a été une excellente expérience. Ils sont réactifs, professionnels et livrent toujours à temps. Notre nouveau site web est exactement ce dont nous avions besoin."
+        }
+    },
+    process: {
+        title: "Notre processus de travail",
+        subtitle: "Une approche structurée qui produit des résultats",
+        step1: {
+            title: "Consultation",
+            description: "Nous commençons par une discussion approfondie de vos besoins, objectifs et vision. Nous écoutons votre histoire et comprenons vos défis uniques."
+        },
+        step2: {
+            title: "Planification & Design",
+            description: "Nous créons un plan et un design détaillés qui s'alignent parfaitement avec votre marque. Chaque choix est réfléchi pour atteindre vos objectifs."
+        },
+        step3: {
+            title: "Développement",
+            description: "Notre équipe travaille avec les dernières technologies pour donner vie à votre projet. Nous vous tenons informé tout au long du processus."
+        },
+        step4: {
+            title: "Lancement & Support",
+            description: "Après le lancement, nous restons disponibles pour le support et les optimisations. Votre succès est notre priorité, même après la livraison."
         }
     },
     footer: {

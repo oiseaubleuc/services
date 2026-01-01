@@ -3,6 +3,7 @@
 import { useState } from 'react'
 import { useRouter } from 'next/navigation'
 import { useLanguage } from '@/contexts/LanguageContext'
+import FramerButton from './FramerButton'
 
 interface TimeSlot {
   time: string
@@ -367,17 +368,14 @@ export default function Contact() {
                 />
               </div>
               
-              <button
+              <FramerButton
                 type="submit"
                 disabled={isSubmitting}
-                className={`w-full bg-white text-gray-900 px-5 xs:px-6 sm:px-8 py-2.5 sm:py-3 md:py-4 rounded-full text-xs xs:text-sm sm:text-base md:text-lg font-medium transition-all duration-200 hover:scale-[1.02] active:scale-[0.98] ${
-                  isSubmitting 
-                    ? 'opacity-50 cursor-not-allowed' 
-                    : 'hover:bg-gray-100'
-                }`}
+                variant="primary"
+                className="w-full"
               >
                 {isSubmitting ? 'Envoi...' : t('contact.form.submit')}
-              </button>
+              </FramerButton>
             </form>
           )}
 
@@ -515,17 +513,14 @@ export default function Contact() {
                     />
                   </div>
 
-                  <button
+                  <FramerButton
                     type="submit"
                     disabled={isSubmittingAppointment || !selectedDate || !selectedTime || !appointmentData.name || !appointmentData.email}
-                    className={`w-full bg-white text-gray-900 px-5 xs:px-6 sm:px-8 py-2.5 sm:py-3 md:py-4 rounded-full text-xs xs:text-sm sm:text-base md:text-lg font-medium transition-all duration-200 hover:scale-[1.02] active:scale-[0.98] ${
-                      isSubmittingAppointment || !selectedDate || !selectedTime || !appointmentData.name || !appointmentData.email
-                        ? 'opacity-50 cursor-not-allowed' 
-                        : 'hover:bg-gray-100'
-                    }`}
+                    variant="primary"
+                    className="w-full"
                   >
                     {isSubmittingAppointment ? t('appointment.submitting') : t('appointment.confirm')}
-                  </button>
+                  </FramerButton>
                 </div>
               ) : selectedDate && !selectedTime ? (
                 <div className="mt-4 p-4 bg-yellow-500/20 border border-yellow-500/50 rounded-xl text-yellow-300 text-sm text-center">

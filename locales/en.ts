@@ -6,7 +6,7 @@ export default {
         appointment: "Appointment"
     },
     hero: {
-        title: "HohoServices",
+        title: "HohoSolutions",
         titleHighlight: "Your trusted partner",
         subtitle: "Build your digital future",
         tagline: "We create powerful, scalable web solutions that drive your business forward",
@@ -97,18 +97,27 @@ export default {
     about: {
         title: "About us",
         subtitle: "Your trusted partner for your web projects",
+        cta: "Let's work together",
+        story: {
+            title: "Our story",
+            description: "HohoSolutions was born from a passion for excellent web solutions. With years of experience in the digital world, we have specialized in creating websites and applications that are not only beautiful but also deliver results. We believe in a personal approach where every client is unique and every project is handled with care."
+        },
         expertise: {
             title: "Our expertise",
             description1: "With years of experience, we have accompanied numerous companies and individuals in the realization of their web projects.",
-            description2: "Our quality and excellence-focused approach allows us to deliver solutions that perfectly meet our clients' expectations, whether for innovative startups or established companies.",
+            description2: "Our quality-focused approach allows us to deliver solutions that perfectly meet our clients' expectations, whether for innovative startups or established companies.",
             feature1: "Guaranteed quality",
             feature2: "Recognized expertise",
             feature3: "Satisfied clientele",
             feature4: "Personalized support"
         },
         mission: {
-            title: "Our commitment",
+            title: "Our mission",
             description: "We are committed to providing services of the highest quality, focusing on client satisfaction and the success of your projects. Our expertise and dedication make us the ideal partner to turn your ideas into digital solutions."
+        },
+        values: {
+            title: "Our values",
+            subtitle: "The principles that guide our work and define our relationships with clients"
         },
         trust: {
             title: "Trust",
@@ -121,6 +130,11 @@ export default {
         reactivity: {
             title: "Reactivity",
             description: "Our collaborators are always available and respond quickly to your requests. Smooth communication and regular follow-up on your project."
+        },
+        ctaSection: {
+            title: "Ready to get started?",
+            description: "Let's bring your digital vision to life together. Contact us today.",
+            button: "Contact us"
         }
     },
     contact: {
@@ -201,7 +215,7 @@ export default {
         }
     },
     valueProposition: {
-        title: "Why choose HohoServices?",
+        title: "Why choose HohoSolutions?",
         subtitle: "Three pillars that set us apart and make your project a success",
         quality: {
             title: "Unwavering quality",
@@ -214,6 +228,66 @@ export default {
         partnership: {
             title: "True partnership",
             description: "We're not just your supplier, we're your partner. We listen to your needs, understand your vision and work together for your success."
+        }
+    },
+    statistics: {
+        projects: {
+            value: "50",
+            label: "Projects completed"
+        },
+        clients: {
+            value: "30",
+            label: "Satisfied clients"
+        },
+        satisfaction: {
+            value: "98",
+            label: "Client satisfaction"
+        },
+        experience: {
+            value: "3",
+            label: "Years of experience"
+        }
+    },
+    testimonials: {
+        title: "What our clients say",
+        subtitle: "Real feedback from satisfied clients who have worked with us",
+        testimonial1: {
+            name: "Sarah Van Der Berg",
+            role: "CEO",
+            company: "TechStart BV",
+            text: "HohoSolutions perfectly understood our vision and transformed it into a beautiful, functional website. Their professionalism and attention to detail are exceptional."
+        },
+        testimonial2: {
+            name: "Michael Janssen",
+            role: "Founder",
+            company: "Creative Solutions",
+            text: "The website they built for us has completely transformed our online presence. We're seeing a significant increase in leads and engagement."
+        },
+        testimonial3: {
+            name: "Emma De Vries",
+            role: "Marketing Manager",
+            company: "Digital Innovations",
+            text: "Working with HohoSolutions was an excellent experience. They are responsive, professional, and always deliver on time. Our new website is exactly what we needed."
+        }
+    },
+    process: {
+        title: "Our work process",
+        subtitle: "A structured approach that delivers results",
+        step1: {
+            title: "Consultation",
+            description: "We start with a thorough discussion of your needs, goals, and vision. We listen to your story and understand your unique challenges."
+        },
+        step2: {
+            title: "Planning & Design",
+            description: "We create a detailed plan and design that perfectly aligns with your brand. Every choice is thoughtfully made to achieve your goals."
+        },
+        step3: {
+            title: "Development",
+            description: "Our team works with the latest technologies to bring your project to life. We keep you informed throughout the entire process."
+        },
+        step4: {
+            title: "Launch & Support",
+            description: "After launch, we remain available for support and optimizations. Your success is our priority, even after delivery."
         }
     },
     footer: {

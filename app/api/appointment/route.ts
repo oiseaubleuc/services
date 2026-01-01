@@ -199,7 +199,7 @@ export async function POST(request: NextRequest) {
                 Rendez-vous confirmé
               </h1>
               <p style="margin: 8px 0 0 0; color: #86868b; font-size: 14px;">
-                HohoServices
+                HohoSolutions
               </p>
             </td>
           </tr>
@@ -429,7 +429,7 @@ ${message}
 
         // Envoyer l'email au client
         await transporter.sendMail({
-            from: `"HohoServices" <${smtpUser}>`,
+            from: `"HohoSolutions" <${smtpUser}>`,
             to: email,
             replyTo: smtpUser,
             subject: `Rendez-vous confirmé - ${formattedDate} à ${time}`,
@@ -438,7 +438,7 @@ ${message}
 
         // Envoyer la notification à vous
         await transporter.sendMail({
-            from: `"HohoServices Rendez-vous" <${smtpUser}>`,
+            from: `"HohoSolutions Rendez-vous" <${smtpUser}>`,
             to: recipientEmail,
             replyTo: email,
             subject: `Nouveau rendez-vous: ${name} - ${formattedDate} à ${time}`,

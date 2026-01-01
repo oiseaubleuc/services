@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import FramerButton from './FramerButton'
 
 interface ServiceCardProps {
   title: string
@@ -30,12 +31,13 @@ export default function ServiceCard({ title, shortDescription, details, serviceI
           </p>
         </div>
         
-        <button
+        <FramerButton
           onClick={() => setIsExpanded(!isExpanded)}
-          className="px-3 xs:px-4 sm:px-5 md:px-6 py-1.5 sm:py-2 md:py-2.5 bg-white/10 hover:bg-white/20 border border-white/30 rounded-full text-white text-xs sm:text-sm font-medium transition-all duration-200 hover:scale-105 active:scale-95 self-start mt-auto"
+          variant="outline"
+          className="self-start mt-auto text-xs sm:text-sm px-3 xs:px-4 sm:px-5 md:px-6 py-1.5 sm:py-2 md:py-2.5"
         >
           {isExpanded ? showLessText : learnMoreText}
-        </button>
+        </FramerButton>
       </div>
     </div>
   )

@@ -1,7 +1,7 @@
 'use client'
 
-import Link from 'next/link'
 import { useLanguage } from '@/contexts/LanguageContext'
+import FramerButton from './FramerButton'
 
 export default function Hero() {
   const { t } = useLanguage()
@@ -22,18 +22,20 @@ export default function Hero() {
             {t('hero.tagline')}
           </p>
           <div className="flex flex-col xs:flex-row gap-2.5 xs:gap-3 sm:gap-4 justify-center items-center px-4">
-            <Link
+            <FramerButton
               href="/contact"
-              className="w-full xs:w-auto px-5 xs:px-6 sm:px-8 py-2.5 xs:py-3 sm:py-3.5 bg-white text-gray-900 rounded-full text-xs xs:text-sm sm:text-base font-medium hover:bg-gray-100 transition-all duration-200 hover:scale-105 active:scale-95"
+              variant="primary"
+              className="w-full xs:w-auto"
             >
               {t('hero.ctaPrimary')}
-            </Link>
-            <Link
+            </FramerButton>
+            <FramerButton
               href="/services"
-              className="w-full xs:w-auto px-5 xs:px-6 sm:px-8 py-2.5 xs:py-3 sm:py-3.5 bg-transparent border-2 border-white text-white rounded-full text-xs xs:text-sm sm:text-base font-medium hover:bg-white hover:text-gray-900 transition-all duration-200 hover:scale-105 active:scale-95"
+              variant="secondary"
+              className="w-full xs:w-auto"
             >
               {t('hero.ctaSecondary')}
-            </Link>
+            </FramerButton>
           </div>
         </div>
       </div>

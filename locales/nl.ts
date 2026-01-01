@@ -6,7 +6,7 @@ export default {
     appointment: "Afspraak"
   },
   hero: {
-    title: "HohoServices",
+    title: "HohoSolutions",
     titleHighlight: "Uw vertrouwde partner",
     subtitle: "Bouw uw digitale toekomst",
     tagline: "We creëren krachtige, schaalbare weboplossingen die uw bedrijf vooruit helpen",
@@ -95,8 +95,13 @@ export default {
     }
   },
   about: {
-    title: "Over HohoServices",
+    title: "Over HohoSolutions",
     subtitle: "Uw betrouwbare partner voor uw webprojecten",
+    cta: "Laten we samenwerken",
+    story: {
+      title: "Ons verhaal",
+      description: "HohoSolutions is ontstaan uit een passie voor excellente weboplossingen. Met jarenlange ervaring in de digitale wereld hebben we ons gespecialiseerd in het creëren van websites en applicaties die niet alleen mooi zijn, maar ook resultaten opleveren. We geloven in een persoonlijke aanpak waarbij elke klant uniek is en elk project met zorg wordt behandeld."
+    },
     expertise: {
       title: "Onze expertise",
       description1: "Met jarenlange ervaring hebben we vele bedrijven en particulieren begeleid bij de realisatie van hun webprojecten.",
@@ -110,6 +115,10 @@ export default {
       title: "Onze missie",
       description: "We verbinden ons ertoe diensten van de hoogste kwaliteit te leveren, met focus op klanttevredenheid en het succes van uw projecten. Onze expertise en toewijding maken ons de ideale partner om uw ideeën om te zetten in digitale oplossingen."
     },
+    values: {
+      title: "Onze waarden",
+      subtitle: "De principes die ons werk sturen en onze relaties met klanten definiëren"
+    },
     trust: {
       title: "Vertrouwen",
       description: "We bouwen duurzame relaties op gebaseerd op transparantie, betrouwbaarheid en respect voor onze verbintenissen. Uw project is in goede handen."
@@ -121,6 +130,11 @@ export default {
     reactivity: {
       title: "Reactiviteit",
       description: "Onze medewerkers zijn altijd beschikbaar en reageren snel op uw verzoeken. Vloeiende communicatie en regelmatige opvolging van uw project."
+    },
+    ctaSection: {
+      title: "Klaar om te beginnen?",
+      description: "Laten we samen uw digitale visie tot leven brengen. Neem vandaag nog contact met ons op.",
+      button: "Neem contact op"
     }
   },
   contact: {
@@ -201,7 +215,7 @@ export default {
     }
   },
   valueProposition: {
-    title: "Waarom kiezen voor HohoServices?",
+    title: "Waarom kiezen voor HohoSolutions?",
     subtitle: "Drie pijlers die ons onderscheiden en uw project tot een succes maken",
     quality: {
       title: "Kwaliteit",
@@ -214,6 +228,66 @@ export default {
     partnership: {
       title: "Partnerschap",
       description: "We zijn niet alleen uw leverancier, we zijn uw partner. We luisteren naar uw behoeften, begrijpen uw visie en werken samen aan uw succes."
+    }
+  },
+  statistics: {
+    projects: {
+      value: "50",
+      label: "Projecten voltooid"
+    },
+    clients: {
+      value: "30",
+      label: "Tevreden klanten"
+    },
+    satisfaction: {
+      value: "98",
+      label: "Klanttevredenheid"
+    },
+    experience: {
+      value: "3",
+      label: "Jaar ervaring"
+    }
+  },
+  testimonials: {
+    title: "Wat onze klanten zeggen",
+    subtitle: "Echte feedback van tevreden klanten die met ons hebben samengewerkt",
+    testimonial1: {
+      name: "Sarah Van Der Berg",
+      role: "CEO",
+      company: "TechStart BV",
+      text: "HohoSolutions heeft onze visie perfect begrepen en omgezet in een prachtige, functionele website. Hun professionaliteit en aandacht voor detail zijn uitzonderlijk."
+    },
+    testimonial2: {
+      name: "Michael Janssen",
+      role: "Oprichter",
+      company: "Creative Solutions",
+      text: "De website die ze voor ons hebben gebouwd heeft onze online aanwezigheid volledig getransformeerd. We zien een aanzienlijke toename in leads en engagement."
+    },
+    testimonial3: {
+      name: "Emma De Vries",
+      role: "Marketing Manager",
+      company: "Digital Innovations",
+      text: "Werken met HohoSolutions was een geweldige ervaring. Ze zijn responsief, professioneel en leveren altijd op tijd. Onze nieuwe website is precies wat we nodig hadden."
+    }
+  },
+  process: {
+    title: "Ons werkproces",
+    subtitle: "Een gestructureerde aanpak die resultaten oplevert",
+    step1: {
+      title: "Consultatie",
+      description: "We beginnen met een grondige bespreking van uw behoeften, doelen en visie. We luisteren naar uw verhaal en begrijpen uw unieke uitdagingen."
+    },
+    step2: {
+      title: "Planning & Design",
+      description: "We creëren een gedetailleerd plan en ontwerp dat perfect aansluit bij uw merk. Elke keuze wordt doordacht gemaakt om uw doelen te bereiken."
+    },
+    step3: {
+      title: "Ontwikkeling",
+      description: "Ons team werkt met de nieuwste technologieën om uw project tot leven te brengen. We houden u op de hoogte tijdens het hele proces."
+    },
+    step4: {
+      title: "Lancering & Support",
+      description: "Na de lancering blijven we beschikbaar voor ondersteuning en optimalisaties. Uw succes is onze prioriteit, ook na de oplevering."
     }
   },
   footer: {
