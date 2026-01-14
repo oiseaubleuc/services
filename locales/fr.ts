@@ -294,7 +294,77 @@ export default {
         description: "Services professionnels pour créer votre site web ou application sur mesure.",
         quickLinks: "Liens rapides",
         contact: "Contact",
+        privacy: "Politique de confidentialité",
+        terms: "Conditions d'utilisation",
         copyright: "Tous droits réservés."
+    },
+    privacy: {
+        title: "Politique de confidentialité",
+        lastUpdated: "Dernière mise à jour : janvier 2025",
+        section1: {
+            title: "1. Introduction",
+            content: "Chez HohoSolutions, nous respectons votre vie privée et nous nous engageons à protéger vos données personnelles. Cette politique de confidentialité explique comment nous collectons, utilisons et protégeons les informations lorsque vous visitez notre site web ou utilisez nos services."
+        },
+        section2: {
+            title: "2. Données que nous collectons",
+            content: "Nous pouvons collecter les types de données personnelles suivants :",
+            item1: "Coordonnées : nom, adresse e-mail, numéro de téléphone",
+            item2: "Informations sur le projet : détails sur votre projet et vos besoins",
+            item3: "Données de communication : messages que vous envoyez via notre formulaire de contact",
+            item4: "Données techniques : adresse IP, type de navigateur, informations sur l'appareil"
+        },
+        section3: {
+            title: "3. Comment nous utilisons vos données",
+            content: "Nous utilisons vos données personnelles pour : vous contacter concernant votre projet, fournir nos services, traiter vos demandes, améliorer nos services, et respecter nos obligations légales."
+        },
+        section4: {
+            title: "4. Protection des données",
+            content: "Nous mettons en place des mesures techniques et organisationnelles appropriées pour protéger vos données personnelles contre l'accès non autorisé, la perte ou la destruction. Vos données sont stockées en toute sécurité et ne sont accessibles qu'au personnel autorisé."
+        },
+        section5: {
+            title: "5. Partage de données",
+            content: "Nous ne partageons pas vos données personnelles avec des tiers, sauf lorsque cela est nécessaire pour la fourniture de nos services, lorsque cela est légalement requis, ou lorsque vous avez donné votre consentement."
+        },
+        section6: {
+            title: "6. Vos droits",
+            content: "Vous avez le droit d'accéder à vos données personnelles, de les corriger, de les supprimer ou de les limiter, de vous opposer à leur traitement, et d'exporter vos données. Contactez-nous à info@hohosolutions.com pour exercer ces droits."
+        },
+        section7: {
+            title: "7. Contact",
+            content: "Si vous avez des questions concernant cette politique de confidentialité ou la façon dont nous traitons vos données, veuillez nous contacter à info@hohosolutions.com."
+        }
+    },
+    terms: {
+        title: "Conditions d'utilisation",
+        lastUpdated: "Dernière mise à jour : janvier 2025",
+        section1: {
+            title: "1. Acceptation des conditions",
+            content: "En accédant et en utilisant le site web de HohoSolutions, vous acceptez ces conditions d'utilisation. Si vous n'acceptez pas ces conditions, nous vous demandons de ne pas utiliser le site web."
+        },
+        section2: {
+            title: "2. Services",
+            content: "HohoSolutions fournit des services de développement web, de conseil et des services numériques connexes. Tous les services sont fournis conformément aux spécifications et conditions convenues telles que définies dans les accords de service individuels."
+        },
+        section3: {
+            title: "3. Propriété intellectuelle",
+            content: "Tout le contenu de ce site web, y compris mais sans s'y limiter, le texte, les images, les logos et le code, est la propriété de HohoSolutions et est protégé par les droits d'auteur et autres droits de propriété intellectuelle."
+        },
+        section4: {
+            title: "4. Responsabilités de l'utilisateur",
+            content: "Vous êtes responsable de l'exactitude des informations que vous fournissez et du respect de toutes les lois et réglementations applicables lors de l'utilisation de nos services."
+        },
+        section5: {
+            title: "5. Responsabilité",
+            content: "HohoSolutions n'est pas responsable des dommages indirects, accessoires ou consécutifs résultant de l'utilisation de nos services. Notre responsabilité totale est limitée au montant que vous avez payé pour le service spécifique."
+        },
+        section6: {
+            title: "6. Modifications",
+            content: "HohoSolutions se réserve le droit de modifier ces conditions d'utilisation à tout moment. Les modifications entrent en vigueur dès leur publication sur ce site web."
+        },
+        section7: {
+            title: "7. Droit applicable",
+            content: "Ces conditions d'utilisation sont régies par et interprétées conformément aux lois de la Belgique. Tout litige sera soumis aux tribunaux compétents de la Belgique."
+        }
     }
 }
 

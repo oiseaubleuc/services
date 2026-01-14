@@ -25,7 +25,7 @@ module.exports = {
                 },
             },
             fontFamily: {
-                sans: ['var(--font-inter)', 'system-ui', 'sans-serif'],
+                sans: ['var(--font-space-grotesk)', 'Helvetica Neue', 'Helvetica', 'Arial', 'sans-serif'],
             },
             letterSpacing: {
                 tighter: '-0.02em',

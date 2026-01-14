@@ -294,7 +294,77 @@ export default {
         description: "Professional services to create your custom website or application.",
         quickLinks: "Quick links",
         contact: "Contact",
+        privacy: "Privacy Policy",
+        terms: "Terms of Use",
         copyright: "All rights reserved."
+    },
+    privacy: {
+        title: "Privacy Policy",
+        lastUpdated: "Last updated: January 2025",
+        section1: {
+            title: "1. Introduction",
+            content: "At HohoSolutions, we respect your privacy and are committed to protecting your personal data. This privacy policy explains how we collect, use, and protect information when you visit our website or use our services."
+        },
+        section2: {
+            title: "2. Data We Collect",
+            content: "We may collect the following types of personal data:",
+            item1: "Contact information: name, email address, phone number",
+            item2: "Project information: details about your project and needs",
+            item3: "Communication data: messages you send through our contact form",
+            item4: "Technical data: IP address, browser type, device information"
+        },
+        section3: {
+            title: "3. How We Use Your Data",
+            content: "We use your personal data to: contact you about your project, provide our services, process your requests, improve our services, and comply with legal obligations."
+        },
+        section4: {
+            title: "4. Data Protection",
+            content: "We implement appropriate technical and organizational measures to protect your personal data against unauthorized access, loss, or destruction. Your data is stored securely and is only accessible to authorized personnel."
+        },
+        section5: {
+            title: "5. Data Sharing",
+            content: "We do not share your personal data with third parties, except when necessary for the delivery of our services, when legally required, or when you have given consent."
+        },
+        section6: {
+            title: "6. Your Rights",
+            content: "You have the right to access your personal data, correct it, delete it or restrict it, object to its processing, and export your data. Contact us at info@hohosolutions.com to exercise these rights."
+        },
+        section7: {
+            title: "7. Contact",
+            content: "If you have questions about this privacy policy or how we process your data, please contact us at info@hohosolutions.com."
+        }
+    },
+    terms: {
+        title: "Terms of Use",
+        lastUpdated: "Last updated: January 2025",
+        section1: {
+            title: "1. Acceptance of Terms",
+            content: "By accessing and using the HohoSolutions website, you accept these terms of use. If you do not agree to these terms, we ask that you do not use the website."
+        },
+        section2: {
+            title: "2. Services",
+            content: "HohoSolutions provides web development, consulting, and related digital services. All services are delivered according to agreed specifications and conditions as set out in individual service agreements."
+        },
+        section3: {
+            title: "3. Intellectual Property",
+            content: "All content on this website, including but not limited to text, images, logos, and code, is the property of HohoSolutions and is protected by copyright and other intellectual property rights."
+        },
+        section4: {
+            title: "4. User Responsibilities",
+            content: "You are responsible for the accuracy of the information you provide and for complying with all applicable laws and regulations when using our services."
+        },
+        section5: {
+            title: "5. Liability",
+            content: "HohoSolutions is not liable for indirect, incidental, or consequential damages resulting from the use of our services. Our total liability is limited to the amount you have paid for the specific service."
+        },
+        section6: {
+            title: "6. Changes",
+            content: "HohoSolutions reserves the right to modify these terms of use at any time. Changes take effect as soon as they are published on this website."
+        },
+        section7: {
+            title: "7. Applicable Law",
+            content: "These terms of use are governed by and interpreted in accordance with the laws of Belgium. Any disputes will be submitted to the competent courts of Belgium."
+        }
     }
 }
 

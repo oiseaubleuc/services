@@ -294,7 +294,77 @@ export default {
     description: "Professionele diensten om uw website of applicatie op maat te maken.",
     quickLinks: "Snelle links",
     contact: "Contact",
+    privacy: "Privacybeleid",
+    terms: "Gebruiksvoorwaarden",
     copyright: "Alle rechten voorbehouden."
+  },
+  privacy: {
+    title: "Privacybeleid",
+    lastUpdated: "Laatst bijgewerkt: januari 2025",
+    section1: {
+      title: "1. Inleiding",
+      content: "Bij HohoSolutions respecteren we uw privacy en zijn we toegewijd aan de bescherming van uw persoonlijke gegevens. Dit privacybeleid legt uit hoe we informatie verzamelen, gebruiken en beschermen wanneer u onze website bezoekt of onze diensten gebruikt."
+    },
+    section2: {
+      title: "2. Gegevens die we verzamelen",
+      content: "We kunnen de volgende soorten persoonlijke gegevens verzamelen:",
+      item1: "Contactgegevens: naam, e-mailadres, telefoonnummer",
+      item2: "Projectinformatie: details over uw project en behoeften",
+      item3: "Communicatiegegevens: berichten die u via ons contactformulier verstuurt",
+      item4: "Technische gegevens: IP-adres, browsertype, apparaatinformatie"
+    },
+    section3: {
+      title: "3. Hoe we uw gegevens gebruiken",
+      content: "We gebruiken uw persoonlijke gegevens om: contact met u op te nemen over uw project, onze diensten te leveren, uw verzoeken te verwerken, onze diensten te verbeteren, en wettelijke verplichtingen na te komen."
+    },
+    section4: {
+      title: "4. Gegevensbescherming",
+      content: "We implementeren passende technische en organisatorische maatregelen om uw persoonlijke gegevens te beschermen tegen ongeautoriseerde toegang, verlies of vernietiging. Uw gegevens worden veilig opgeslagen en alleen toegankelijk voor geautoriseerd personeel."
+    },
+    section5: {
+      title: "5. Delen van gegevens",
+      content: "We delen uw persoonlijke gegevens niet met derden, behalve wanneer dit nodig is voor de levering van onze diensten, wanneer dit wettelijk verplicht is, of wanneer u hiervoor toestemming heeft gegeven."
+    },
+    section6: {
+      title: "6. Uw rechten",
+      content: "U heeft het recht om toegang te krijgen tot uw persoonlijke gegevens, deze te corrigeren, te verwijderen of te beperken, bezwaar te maken tegen de verwerking, en uw gegevens te exporteren. Neem contact met ons op via info@hohosolutions.com om deze rechten uit te oefenen."
+    },
+    section7: {
+      title: "7. Contact",
+      content: "Als u vragen heeft over dit privacybeleid of over hoe we uw gegevens verwerken, neem dan contact met ons op via info@hohosolutions.com."
+    }
+  },
+  terms: {
+    title: "Gebruiksvoorwaarden",
+    lastUpdated: "Laatst bijgewerkt: januari 2025",
+    section1: {
+      title: "1. Aanvaarding van de voorwaarden",
+      content: "Door toegang te krijgen tot en gebruik te maken van de website van HohoSolutions, aanvaardt u deze gebruiksvoorwaarden. Als u niet akkoord gaat met deze voorwaarden, verzoeken we u de website niet te gebruiken."
+    },
+    section2: {
+      title: "2. Diensten",
+      content: "HohoSolutions biedt webontwikkeling, consulting en gerelateerde digitale diensten. Alle diensten worden geleverd volgens de overeengekomen specificaties en voorwaarden zoals vastgelegd in individuele serviceovereenkomsten."
+    },
+    section3: {
+      title: "3. Intellectueel eigendom",
+      content: "Alle inhoud op deze website, inclusief maar niet beperkt tot tekst, afbeeldingen, logo's en code, is eigendom van HohoSolutions en is beschermd door auteursrechten en andere intellectuele eigendomsrechten."
+    },
+    section4: {
+      title: "4. Gebruikersverantwoordelijkheden",
+      content: "U bent verantwoordelijk voor de nauwkeurigheid van de informatie die u verstrekt en voor het naleven van alle toepasselijke wetten en regelgeving bij het gebruik van onze diensten."
+    },
+    section5: {
+      title: "5. Aansprakelijkheid",
+      content: "HohoSolutions is niet aansprakelijk voor indirecte, incidentele of gevolgschade die voortvloeit uit het gebruik van onze diensten. Onze totale aansprakelijkheid is beperkt tot het bedrag dat u heeft betaald voor de specifieke dienst."
+    },
+    section6: {
+      title: "6. Wijzigingen",
+      content: "HohoSolutions behoudt zich het recht voor om deze gebruiksvoorwaarden op elk moment te wijzigen. Wijzigingen worden van kracht zodra ze op deze website worden gepubliceerd."
+    },
+    section7: {
+      title: "7. Toepasselijk recht",
+      content: "Deze gebruiksvoorwaarden worden beheerst door en geïnterpreteerd in overeenstemming met de wetten van België. Eventuele geschillen zullen worden voorgelegd aan de bevoegde rechtbanken in België."
+    }
   }
 }
 

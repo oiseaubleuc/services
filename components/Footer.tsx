@@ -38,10 +38,24 @@ export default function Footer() {
             >
               {t('nav.contact')}
             </Link>
+            <span className="text-gray-600">•</span>
+            <Link 
+              href="/privacy" 
+              className="text-gray-400 hover:text-white transition-colors duration-200 font-light px-1"
+            >
+              {t('footer.privacy')}
+            </Link>
+            <span className="text-gray-600">•</span>
+            <Link 
+              href="/terms" 
+              className="text-gray-400 hover:text-white transition-colors duration-200 font-light px-1"
+            >
+              {t('footer.terms')}
+            </Link>
           </div>
           
           <div className="text-center md:text-right order-3">
-            <p className="text-gray-400 text-xs xs:text-sm font-light mb-1 break-all sm:break-normal">hohoservicess@gmail.com</p>
+            <p className="text-gray-400 text-xs xs:text-sm font-light mb-1 break-all sm:break-normal">info@hohosolutions.com</p>
             <p className="text-gray-500 text-[10px] xs:text-xs font-light">
               &copy; {new Date().getFullYear()} HohoSolutions
             </p>

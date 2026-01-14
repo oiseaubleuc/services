@@ -24,8 +24,8 @@ export async function POST(request: NextRequest) {
     }
 
     // Configuration email Gmail
-    const recipientEmail = process.env.CONTACT_EMAIL || 'hohoservicess@gmail.com'
-    const smtpUser = process.env.SMTP_USER || 'hohoservicess@gmail.com'
+    const recipientEmail = process.env.CONTACT_EMAIL || 'info@hohosolutions.com'
+    const smtpUser = process.env.SMTP_USER || 'info@hohosolutions.com'
     const smtpPassword = process.env.SMTP_PASSWORD
 
     if (!smtpPassword) {
