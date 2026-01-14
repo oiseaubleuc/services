@@ -11,12 +11,19 @@ const spaceGrotesk = Space_Grotesk({
   display: 'swap',
   variable: '--font-space-grotesk',
   weight: ['300', '400', '500', '600', '700'],
+  fallback: ['Helvetica Neue', 'Helvetica', 'Arial', 'sans-serif'],
+  preload: true,
 })
 
 export const metadata: Metadata = {
   title: 'HohoSolutions - Services Full Stack',
   description: 'Services de développement full stack professionnels',
-  viewport: 'width=device-width, initial-scale=1, maximum-scale=5',
+}
+
+export const viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  maximumScale: 5,
 }
 
 export default function RootLayout({
