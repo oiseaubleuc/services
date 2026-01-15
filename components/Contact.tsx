@@ -226,7 +226,7 @@ export default function Contact() {
   }
 
   const availableDates = getAvailableDates()
-  const whatsappNumber = '32456862580'
+  const whatsappNumber = '32451015476'
 
   return (
     <section id="contact" className="py-12 sm:py-16 md:py-20 lg:py-24 xl:py-32 relative">

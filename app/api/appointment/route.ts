@@ -288,7 +288,7 @@ ${message}
                   <tr>
                     <td style="padding: 4px 0;">
                       <span style="color: #86868b; font-size: 12px;">WhatsApp:</span>
-                      <a href="https://wa.me/32456862580" style="color: #0071e3; text-decoration: none; font-size: 12px; margin-left: 8px;">+32 456 86 25 80</a>
+                      <a href="https://wa.me/32451015476" style="color: #0071e3; text-decoration: none; font-size: 12px; margin-left: 8px;">+32 451015476</a>
                     </td>
                   </tr>
                 </table>

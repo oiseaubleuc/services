@@ -18,6 +18,10 @@ const spaceGrotesk = Space_Grotesk({
 export const metadata: Metadata = {
   title: 'HohoSolutions - Services Full Stack',
   description: 'Services de développement full stack professionnels',
+  metadataBase: new URL('https://www.hohosolutions.com'),
+  alternates: {
+    canonical: 'https://www.hohosolutions.com',
+  },
 }
 
 export const viewport = {

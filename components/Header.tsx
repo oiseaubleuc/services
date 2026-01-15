@@ -41,7 +41,7 @@ export default function Header() {
                     >
                         <div className="relative w-12 h-12 xs:w-16 xs:h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 flex-shrink-0">
                             <Image
-                                src="/logoo.png"
+                                src="/logos/logo_HS.png"
                                 alt="HohoSolutions Logo"
                                 width={96}
                                 height={96}

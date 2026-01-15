@@ -1,0 +1,55 @@
+<!-- HohoSolutions Email Signature - Kopieer deze code naar Gmail -->
+<!-- Let op: Voor beste resultaat, voeg eerst dit toe aan de <head> van je email client als mogelijk: -->
+<!-- <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet"> -->
+<table cellpadding="0" cellspacing="0" border="0" style="font-family: 'Space Grotesk', 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 13px; line-height: 1.5; color: #333333; width: 100%; max-width: 600px;">
+    <!-- Top banner met logo en naam -->
+    <tr>
+        <td style="background-color: #0a0a0f; padding: 20px 25px; vertical-align: middle;">
+            <table cellpadding="0" cellspacing="0" border="0" width="100%">
+                <tr>
+                    <td style="padding-right: 20px; vertical-align: middle; width: 80px;">
+                        <img src="https://www.hohosolutions.com/logos/logo_HS.png" alt="HohoSolutions" width="80" height="80" style="display: block; border: 0; background: transparent;" />
+                    </td>
+                    <td style="vertical-align: middle;">
+                        <table cellpadding="0" cellspacing="0" border="0">
+                            <tr>
+                                <td style="padding-bottom: 5px;">
+                                    <span style="font-size: 11px; font-weight: 400; color: #ffffff; text-transform: uppercase; letter-spacing: 1px;">FULL STACK DEVELOPER, HOHOSOLUTIONS</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <span style="font-size: 24px; font-weight: 700; color: #ffffff; letter-spacing: -0.5px; line-height: 1.2;">HOUDAIFA HAMOUCHI</span>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+    <!-- Contact informatie sectie -->
+    <tr>
+        <td style="background-color: #ffffff; padding: 20px 25px;">
+            <table cellpadding="0" cellspacing="0" border="0" width="100%">
+                <tr>
+                    <td style="padding-bottom: 8px;">
+                        <span style="font-size: 12px; color: #0066cc; font-weight: 600;">E</span>
+                        <span style="font-size: 12px; color: #666666; padding-left: 5px;">info@hohosolutions.com</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="padding-bottom: 8px;">
+                        <span style="font-size: 12px; color: #0066cc; font-weight: 600;">T</span>
+                        <span style="font-size: 12px; color: #666666; padding-left: 5px;">+32 451015476</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="https://www.hohosolutions.com" style="font-size: 12px; color: #0066cc; text-decoration: none; font-weight: 500;">www.hohosolutions.com</a>
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+</table>

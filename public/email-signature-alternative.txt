@@ -1,0 +1,61 @@
+<!-- HohoSolutions Email Signature - Alternative avec logo PNG sans fond -->
+<!-- Si le SVG ne fonctionne pas dans votre client email, utilisez cette version -->
+<table cellpadding="0" cellspacing="0" border="0" style="font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 13px; line-height: 1.5; color: #333333;">
+    <tr>
+        <td style="padding: 0;">
+            <table cellpadding="0" cellspacing="0" border="0">
+                <tr>
+                    <td style="padding-right: 15px; vertical-align: middle; background-color: transparent;">
+                        <!-- Option 1: Utiliser le SVG (recommandé si supporté) -->
+                        <img src="https://www.hohosolutions.com/logos/logo.svg" alt="HohoSolutions" width="60" height="60" style="display: block; border: 0; background: transparent;" />
+                        <!-- Option 2: Si SVG ne fonctionne pas, remplacez par une version PNG avec fond transparent -->
+                        <!-- <img src="https://www.hohosolutions.com/logos/logo_HS.png" alt="HohoSolutions" width="60" height="60" style="display: block; border: 0; background: transparent; opacity: 0.95;" /> -->
+                    </td>
+                    <td style="vertical-align: middle; padding-left: 0;">
+                        <table cellpadding="0" cellspacing="0" border="0">
+                            <tr>
+                                <td style="padding-bottom: 4px;">
+                                    <span style="font-size: 18px; font-weight: 600; color: #1d1d1f; letter-spacing: -0.3px;">Houdaifa Hamouchi</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="padding-bottom: 8px;">
+                                    <span style="font-size: 12px; color: #666666; text-transform: uppercase; letter-spacing: 0.5px;">Full Stack Developer</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <span style="font-size: 16px; font-weight: 600; color: #1d1d1f; letter-spacing: -0.3px;">HohoSolutions</span>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+    <tr>
+        <td style="padding-top: 15px; padding-bottom: 0;">
+            <table cellpadding="0" cellspacing="0" border="0">
+                <tr>
+                    <td style="padding-right: 8px; vertical-align: middle; color: #666666; font-size: 14px;">✉</td>
+                    <td style="vertical-align: middle;">
+                        <a href="mailto:info@hohosolutions.com" style="color: #0066cc; text-decoration: none; font-size: 13px;">info@hohosolutions.com</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="padding-right: 8px; padding-top: 8px; vertical-align: middle; color: #666666; font-size: 14px;">📞</td>
+                    <td style="padding-top: 8px; vertical-align: middle;">
+                        <a href="tel:+32451015476" style="color: #0066cc; text-decoration: none; font-size: 13px;">+32 451015476</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="padding-right: 8px; padding-top: 8px; vertical-align: middle; color: #666666; font-size: 14px;">🌐</td>
+                    <td style="padding-top: 8px; vertical-align: middle;">
+                        <a href="https://www.hohosolutions.com" style="color: #0066cc; text-decoration: none; font-size: 13px;">www.hohosolutions.com</a>
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+</table>
