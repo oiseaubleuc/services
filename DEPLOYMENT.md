@@ -57,6 +57,12 @@ Bij je domain provider (waar je hohosolutions.com hebt gekocht):
 
 Vercel regelt automatisch SSL (HTTPS) voor je custom domain. Dit kan 24-48 uur duren.
 
+**Belangrijk:**
+- Zorg dat je domain correct is gekoppeld in Vercel Settings → Domains
+- Controleer dat de DNS records correct zijn ingesteld
+- Wacht tot Vercel het SSL certificaat heeft gegenereerd (status wordt "Valid" in Vercel)
+- Gebruik ALTIJD `https://` in plaats van `http://` bij het bezoeken van je site
+
 ### Stap 6: Verificatie
 
 Na DNS propagation (24-48 uur):
