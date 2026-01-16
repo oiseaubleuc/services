@@ -12,7 +12,8 @@ export default {
     subtitle: "Bouw uw digitale toekomst",
     tagline: "We creëren krachtige, schaalbare weboplossingen die uw bedrijf vooruit helpen",
     ctaPrimary: "Neem contact op",
-    ctaSecondary: "Ontdek onze diensten"
+    ctaSecondary: "Ontdek onze diensten",
+    ctaOffers: "Bekijk aanbiedingen"
   },
   services: {
     title: "Onze Diensten",

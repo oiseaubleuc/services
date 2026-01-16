@@ -36,6 +36,13 @@ export default function Hero() {
             >
               {t('hero.ctaSecondary')}
             </FramerButton>
+            <FramerButton
+              href="/offer"
+              variant="yellow"
+              className="w-full xs:w-auto"
+            >
+              {t('hero.ctaOffers')}
+            </FramerButton>
           </div>
         </div>
       </div>

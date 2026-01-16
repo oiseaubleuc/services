@@ -12,7 +12,8 @@ export default {
         subtitle: "Build your digital future",
         tagline: "We create powerful, scalable web solutions that drive your business forward",
         ctaPrimary: "Contact us",
-        ctaSecondary: "Discover our services"
+        ctaSecondary: "Discover our services",
+        ctaOffers: "View offers"
     },
     services: {
         title: "Our services",

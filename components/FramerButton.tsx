@@ -7,7 +7,7 @@ interface FramerButtonProps {
   children: ReactNode
   href?: string
   onClick?: () => void
-  variant?: 'primary' | 'secondary' | 'outline'
+  variant?: 'primary' | 'secondary' | 'outline' | 'yellow'
   className?: string
   disabled?: boolean
   type?: 'button' | 'submit'
@@ -23,11 +23,12 @@ export default function FramerButton({
   type = 'button'
 }: FramerButtonProps) {
   const baseStyles = 'relative inline-flex items-center justify-center px-6 sm:px-8 py-3 sm:py-4 rounded-full text-sm sm:text-base font-medium transition-all duration-300 ease-out overflow-hidden group'
-  
+
   const variants = {
     primary: 'bg-white text-gray-900 hover:bg-gray-50 hover:scale-[1.02] active:scale-[0.98] shadow-lg hover:shadow-xl',
     secondary: 'bg-transparent border-2 border-white text-white hover:bg-white hover:text-gray-900 hover:scale-[1.02] active:scale-[0.98]',
-    outline: 'bg-white/10 backdrop-blur-sm border border-white/20 text-white hover:bg-white/20 hover:border-white/40 hover:scale-[1.02] active:scale-[0.98]'
+    outline: 'bg-white/10 backdrop-blur-sm border border-white/20 text-white hover:bg-white/20 hover:border-white/40 hover:scale-[1.02] active:scale-[0.98]',
+    yellow: 'bg-yellow-500 text-gray-900 hover:bg-yellow-600 hover:scale-[1.02] active:scale-[0.98] shadow-lg hover:shadow-xl font-semibold'
   }
 
   const buttonContent = (
