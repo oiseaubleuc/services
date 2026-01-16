@@ -3,7 +3,8 @@ export default {
         services: "Services",
         about: "À propos",
         contact: "Contact",
-        appointment: "Rendez-vous"
+        appointment: "Rendez-vous",
+        offer: "Offres"
     },
     hero: {
         title: "HohoSolutions",
@@ -168,6 +169,7 @@ export default {
             },
             message: "Message",
             messagePlaceholder: "Parlez-nous de votre projet...",
+            interestedIn: "Je suis intéressé(e) par le package:",
             submit: "Envoyer le message",
             success: "Merci pour votre message ! Nous vous répondrons bientôt."
         }
@@ -364,6 +366,57 @@ export default {
         section7: {
             title: "7. Droit applicable",
             content: "Ces conditions d'utilisation sont régies par et interprétées conformément aux lois de la Belgique. Tout litige sera soumis aux tribunaux compétents de la Belgique."
+        }
+    },
+    offer: {
+        temporary: "Offre temporaire - Pour tous les entrepreneurs qui veulent mieux gagner cette année ! Valable 2 mois",
+        title: "Nos offres — Création de site web",
+        subtitle: "Des solutions adaptées à vos besoins, de la création simple à la solution complète sur-mesure",
+        popular: "Populaire",
+        cta: "Choisir cette offre",
+        contact: "Contactez-nous",
+        note: "Chaque projet fait l'objet d'un devis détaillé, lot par lot. Les prix indiqués sont des prix de départ.",
+        guarantee: {
+            title: "Délai de traitement",
+            description: "Suite à votre demande, vous recevrez sous 12 heures un devis détaillé, une planification de projet et toute la documentation nécessaire. Vous pourrez ainsi prendre une décision éclairée et démarrer rapidement."
+        },
+        packages: {
+            starter: {
+                name: "Offre essentielle",
+                description: "Une solution simple, rapide et efficace pour mettre en ligne un site internet fonctionnel.",
+                feature1: "Design à partir d'un template personnalisé avec vos couleurs",
+                feature2: "Intégration de vos contenus fournis (textes & images)",
+                feature3: "SEO de base (structure, balises, vitesse)",
+                feature4: "Mini formation pour être autonome",
+                feature5: "Site responsive et conforme RGPD",
+                feature6: "Support pendant 1 mois après la mise en ligne"
+            },
+            professional: {
+                name: "Offre professionnelle",
+                description: "Une prestation complète pour créer un site web professionnel à votre image.",
+                feature1: "Design unique, totalement sur-mesure",
+                feature2: "Création de votre logo, palette de couleurs, typographies",
+                feature3: "Réécriture stratégique ou rédaction de vos contenus",
+                feature4: "Optimisation soignée pour le référencement naturel (SEO)",
+                feature5: "Sécurité renforcée + sauvegarde externalisée",
+                feature6: "Formation complète + support pendant 2 mois",
+                feature7: "Site rapide, responsive, prêt à évoluer",
+                feature8: "Intégration de fonctionnalités avancées"
+            },
+            enterprise: {
+                name: "Offre entreprise",
+                description: "Une solution complète et évolutive pour les entreprises qui cherchent l'excellence.",
+                feature1: "Design unique et identité visuelle complète",
+                feature2: "Architecture full stack sur-mesure",
+                feature3: "Développement backend et frontend avancé",
+                feature4: "Optimisation SEO avancée et stratégie de contenu",
+                feature5: "Sécurité maximale + infrastructure cloud",
+                feature6: "Formation complète + support prioritaire 3 mois",
+                feature7: "Intégration d'APIs et services tiers",
+                feature8: "Performance et scalabilité optimisées",
+                feature9: "Dashboard d'administration personnalisé",
+                feature10: "Accompagnement stratégique et consulting"
+            }
         }
     }
 }

@@ -1,6 +1,10 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
+  // Configure Turbopack root to fix permission issues
+  turbopack: {
+    root: __dirname,
+  },
   // Ensure proper caching headers
   async headers() {
     return [

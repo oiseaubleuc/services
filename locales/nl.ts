@@ -3,7 +3,8 @@ export default {
     services: "Diensten",
     about: "Over ons",
     contact: "Contact",
-    appointment: "Afspraak"
+    appointment: "Afspraak",
+    offer: "Aanbiedingen"
   },
   hero: {
     title: "HohoSolutions",
@@ -168,6 +169,7 @@ export default {
       },
       message: "Bericht",
       messagePlaceholder: "Vertel ons over uw project...",
+      interestedIn: "Ik ben geïnteresseerd in het pakket:",
       submit: "Bericht verzenden",
       success: "Bedankt voor uw bericht! We nemen binnenkort contact met u op."
     }
@@ -364,6 +366,57 @@ export default {
     section7: {
       title: "7. Toepasselijk recht",
       content: "Deze gebruiksvoorwaarden worden beheerst door en geïnterpreteerd in overeenstemming met de wetten van België. Eventuele geschillen zullen worden voorgelegd aan de bevoegde rechtbanken in België."
+    }
+  },
+  offer: {
+    temporary: "Tijdelijke aanbieding - Voor alle ondernemers die dit jaar beter willen verdienen! Geldig 2 maanden",
+    title: "Onze aanbiedingen — Website ontwikkeling",
+    subtitle: "Oplossingen aangepast aan uw behoeften, van eenvoudige creatie tot complete op maat gemaakte oplossing",
+    popular: "Populair",
+    cta: "Kies deze aanbieding",
+    contact: "Neem contact op",
+    note: "Elk project krijgt een gedetailleerde offerte, lot per lot. De aangegeven prijzen zijn startprijzen.",
+    guarantee: {
+      title: "Behandelingstermijn",
+      description: "Na uw aanvraag ontvangt u binnen 12 uur een gedetailleerde offerte, projectplanning en alle benodigde documentatie. Zo kunt u direct geïnformeerd beslissen en snel van start gaan."
+    },
+    packages: {
+      starter: {
+        name: "Essentiële pakket",
+        description: "Een eenvoudige, snelle en effectieve oplossing om een functionele website online te zetten.",
+        feature1: "Design op basis van een aangepaste template met uw kleuren",
+        feature2: "Integratie van uw aangeleverde content (teksten & afbeeldingen)",
+        feature3: "Basis SEO (structuur, tags, snelheid)",
+        feature4: "Mini training om zelfstandig te zijn",
+        feature5: "Responsive website en AVG-conform",
+        feature6: "Ondersteuning gedurende 1 maand na lancering"
+      },
+      professional: {
+        name: "Professionele pakket",
+        description: "Een complete dienst om een professionele website op uw maat te creëren.",
+        feature1: "Uniek design, volledig op maat gemaakt",
+        feature2: "Creatie van uw logo, kleurenpalet, typografieën",
+        feature3: "Strategische herschrijving of redactie van uw content",
+        feature4: "Zorgvuldige optimalisatie voor natuurlijke SEO",
+        feature5: "Versterkte beveiliging + externe back-up",
+        feature6: "Complete training + ondersteuning gedurende 2 maanden",
+        feature7: "Snelle, responsive website, klaar om te evolueren",
+        feature8: "Integratie van geavanceerde functionaliteiten"
+      },
+      enterprise: {
+        name: "Enterprise pakket",
+        description: "Een complete en schaalbare oplossing voor bedrijven die excellentie zoeken.",
+        feature1: "Uniek design en complete visuele identiteit",
+        feature2: "Full stack architectuur op maat",
+        feature3: "Geavanceerde backend en frontend ontwikkeling",
+        feature4: "Geavanceerde SEO optimalisatie en content strategie",
+        feature5: "Maximale beveiliging + cloud infrastructuur",
+        feature6: "Complete training + prioritaire ondersteuning 3 maanden",
+        feature7: "Integratie van APIs en externe services",
+        feature8: "Geoptimaliseerde prestaties en schaalbaarheid",
+        feature9: "Aangepast beheer dashboard",
+        feature10: "Strategische begeleiding en consulting"
+      }
     }
   }
 }

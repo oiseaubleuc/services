@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { useRouter } from 'next/navigation'
 import { useLanguage } from '@/contexts/LanguageContext'
 import FramerButton from './FramerButton'
@@ -15,6 +15,23 @@ export default function Contact() {
   const router = useRouter()
   const [activeTab, setActiveTab] = useState<'message' | 'appointment'>('message')
   
+  // Lire le package depuis l'URL
+  const [packageParam, setPackageParam] = useState<string | null>(null)
+  
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      const params = new URLSearchParams(window.location.search)
+      const packageValue = params.get('package')
+      setPackageParam(packageValue)
+    }
+  }, [])
+  
+  const packageNames: Record<string, string> = {
+    starter: t('offer.packages.starter.name'),
+    professional: t('offer.packages.professional.name'),
+    enterprise: t('offer.packages.enterprise.name'),
+  }
+  
   // État pour le formulaire de contact
   const [formData, setFormData] = useState({
     name: '',
@@ -23,6 +40,16 @@ export default function Contact() {
     projectType: '',
     message: '',
   })
+  
+  // Mettre à jour le message si le package change
+  useEffect(() => {
+    if (packageParam && packageNames[packageParam]) {
+      setFormData(prev => ({
+        ...prev,
+        message: `${t('contact.form.interestedIn')} ${packageNames[packageParam]}\n\n`
+      }))
+    }
+  }, [packageParam, t])
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle')
   

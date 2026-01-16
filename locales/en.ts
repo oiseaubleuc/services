@@ -3,7 +3,8 @@ export default {
         services: "Services",
         about: "About",
         contact: "Contact",
-        appointment: "Appointment"
+        appointment: "Appointment",
+        offer: "Offers"
     },
     hero: {
         title: "HohoSolutions",
@@ -168,6 +169,7 @@ export default {
             },
             message: "Message",
             messagePlaceholder: "Tell us about your project...",
+            interestedIn: "I'm interested in the package:",
             submit: "Send message",
             success: "Thank you for your message! We will get back to you soon."
         }
@@ -364,6 +366,57 @@ export default {
         section7: {
             title: "7. Applicable Law",
             content: "These terms of use are governed by and interpreted in accordance with the laws of Belgium. Any disputes will be submitted to the competent courts of Belgium."
+        }
+    },
+    offer: {
+        temporary: "Temporary offer - For all entrepreneurs who want to earn better this year! Valid for 2 months",
+        title: "Our offers — Web development",
+        subtitle: "Solutions tailored to your needs, from simple creation to complete custom solution",
+        popular: "Popular",
+        cta: "Choose this offer",
+        contact: "Contact us",
+        note: "Each project receives a detailed quote, lot by lot. The prices shown are starting prices.",
+        guarantee: {
+            title: "Processing time",
+            description: "Following your request, you will receive within 12 hours a detailed quote, project planning, and all necessary documentation. This enables you to make an informed decision and get started quickly."
+        },
+        packages: {
+            starter: {
+                name: "Essential package",
+                description: "A simple, fast and effective solution to put a functional website online.",
+                feature1: "Design based on a customized template with your colors",
+                feature2: "Integration of your provided content (texts & images)",
+                feature3: "Basic SEO (structure, tags, speed)",
+                feature4: "Mini training to be autonomous",
+                feature5: "Responsive website and GDPR compliant",
+                feature6: "Support for 1 month after launch"
+            },
+            professional: {
+                name: "Professional package",
+                description: "A complete service to create a professional website tailored to your image.",
+                feature1: "Unique design, fully custom-made",
+                feature2: "Creation of your logo, color palette, typographies",
+                feature3: "Strategic rewriting or writing of your content",
+                feature4: "Careful optimization for natural SEO",
+                feature5: "Enhanced security + external backup",
+                feature6: "Complete training + support for 2 months",
+                feature7: "Fast, responsive website, ready to evolve",
+                feature8: "Integration of advanced features"
+            },
+            enterprise: {
+                name: "Enterprise package",
+                description: "A complete and scalable solution for companies seeking excellence.",
+                feature1: "Unique design and complete visual identity",
+                feature2: "Custom full stack architecture",
+                feature3: "Advanced backend and frontend development",
+                feature4: "Advanced SEO optimization and content strategy",
+                feature5: "Maximum security + cloud infrastructure",
+                feature6: "Complete training + priority support 3 months",
+                feature7: "Integration of APIs and third-party services",
+                feature8: "Optimized performance and scalability",
+                feature9: "Custom administration dashboard",
+                feature10: "Strategic guidance and consulting"
+            }
         }
     }
 }

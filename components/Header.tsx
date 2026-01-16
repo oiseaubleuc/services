@@ -63,6 +63,12 @@ export default function Header() {
                             {t('nav.services')}
                         </Link>
                         <Link
+                            href="/offer"
+                            className="text-xs xl:text-sm text-gray-300 hover:text-white transition-colors duration-200 font-medium whitespace-nowrap"
+                        >
+                            Offer
+                        </Link>
+                        <Link
                             href="/about"
                             className="text-xs xl:text-sm text-gray-300 hover:text-white transition-colors duration-200 font-medium whitespace-nowrap"
                         >
@@ -146,6 +152,13 @@ export default function Header() {
                             onClick={() => setIsMenuOpen(false)}
                         >
                             {t('nav.services')}
+                        </Link>
+                        <Link
+                            href="/offer"
+                            className="block text-sm sm:text-base text-white hover:text-gray-300 transition-colors font-medium py-1"
+                            onClick={() => setIsMenuOpen(false)}
+                        >
+                            Offer
                         </Link>
                         <Link
                             href="/about"
