@@ -11,6 +11,7 @@ export default {
         titleHighlight: "Votre partenaire de confiance",
         subtitle: "Construisez votre avenir digital",
         tagline: "Nous créons des solutions web puissantes et évolutives qui propulsent votre entreprise",
+        visibilitySlogan: "Nous rendons votre projet visible",
         ctaPrimary: "Contactez-nous",
         ctaSecondary: "Découvrir nos services",
         ctaOffers: "Voir les offres"

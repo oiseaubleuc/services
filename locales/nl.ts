@@ -11,6 +11,7 @@ export default {
     titleHighlight: "Uw vertrouwde partner",
     subtitle: "Bouw uw digitale toekomst",
     tagline: "We creëren krachtige, schaalbare weboplossingen die uw bedrijf vooruit helpen",
+    visibilitySlogan: "Wij maken uw project zichtbaar",
     ctaPrimary: "Neem contact op",
     ctaSecondary: "Ontdek onze diensten",
     ctaOffers: "Bekijk aanbiedingen"
