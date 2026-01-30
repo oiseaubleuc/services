@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server'
 import nodemailer from 'nodemailer'
 import { google } from 'googleapis'
+import db from '@/lib/db'
 
 // Fonction pour créer un événement Google Calendar avec Google Meet
 async function createGoogleCalendarEvent(
@@ -81,106 +82,106 @@ async function createGoogleCalendarEvent(
 }
 
 export async function POST(request: NextRequest) {
-    try {
-        const body = await request.json()
-        const { name, email, phone, message, date, time } = body
+  try {
+    const body = await request.json()
+    const { name, email, phone, message, date, time } = body
 
-        // Validation
-        if (!name || !email || !date || !time) {
-            return NextResponse.json(
-                { error: 'Tous les champs requis doivent être remplis' },
-                { status: 400 }
-            )
-        }
+    // Validation
+    if (!name || !email || !date || !time) {
+      return NextResponse.json(
+        { error: 'Tous les champs requis doivent être remplis' },
+        { status: 400 }
+      )
+    }
 
-        // Validation du format email
-        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
-        if (!emailRegex.test(email)) {
-            return NextResponse.json(
-                { error: 'Format d\'email invalide' },
-                { status: 400 }
-            )
-        }
+    // Validation du format email
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+    if (!emailRegex.test(email)) {
+      return NextResponse.json(
+        { error: 'Format d\'email invalide' },
+        { status: 400 }
+      )
+    }
 
-        // Validation de la date (ne pas permettre les dates passées)
-        const appointmentDate = new Date(date)
-        const [hours, minutes] = time.split(':').map(Number)
-        appointmentDate.setHours(hours, minutes, 0, 0)
-        
-        const now = new Date()
-        if (appointmentDate < now) {
-            return NextResponse.json(
-                { error: 'La date et l\'heure du rendez-vous doivent être dans le futur' },
-                { status: 400 }
-            )
-        }
+    // Validation de la date (ne pas permettre les dates passées)
+    const appointmentDate = new Date(date)
+    const [hours, minutes] = time.split(':').map(Number)
+    appointmentDate.setHours(hours, minutes, 0, 0)
 
-        // Configuration email Gmail
-        const recipientEmail = process.env.CONTACT_EMAIL || 'info@hohosolutions.com'
-        const smtpUser = process.env.SMTP_USER || 'info@hohosolutions.com'
-        const smtpPassword = process.env.SMTP_PASSWORD
+    const now = new Date()
+    if (appointmentDate < now) {
+      return NextResponse.json(
+        { error: 'La date et l\'heure du rendez-vous doivent être dans le futur' },
+        { status: 400 }
+      )
+    }
 
-        if (!smtpPassword) {
-            console.error('SMTP_PASSWORD n\'est pas configuré')
-            return NextResponse.json(
-                { error: 'Configuration email manquante. Veuillez contacter l\'administrateur.' },
-                { status: 500 }
-            )
-        }
+    // Configuration email Gmail
+    const recipientEmail = process.env.CONTACT_EMAIL || 'info@hohosolutions.com'
+    const smtpUser = process.env.SMTP_USER || 'info@hohosolutions.com'
+    const smtpPassword = process.env.SMTP_PASSWORD
 
-        // Créer l'événement Google Calendar avec Google Meet
-        // appointmentDate est déjà défini dans la validation ci-dessus
-        
-        const endDate = new Date(appointmentDate)
-        endDate.setHours(endDate.getHours() + 1) // Durée de 1 heure par défaut
-        
-        const startDateTime = appointmentDate.toISOString()
-        const endDateTime = endDate.toISOString()
-        
-        const calendarEvent = await createGoogleCalendarEvent(
-          `Rendez-vous avec ${name}`,
-          message || `Rendez-vous avec ${name}${phone ? ` - Tél: ${phone}` : ''}`,
-          startDateTime,
-          endDateTime,
-          email
-        )
-        
-        // Générer un lien Google Meet générique fonctionnel
-        // Si Google Calendar n'est pas configuré, on utilise un lien qui crée une nouvelle réunion
-        // Ce lien fonctionne et créera automatiquement une réunion Google Meet
-        const meetLink = calendarEvent?.meetLink || `https://meet.google.com/new`
+    if (!smtpPassword) {
+      console.error('SMTP_PASSWORD n\'est pas configuré')
+      return NextResponse.json(
+        { error: 'Configuration email manquante. Veuillez contacter l\'administrateur.' },
+        { status: 500 }
+      )
+    }
 
-        // Nettoyer le mot de passe
-        const cleanPassword = smtpPassword.trim().replace(/\s+/g, '')
+    // Créer l'événement Google Calendar avec Google Meet
+    // appointmentDate est déjà défini dans la validation ci-dessus
 
-        const transporter = nodemailer.createTransport({
-            service: 'gmail',
-            auth: {
-                user: smtpUser,
-                pass: cleanPassword,
-            },
-        })
+    const endDate = new Date(appointmentDate)
+    endDate.setHours(endDate.getHours() + 1) // Durée de 1 heure par défaut
 
-        // Formater la date pour l'email
-        const formattedDate = appointmentDate.toLocaleDateString('fr-FR', {
-            weekday: 'long',
-            day: 'numeric',
-            month: 'long',
-            year: 'numeric'
-        })
-        
-        const formattedTime = appointmentDate.toLocaleTimeString('fr-FR', {
-            hour: '2-digit',
-            minute: '2-digit'
-        })
-        
-        const formattedEndTime = endDate.toLocaleTimeString('fr-FR', {
-            hour: '2-digit',
-            minute: '2-digit'
-        })
+    const startDateTime = appointmentDate.toISOString()
+    const endDateTime = endDate.toISOString()
 
-        // Email pour le client (style Apple complet)
-        const clientEmailHtml = `
+    const calendarEvent = await createGoogleCalendarEvent(
+      `Rendez-vous avec ${name}`,
+      message || `Rendez-vous avec ${name}${phone ? ` - Tél: ${phone}` : ''}`,
+      startDateTime,
+      endDateTime,
+      email
+    )
+
+    // Générer un lien Google Meet générique fonctionnel
+    // Si Google Calendar n'est pas configuré, on utilise un lien qui crée une nouvelle réunion
+    // Ce lien fonctionne et créera automatiquement une réunion Google Meet
+    const meetLink = calendarEvent?.meetLink || `https://meet.google.com/new`
+
+    // Nettoyer le mot de passe
+    const cleanPassword = smtpPassword.trim().replace(/\s+/g, '')
+
+    const transporter = nodemailer.createTransport({
+      service: 'gmail',
+      auth: {
+        user: smtpUser,
+        pass: cleanPassword,
+      },
+    })
+
+    // Formater la date pour l'email
+    const formattedDate = appointmentDate.toLocaleDateString('fr-FR', {
+      weekday: 'long',
+      day: 'numeric',
+      month: 'long',
+      year: 'numeric'
+    })
+
+    const formattedTime = appointmentDate.toLocaleTimeString('fr-FR', {
+      hour: '2-digit',
+      minute: '2-digit'
+    })
+
+    const formattedEndTime = endDate.toLocaleTimeString('fr-FR', {
+      hour: '2-digit',
+      minute: '2-digit'
+    })
+
+    // Email pour le client (style Apple complet)
+    const clientEmailHtml = `
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -324,8 +325,8 @@ ${message}
 </html>
         `
 
-        // Email pour vous (notification)
-        const notificationEmailHtml = `
+    // Email pour vous (notification)
+    const notificationEmailHtml = `
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -427,50 +428,70 @@ ${message}
 </html>
         `
 
-        // Envoyer l'email au client
-        await transporter.sendMail({
-            from: `"HohoSolutions" <${smtpUser}>`,
-            to: email,
-            replyTo: smtpUser,
-            subject: `Rendez-vous confirmé - ${formattedDate} à ${time}`,
-            html: clientEmailHtml,
-        })
+    // Envoyer l'email au client
+    await transporter.sendMail({
+      from: `"HohoSolutions" <${smtpUser}>`,
+      to: email,
+      replyTo: smtpUser,
+      subject: `Rendez-vous confirmé - ${formattedDate} à ${time}`,
+      html: clientEmailHtml,
+    })
 
-        // Envoyer la notification à vous
-        await transporter.sendMail({
-            from: `"HohoSolutions Rendez-vous" <${smtpUser}>`,
-            to: recipientEmail,
-            replyTo: email,
-            subject: `Nouveau rendez-vous: ${name} - ${formattedDate} à ${time}`,
-            html: notificationEmailHtml,
-        })
+    // Envoyer la notification à vous
+    await transporter.sendMail({
+      from: `"HohoSolutions Rendez-vous" <${smtpUser}>`,
+      to: recipientEmail,
+      replyTo: email,
+      subject: `Nouveau rendez-vous: ${name} - ${formattedDate} à ${time}`,
+      html: notificationEmailHtml,
+    })
 
-        return NextResponse.json(
-            { success: true, message: 'Rendez-vous confirmé avec succès' },
-            { status: 200 }
-        )
-    } catch (error: any) {
-        console.error('Erreur lors de la réservation:', error)
-        console.error('Stack:', error.stack)
-        
-        let errorMessage = 'Erreur lors de la réservation. Veuillez réessayer plus tard.'
-        if (error.code === 'EAUTH') {
-            errorMessage = 'Erreur d\'authentification email. Veuillez contacter l\'administrateur.'
-        } else if (error.code === 'ECONNECTION' || error.code === 'ETIMEDOUT') {
-            errorMessage = 'Erreur de connexion. Vérifiez votre connexion internet et réessayez.'
-        } else if (error.message && process.env.NODE_ENV === 'development') {
-            errorMessage = `Erreur: ${error.message}`
-        }
-        
-        // Log détaillé en développement uniquement
-        if (process.env.NODE_ENV === 'development') {
-            console.error('Détails de l\'erreur:', error)
-        }
-        
-        return NextResponse.json(
-            { error: errorMessage },
-            { status: 500 }
-        )
+    // Save to database
+    try {
+      db.prepare(`
+                INSERT INTO appointments (name, email, phone, message, date, time, meet_link, calendar_event_id)
+                VALUES (?, ?, ?, ?, ?, ?, ?, ?)
+            `).run(
+        name,
+        email,
+        phone || null,
+        message || null,
+        date,
+        time,
+        calendarEvent?.meetLink || null,
+        calendarEvent?.eventId || null
+      )
+    } catch (dbError) {
+      console.error('Error saving appointment to database:', dbError)
+      // Don't fail the request if DB save fails
     }
+
+    return NextResponse.json(
+      { success: true, message: 'Rendez-vous confirmé avec succès' },
+      { status: 200 }
+    )
+  } catch (error: any) {
+    console.error('Erreur lors de la réservation:', error)
+    console.error('Stack:', error.stack)
+
+    let errorMessage = 'Erreur lors de la réservation. Veuillez réessayer plus tard.'
+    if (error.code === 'EAUTH') {
+      errorMessage = 'Erreur d\'authentification email. Veuillez contacter l\'administrateur.'
+    } else if (error.code === 'ECONNECTION' || error.code === 'ETIMEDOUT') {
+      errorMessage = 'Erreur de connexion. Vérifiez votre connexion internet et réessayez.'
+    } else if (error.message && process.env.NODE_ENV === 'development') {
+      errorMessage = `Erreur: ${error.message}`
+    }
+
+    // Log détaillé en développement uniquement
+    if (process.env.NODE_ENV === 'development') {
+      console.error('Détails de l\'erreur:', error)
+    }
+
+    return NextResponse.json(
+      { error: errorMessage },
+      { status: 500 }
+    )
+  }
 }
 

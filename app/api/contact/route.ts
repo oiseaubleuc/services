@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server'
 import nodemailer from 'nodemailer'
+import db from '@/lib/db'
 
 export async function POST(request: NextRequest) {
   try {
@@ -169,6 +170,21 @@ ${message}
       subject: emailSubject,
       html: emailHtml,
     })
+
+    // Save to database
+    try {
+      const packageInterest = message.includes('Pack') || message.includes('pack') 
+        ? (message.match(/Pack\s+(Essentiel|Professionnel|Entreprise|Essential|Professional|Enterprise)/i)?.[0] || null)
+        : null
+
+      db.prepare(`
+        INSERT INTO contacts (name, email, phone, project_type, message, package_interest)
+        VALUES (?, ?, ?, ?, ?, ?)
+      `).run(name, email, phone || null, projectType, message, packageInterest)
+    } catch (dbError) {
+      console.error('Error saving contact to database:', dbError)
+      // Don't fail the request if DB save fails
+    }
 
     return NextResponse.json(
       { success: true, message: 'Message envoyé avec succès' },
