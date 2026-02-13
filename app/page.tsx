@@ -8,8 +8,8 @@ import Process from '@/components/Process'
 export default function Home() {
   return (
     <>
-      <VideoSection />
       <Hero />
+      <VideoSection />
       <Statistics />
       <Expectations />
       <ValueProposition />

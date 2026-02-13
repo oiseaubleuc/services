@@ -44,6 +44,12 @@ export default function Hero() {
               {t('hero.ctaOffers')}
             </FramerButton>
           </div>
+          <a
+            href="#video"
+            className="inline-block mt-6 sm:mt-8 text-sm sm:text-base text-gray-400 hover:text-white transition-colors underline underline-offset-2"
+          >
+            Voir la vidéo ↓
+          </a>
         </div>
       </div>
     </section>
