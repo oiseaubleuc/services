@@ -6,6 +6,7 @@ import AnimatedBackground from '@/components/AnimatedBackground'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import Analytics from '@/components/Analytics'
+import MetaLocale from '@/components/MetaLocale'
 import PWAInstallPrompt from '@/components/PWAInstallPrompt'
 import PWARegister from '@/components/PWARegister'
 
@@ -17,14 +18,14 @@ const spaceGrotesk = Space_Grotesk({
 })
 
 export const metadata: Metadata = {
-  title: 'HohoSolutions – Uw vertrouwde partner',
-  description: 'Bouw uw digitale toekomst. We creëren krachtige, schaalbare weboplossingen die uw bedrijf vooruit helpen.',
+  title: 'HohoSolutions – Our expertise, your success.',
+  description: 'Expert development and scalable digital solutions for growing companies. We specialize in high-performance web systems designed to drive your project forward. Your vision, built for the future.',
   viewport: 'width=device-width, initial-scale=1, maximum-scale=5',
   manifest: '/manifest.json',
   themeColor: '#0a0a0f',
   openGraph: {
-    title: 'HohoSolutions – Uw vertrouwde partner',
-    description: 'Bouw uw digitale toekomst. We creëren krachtige, schaalbare weboplossingen die uw bedrijf vooruit helpen.',
+    title: 'HohoSolutions – Our expertise, your success.',
+    description: 'Expert development and scalable digital solutions for growing companies. We specialize in high-performance web systems designed to drive your project forward. Your vision, built for the future.',
     url: 'https://hohosolutions.com',
     siteName: 'HohoSolutions',
     type: 'website',
@@ -79,6 +80,7 @@ export default function RootLayout({
       <body className={`${spaceGrotesk.className} antialiased`}>
         <PWARegister />
         <LanguageProvider>
+          <MetaLocale />
           <Analytics />
           <AnimatedBackground />
           <Header />

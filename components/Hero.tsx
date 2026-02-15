@@ -1,14 +1,64 @@
 'use client'
 
+import { useState, useRef, useEffect } from 'react'
 import { useLanguage } from '@/contexts/LanguageContext'
 import FramerButton from './FramerButton'
 
 export default function Hero() {
   const { t } = useLanguage()
+  const [videoError, setVideoError] = useState(false)
+  const videoRef = useRef<HTMLVideoElement>(null)
+
+  useEffect(() => {
+    const v = videoRef.current
+    if (!v) return
+    const onError = () => setVideoError(true)
+    const onLoadedData = () => setVideoError(false)
+    v.addEventListener('error', onError)
+    v.addEventListener('loadeddata', onLoadedData)
+    return () => {
+      v.removeEventListener('error', onError)
+      v.removeEventListener('loadeddata', onLoadedData)
+    }
+  }, [])
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center pt-20 pb-12 sm:pt-24 sm:pb-16 md:pt-28 md:pb-20 lg:pt-32 lg:pb-24">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-12 text-center relative z-10">
+    <section className="relative flex flex-col items-center pt-20 pb-12 sm:pt-24 sm:pb-16 md:pt-28 md:pb-20 lg:pt-32 lg:pb-24 min-h-screen">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-12 text-center relative z-10 w-full flex flex-col items-center">
+        {/* Video first — visible as soon as you land */}
+        <div className="w-full max-w-4xl mx-auto mb-6 sm:mb-8 flex-shrink-0">
+          <div className="relative w-full aspect-video max-h-[50vh] min-h-[200px] rounded-xl sm:rounded-2xl overflow-hidden shadow-2xl bg-gray-900 border-2 border-white/20">
+            <video
+              ref={videoRef}
+              className="absolute inset-0 w-full h-full object-cover"
+              controls
+              playsInline
+              autoPlay
+              muted
+              loop
+              preload="auto"
+              aria-label="HohoSolutions"
+            >
+              <source src="/space.mp4" type="video/mp4" />
+              <source src="/video/space.mp4" type="video/mp4" />
+              Video not available.
+            </video>
+            {videoError && (
+              <div className="absolute inset-0 flex flex-col items-center justify-center gap-3 bg-gray-900/95 text-white p-4 text-center">
+                <p className="text-sm sm:text-base font-medium">Video could not load.</p>
+                <a
+                  href="/space.mp4"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-sm text-primary-400 hover:text-primary-300 underline"
+                >
+                  Open video in new tab →
+                </a>
+                <p className="text-xs text-gray-400">If that works, the file is fine and the embed may be blocked (e.g. by browser or deployment).</p>
+              </div>
+            )}
+          </div>
+        </div>
         <div className="animate-fade-in-up">
           <h1 className="text-2xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-6xl 2xl:text-7xl font-semibold text-white mb-3 sm:mb-4 md:mb-6 tracking-tight leading-tight px-2">
             {t('hero.title')}
@@ -44,12 +94,6 @@ export default function Hero() {
               {t('hero.ctaOffers')}
             </FramerButton>
           </div>
-          <a
-            href="#video"
-            className="inline-block mt-6 sm:mt-8 text-sm sm:text-base text-gray-400 hover:text-white transition-colors underline underline-offset-2"
-          >
-            Voir la vidéo ↓
-          </a>
         </div>
       </div>
     </section>

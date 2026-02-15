@@ -1,4 +1,8 @@
 export default {
+    meta: {
+        title: "HohoSolutions – Notre expertise, votre succès.",
+        description: "Développement expert et solutions digitales évolutives pour les entreprises en croissance. Nous sommes spécialisés dans les systèmes web performants conçus pour faire avancer votre projet. Votre vision, construite pour l'avenir.",
+    },
     nav: {
         services: "Services",
         about: "À propos",
