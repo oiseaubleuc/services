@@ -23,6 +23,8 @@ export default {
     services: {
         title: "Nos Services",
         subtitle: "Tout ce dont vous avez besoin pour votre projet en ligne",
+        trustedBy: "Ils nous font confiance",
+        techStack: "Notre stack technique",
         learnMore: "En savoir plus",
         showLess: "Voir moins",
         detailsTitle: "Détails de nos services",

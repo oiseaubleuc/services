@@ -1,6 +1,12 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
+  images: {
+    remotePatterns: [
+      { protocol: 'https', hostname: 'cdn.simpleicons.org', pathname: '/**' },
+      { protocol: 'https', hostname: 'cdn.jsdelivr.net', pathname: '/**' },
+    ],
+  },
   // Configure Turbopack root to fix permission issues
   turbopack: {
     root: __dirname,

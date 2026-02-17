@@ -84,7 +84,7 @@ export default function RootLayout({
           <Analytics />
           <AnimatedBackground />
           <Header />
-          <main className="min-h-screen">
+          <main className="relative z-0 min-h-screen">
             {children}
           </main>
           <Footer />

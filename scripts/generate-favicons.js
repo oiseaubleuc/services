@@ -2,8 +2,11 @@ const sharp = require('sharp');
 const fs = require('fs');
 const path = require('path');
 
+// Logo clair (blanc) pour fond noir — icône app = fond noir + logo blanc
 const logoPath = path.join(__dirname, '../public/logos/logo_HS.png');
 const publicDir = path.join(__dirname, '../public');
+
+const BLACK_BG = { r: 10, g: 10, b: 15, alpha: 1 }; // #0a0a0f
 
 // Sizes for different favicon formats
 const faviconSizes = [
@@ -17,32 +20,29 @@ const faviconSizes = [
 
 async function generateFavicons() {
   try {
-    // Check if logo exists
     if (!fs.existsSync(logoPath)) {
       console.error(`Logo not found at ${logoPath}`);
       process.exit(1);
     }
 
-    console.log('Generating favicons from logo...');
+    console.log('Generating favicons: fond noir + logo blanc...');
 
-    // Generate PNG favicons
     for (const { size, name } of faviconSizes) {
       const outputPath = path.join(publicDir, name);
       await sharp(logoPath)
         .resize(size, size, {
           fit: 'contain',
-          background: { r: 0, g: 0, b: 0, alpha: 0 } // Transparent background
+          background: BLACK_BG
         })
         .png()
         .toFile(outputPath);
       console.log(`✓ Generated ${name} (${size}x${size})`);
     }
 
-    // Generate favicon.ico (16x16 and 32x32 combined)
     const favicon16 = await sharp(logoPath)
       .resize(16, 16, {
         fit: 'contain',
-        background: { r: 0, g: 0, b: 0, alpha: 0 }
+        background: BLACK_BG
       })
       .png()
       .toBuffer();
@@ -50,7 +50,7 @@ async function generateFavicons() {
     const favicon32 = await sharp(logoPath)
       .resize(32, 32, {
         fit: 'contain',
-        background: { r: 0, g: 0, b: 0, alpha: 0 }
+        background: BLACK_BG
       })
       .png()
       .toBuffer();

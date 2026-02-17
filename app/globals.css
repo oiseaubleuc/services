@@ -41,6 +41,14 @@ body {
     -webkit-backdrop-filter: saturate(180%) blur(20px);
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   }
+
+  /* Fond clair au scroll : logo noir, texte sombre */
+  .glass-effect-light {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: saturate(180%) blur(20px);
+    -webkit-backdrop-filter: saturate(180%) blur(20px);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  }
   
   .smooth-scroll {
     scroll-behavior: smooth;
@@ -75,6 +83,19 @@ body {
 
 .animate-fade-in-up {
   animation: fadeInUp 0.8s ease-out;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-33.333%);
+  }
+}
+
+.animate-marquee {
+  animation: marquee 30s linear infinite;
 }
 
 @keyframes rotatePlanet {

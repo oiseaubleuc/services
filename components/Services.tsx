@@ -1,12 +1,32 @@
 'use client'
 
 import { useState } from 'react'
+import Image from 'next/image'
 import ServiceCard from './ServiceCard'
 import { useLanguage } from '@/contexts/LanguageContext'
+
+// Langages & technos fullstack — icônes via Simple Icons CDN
+const TECH_STACK = [
+  { name: 'JavaScript', icon: 'https://cdn.simpleicons.org/javascript/F7DF1E' },
+  { name: 'TypeScript', icon: 'https://cdn.simpleicons.org/typescript/3178C6' },
+  { name: 'React', icon: 'https://cdn.simpleicons.org/react/61DAFB' },
+  { name: 'Next.js', icon: 'https://cdn.simpleicons.org/nextdotjs/000000' },
+  { name: 'Node.js', icon: 'https://cdn.simpleicons.org/nodedotjs/339933' },
+  { name: 'Python', icon: 'https://cdn.simpleicons.org/python/3776AB' },
+  { name: 'HTML5', icon: 'https://cdn.simpleicons.org/html5/E34F26' },
+  { name: 'CSS3', icon: 'https://cdn.simpleicons.org/css3/1572B6' },
+  { name: 'Tailwind CSS', icon: 'https://cdn.simpleicons.org/tailwindcss/06B6D4' },
+  { name: 'Git', icon: 'https://cdn.simpleicons.org/git/F05032' },
+  { name: 'PostgreSQL', icon: 'https://cdn.simpleicons.org/postgresql/4169E1' },
+  { name: 'MongoDB', icon: 'https://cdn.simpleicons.org/mongodb/47A248' },
+  { name: 'Docker', icon: 'https://cdn.simpleicons.org/docker/2496ED' },
+  { name: 'Vue.js', icon: 'https://cdn.simpleicons.org/vuedotjs/4FC08D' },
+]
 
 export default function Services() {
   const { t } = useLanguage()
   const [activeTab, setActiveTab] = useState<'individual' | 'business'>('individual')
+  const [iconErrors, setIconErrors] = useState<Set<number>>(new Set())
 
   const individualServices = [
     {
@@ -177,6 +197,43 @@ export default function Services() {
             </div>
           </div>
         )}
+
+        {/* Stack technique fullstack — langages & technos */}
+        <div className="mt-16 sm:mt-20 md:mt-24 lg:mt-32 rounded-2xl sm:rounded-3xl overflow-hidden bg-white border border-gray-100">
+          <p className="text-center text-gray-600 text-sm sm:text-base font-medium py-4 sm:py-5 border-b border-gray-100">
+            {t('services.techStack')}
+          </p>
+          <div className="flex flex-wrap items-center justify-center gap-5 sm:gap-6 md:gap-8 p-6 sm:p-8 md:p-10">
+            {TECH_STACK.map((tech, index) => (
+              <div
+                key={tech.name}
+                className="flex flex-col items-center justify-center gap-1 min-h-[56px] opacity-90 hover:opacity-100 transition-all duration-200"
+                title={tech.name}
+              >
+                {iconErrors.has(index) ? (
+                  <span className="text-gray-500 text-xs font-medium">{tech.name}</span>
+                ) : (
+                  <>
+                    <div className="relative w-10 h-10 sm:w-12 sm:h-12">
+                      <Image
+                        src={tech.icon}
+                        alt={tech.name}
+                        width={48}
+                        height={48}
+                        className="object-contain"
+                        unoptimized
+                        onError={() => setIconErrors((prev) => new Set(prev).add(index))}
+                      />
+                    </div>
+                    <span className="text-gray-500 text-[10px] sm:text-xs font-medium text-center max-w-[4rem] sm:max-w-none truncate">
+                      {tech.name}
+                    </span>
+                  </>
+                )}
+              </div>
+            ))}
+          </div>
+        </div>
       </div>
     </section>
   )

@@ -27,21 +27,29 @@ export default function Header() {
 
     const currentLang = languages.find(lang => lang.code === language) || languages[0]
 
+    const isLightBg = scrolled
+    const logoSrc = isLightBg ? '/logos/logo_hss.png' : '/logos/logo_HS.png'
+    const textClasses = isLightBg ? 'text-gray-900' : 'text-white'
+    const linkClasses = isLightBg
+        ? 'text-gray-600 hover:text-gray-900'
+        : 'text-gray-300 hover:text-white'
+    const menuButtonClass = isLightBg ? 'text-gray-900' : 'text-white'
+
     return (
         <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
             scrolled 
-                ? 'glass-effect shadow-sm' 
+                ? 'glass-effect-light shadow-sm' 
                 : 'bg-black/20 backdrop-blur-sm'
         }`}>
             <nav className="max-w-7xl mx-auto px-3 sm:px-4 md:px-6 lg:px-12 py-2.5 sm:py-3 md:py-4">
                 <div className="flex items-center justify-between gap-2 sm:gap-4">
                     <Link
                         href="/"
-                        className="flex items-center gap-1.5 sm:gap-2 hover:opacity-80 transition-opacity min-w-0"
+                        className={`flex items-center gap-1.5 sm:gap-2 hover:opacity-80 transition-opacity min-w-0 ${textClasses}`}
                     >
                         <div className="relative w-12 h-12 xs:w-16 xs:h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 flex-shrink-0">
                             <Image
-                                src="/logos/logo_HS.png"
+                                src={logoSrc}
                                 alt="HohoSolutions Logo"
                                 width={96}
                                 height={96}
@@ -49,7 +57,7 @@ export default function Header() {
                                 priority
                             />
                         </div>
-                        <span className="text-sm xs:text-base sm:text-lg md:text-xl font-semibold text-white tracking-tight truncate">
+                        <span className={`text-sm xs:text-base sm:text-lg md:text-xl font-semibold tracking-tight truncate ${textClasses}`}>
                             HohoSolutions
                         </span>
                     </Link>
@@ -58,25 +66,25 @@ export default function Header() {
                     <div className="hidden lg:flex items-center space-x-6 xl:space-x-8">
                         <Link
                             href="/services"
-                            className="text-xs xl:text-sm text-gray-300 hover:text-white transition-colors duration-200 font-medium whitespace-nowrap"
+                            className={`text-xs xl:text-sm transition-colors duration-200 font-medium whitespace-nowrap ${linkClasses}`}
                         >
                             {t('nav.services')}
                         </Link>
                         <Link
                             href="/offer"
-                            className="text-xs xl:text-sm text-gray-300 hover:text-white transition-colors duration-200 font-medium whitespace-nowrap"
+                            className={`text-xs xl:text-sm transition-colors duration-200 font-medium whitespace-nowrap ${linkClasses}`}
                         >
                             Offer
                         </Link>
                         <Link
                             href="/about"
-                            className="text-xs xl:text-sm text-gray-300 hover:text-white transition-colors duration-200 font-medium whitespace-nowrap"
+                            className={`text-xs xl:text-sm transition-colors duration-200 font-medium whitespace-nowrap ${linkClasses}`}
                         >
                             {t('nav.about')}
                         </Link>
                         <Link
                             href="/contact"
-                            className="text-xs xl:text-sm text-gray-300 hover:text-white transition-colors duration-200 font-medium whitespace-nowrap"
+                            className={`text-xs xl:text-sm transition-colors duration-200 font-medium whitespace-nowrap ${linkClasses}`}
                         >
                             {t('nav.contact')}
                         </Link>
@@ -85,7 +93,7 @@ export default function Header() {
                         <div className="relative">
                             <button
                                 onClick={() => setIsLangMenuOpen(!isLangMenuOpen)}
-                                className="flex items-center space-x-1.5 text-xs xl:text-sm text-gray-300 hover:text-white transition-colors duration-200 font-medium"
+                                className={`flex items-center space-x-1.5 text-xs xl:text-sm transition-colors duration-200 font-medium ${linkClasses}`}
                             >
                                 <span className="whitespace-nowrap">{currentLang.name}</span>
                                 <svg className="w-3.5 h-3.5 xl:w-4 xl:h-4 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -121,7 +129,7 @@ export default function Header() {
 
                     {/* Tablet/Mobile Menu Button */}
                     <button
-                        className="lg:hidden text-white p-1 hover:opacity-80 transition-opacity"
+                        className={`lg:hidden p-1 hover:opacity-80 transition-opacity ${menuButtonClass}`}
                         onClick={() => setIsMenuOpen(!isMenuOpen)}
                         aria-label="Toggle menu"
                     >
@@ -145,31 +153,31 @@ export default function Header() {
 
                 {/* Mobile/Tablet Menu */}
                 {isMenuOpen && (
-                    <div className="lg:hidden mt-4 sm:mt-6 space-y-4 sm:space-y-6 pb-4 sm:pb-6 animate-fade-in-up border-t border-white/10 pt-4 sm:pt-6">
+                    <div className={`lg:hidden mt-4 sm:mt-6 space-y-4 sm:space-y-6 pb-4 sm:pb-6 animate-fade-in-up border-t pt-4 sm:pt-6 ${isLightBg ? 'border-gray-200' : 'border-white/10'}`}>
                         <Link
                             href="/services"
-                            className="block text-sm sm:text-base text-white hover:text-gray-300 transition-colors font-medium py-1"
+                            className={`block text-sm sm:text-base transition-colors font-medium py-1 ${isLightBg ? 'text-gray-900 hover:text-gray-600' : 'text-white hover:text-gray-300'}`}
                             onClick={() => setIsMenuOpen(false)}
                         >
                             {t('nav.services')}
                         </Link>
                         <Link
                             href="/offer"
-                            className="block text-sm sm:text-base text-white hover:text-gray-300 transition-colors font-medium py-1"
+                            className={`block text-sm sm:text-base transition-colors font-medium py-1 ${isLightBg ? 'text-gray-900 hover:text-gray-600' : 'text-white hover:text-gray-300'}`}
                             onClick={() => setIsMenuOpen(false)}
                         >
                             Offer
                         </Link>
                         <Link
                             href="/about"
-                            className="block text-sm sm:text-base text-white hover:text-gray-300 transition-colors font-medium py-1"
+                            className={`block text-sm sm:text-base transition-colors font-medium py-1 ${isLightBg ? 'text-gray-900 hover:text-gray-600' : 'text-white hover:text-gray-300'}`}
                             onClick={() => setIsMenuOpen(false)}
                         >
                             {t('nav.about')}
                         </Link>
                         <Link
                             href="/contact"
-                            className="block text-sm sm:text-base text-white hover:text-gray-300 transition-colors font-medium py-1"
+                            className={`block text-sm sm:text-base transition-colors font-medium py-1 ${isLightBg ? 'text-gray-900 hover:text-gray-600' : 'text-white hover:text-gray-300'}`}
                             onClick={() => setIsMenuOpen(false)}
                         >
                             {t('nav.contact')}

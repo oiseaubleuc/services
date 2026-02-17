@@ -7,58 +7,60 @@ import FramerButton from './FramerButton'
 export default function Hero() {
   const { t } = useLanguage()
   const [videoError, setVideoError] = useState(false)
+  const [videoReady, setVideoReady] = useState(false)
   const videoRef = useRef<HTMLVideoElement>(null)
 
   useEffect(() => {
     const v = videoRef.current
     if (!v) return
     const onError = () => setVideoError(true)
-    const onLoadedData = () => setVideoError(false)
+    const onLoadedData = () => {
+      setVideoError(false)
+      setVideoReady(true)
+    }
+    const onCanPlay = () => setVideoReady(true)
     v.addEventListener('error', onError)
     v.addEventListener('loadeddata', onLoadedData)
+    v.addEventListener('canplay', onCanPlay)
     return () => {
       v.removeEventListener('error', onError)
       v.removeEventListener('loadeddata', onLoadedData)
+      v.removeEventListener('canplay', onCanPlay)
     }
   }, [])
 
   return (
-    <section className="relative flex flex-col items-center pt-20 pb-12 sm:pt-24 sm:pb-16 md:pt-28 md:pb-20 lg:pt-32 lg:pb-24 min-h-screen">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-12 text-center relative z-10 w-full flex flex-col items-center">
-        {/* Video first — visible as soon as you land */}
-        <div className="w-full max-w-4xl mx-auto mb-6 sm:mb-8 flex-shrink-0">
-          <div className="relative w-full aspect-video max-h-[50vh] min-h-[200px] rounded-xl sm:rounded-2xl overflow-hidden shadow-2xl bg-gray-900 border-2 border-white/20">
-            <video
-              ref={videoRef}
-              className="absolute inset-0 w-full h-full object-cover"
-              controls
-              playsInline
-              autoPlay
-              muted
-              loop
-              preload="auto"
-              aria-label="HohoSolutions"
-            >
-              <source src="/space.mp4" type="video/mp4" />
-              <source src="/video/space.mp4" type="video/mp4" />
-              Video not available.
-            </video>
-            {videoError && (
-              <div className="absolute inset-0 flex flex-col items-center justify-center gap-3 bg-gray-900/95 text-white p-4 text-center">
-                <p className="text-sm sm:text-base font-medium">Video could not load.</p>
-                <a
-                  href="/space.mp4"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-sm text-primary-400 hover:text-primary-300 underline"
-                >
-                  Open video in new tab →
-                </a>
-                <p className="text-xs text-gray-400">If that works, the file is fine and the embed may be blocked (e.g. by browser or deployment).</p>
-              </div>
-            )}
-          </div>
+    <section className="relative flex flex-col items-center justify-center pt-20 pb-12 sm:pt-24 sm:pb-16 md:pt-28 md:pb-20 lg:pt-32 lg:pb-24 min-h-screen overflow-hidden">
+      {/* Vidéo en arrière-plan — remplit tout l'espace (là où était le vide) */}
+      <video
+        ref={videoRef}
+        className="absolute inset-0 w-full h-full object-cover z-0 pointer-events-none"
+        playsInline
+        autoPlay
+        muted
+        loop
+        preload="auto"
+        aria-hidden
+        disablePictureInPicture
+        disableRemotePlayback
+        style={{ touchAction: 'none' }}
+        src="/api/video"
+      >
+        <source src="/api/video" type="video/mp4" />
+        <source src="/space.mp4" type="video/mp4" />
+        <source src="/video/space.mp4" type="video/mp4" />
+      </video>
+      {/* Overlay sombre pour garder le texte lisible */}
+      <div className="absolute inset-0 bg-black/50 z-[1]" aria-hidden />
+      {videoError && (
+        <div className="absolute inset-0 flex items-center justify-center z-[2] bg-black/80">
+          <a href="/api/video" target="_blank" rel="noopener noreferrer" className="text-white underline">
+            Ouvrir la vidéo
+          </a>
         </div>
+      )}
+      {/* Contenu par-dessus la vidéo */}
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-12 text-center relative z-10 w-full flex flex-col items-center">
         <div className="animate-fade-in-up">
           <h1 className="text-2xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-6xl 2xl:text-7xl font-semibold text-white mb-3 sm:mb-4 md:mb-6 tracking-tight leading-tight px-2">
             {t('hero.title')}
