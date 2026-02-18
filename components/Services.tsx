@@ -227,43 +227,43 @@ export default function Services() {
             </div>
           </div>
         )}
+      </div>
 
-        {/* Stack technique fullstack — logos blancs sur fond noir, défilement continu */}
-        <div className="mt-16 sm:mt-20 md:mt-24 lg:mt-32 rounded-2xl sm:rounded-3xl overflow-hidden bg-black border border-white/20">
-          <p className="text-center text-white text-sm sm:text-base font-medium py-4 sm:py-5 border-b border-white/20">
-            {t('services.techStack')}
-          </p>
-          <div className="overflow-hidden py-6 sm:py-8">
-            <div className="flex animate-marquee-tech gap-8 sm:gap-10 md:gap-12 w-max">
-              {[...TECH_STACK, ...TECH_STACK].map((tech, index) => (
-                <div
-                  key={`${tech.name}-${index}`}
-                  className="flex flex-col items-center justify-center gap-2 flex-shrink-0 w-20 sm:w-24"
-                  title={tech.name}
-                >
-                  {iconErrors.has(index % TECH_STACK.length) ? (
-                    <span className="text-white/80 text-xs font-medium text-center">{tech.name}</span>
-                  ) : (
-                    <>
-                      <div className="relative w-10 h-10 sm:w-12 sm:h-12 grayscale brightness-0 invert">
-                        <Image
-                          src={tech.icon}
-                          alt={tech.name}
-                          width={48}
-                          height={48}
-                          className="object-contain"
-                          unoptimized
-                          onError={() => setIconErrors((prev) => new Set(prev).add(index % TECH_STACK.length))}
-                        />
-                      </div>
-                      <span className="text-white text-[10px] sm:text-xs font-medium text-center truncate w-full">
-                        {tech.name}
-                      </span>
-                    </>
-                  )}
-                </div>
-              ))}
-            </div>
+      {/* Carrousel tech stack — pleine largeur de la page, logos blancs sur fond noir, défilement continu */}
+      <div className="w-full mt-16 sm:mt-20 md:mt-24 lg:mt-32 bg-black border-y border-white/20 overflow-hidden">
+        <p className="text-center text-white text-sm sm:text-base font-medium py-4 sm:py-5 border-b border-white/20">
+          {t('services.techStack')}
+        </p>
+        <div className="overflow-hidden py-6 sm:py-8">
+          <div className="flex animate-marquee-tech gap-8 sm:gap-10 md:gap-12 w-max">
+            {[...TECH_STACK, ...TECH_STACK].map((tech, index) => (
+              <div
+                key={`${tech.name}-${index}`}
+                className="flex flex-col items-center justify-center gap-2 flex-shrink-0 w-20 sm:w-24"
+                title={tech.name}
+              >
+                {iconErrors.has(index % TECH_STACK.length) ? (
+                  <span className="text-white/80 text-xs font-medium text-center">{tech.name}</span>
+                ) : (
+                  <>
+                    <div className="relative w-10 h-10 sm:w-12 sm:h-12 grayscale brightness-0 invert">
+                      <Image
+                        src={tech.icon}
+                        alt={tech.name}
+                        width={48}
+                        height={48}
+                        className="object-contain"
+                        unoptimized
+                        onError={() => setIconErrors((prev) => new Set(prev).add(index % TECH_STACK.length))}
+                      />
+                    </div>
+                    <span className="text-white text-[10px] sm:text-xs font-medium text-center truncate w-full">
+                      {tech.name}
+                    </span>
+                  </>
+                )}
+              </div>
+            ))}
           </div>
         </div>
       </div>

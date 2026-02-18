@@ -1,5 +1,5 @@
-// Service Worker for HohoSolutions PWA
-const CACHE_NAME = 'hohosolutions-v1'
+// Service Worker for HohoSolutions PWA (bump version to invalidate cache after updates)
+const CACHE_NAME = 'hohosolutions-v2'
 const urlsToCache = [
   '/',
   '/services',
@@ -40,55 +40,42 @@ self.addEventListener('activate', (event) => {
   self.clients.claim()
 })
 
-// Fetch event - serve from cache, fallback to network
+// Fetch event - network first for HTML (so updates show in Safari), cache first for rest
 self.addEventListener('fetch', (event) => {
-  // Skip non-GET requests
-  if (event.request.method !== 'GET') {
+  if (event.request.method !== 'GET') return
+  if (event.request.url.includes('/api/') || !event.request.url.startsWith(self.location.origin)) return
+  if (event.request.url.includes('/sw.js')) return
+
+  const isDocument = event.request.mode === 'navigate' || event.request.destination === 'document'
+
+  if (isDocument) {
+    // Navigation/document: always try network first so Safari shows latest content
+    event.respondWith(
+      fetch(event.request)
+        .then((response) => {
+          if (response && response.status === 200 && response.type === 'basic') {
+            const r = response.clone()
+            caches.open(CACHE_NAME).then((cache) => cache.put(event.request, r)).catch(() => {})
+          }
+          return response
+        })
+        .catch(() => caches.match(event.request).then((cached) => cached || caches.match('/')))
+    )
     return
   }
 
-  // Skip API routes and external URLs
-  if (event.request.url.includes('/api/') || 
-      !event.request.url.startsWith(self.location.origin)) {
-    return
-  }
-
-  // Skip service worker itself
-  if (event.request.url.includes('/sw.js')) {
-    return
-  }
-
+  // Other assets: cache first, then network
   event.respondWith(
     caches.match(event.request)
       .then((response) => {
-        // Return cached version or fetch from network
-        if (response) {
-          return response
-        }
-
+        if (response) return response
         return fetch(event.request).then((response) => {
-          // Don't cache if not a valid response
-          if (!response || response.status !== 200 || response.type !== 'basic') {
-            return response
-          }
-
-          // Clone the response
+          if (!response || response.status !== 200 || response.type !== 'basic') return response
           const responseToCache = response.clone()
-
-          caches.open(CACHE_NAME)
-            .then((cache) => {
-              cache.put(event.request, responseToCache)
-            })
-            .catch(() => {
-              // Ignore cache errors
-            })
-
+          caches.open(CACHE_NAME).then((cache) => cache.put(event.request, responseToCache)).catch(() => {})
           return response
         })
       })
-      .catch(() => {
-        // Return offline page if available
-        return caches.match('/')
-      })
+      .catch(() => caches.match('/'))
   )
 })

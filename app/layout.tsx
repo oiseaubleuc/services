@@ -18,11 +18,13 @@ const spaceGrotesk = Space_Grotesk({
 })
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://hohosolutions.com'),
   title: 'HohoSolutions – Our expertise, your success.',
   description: 'Expert development and scalable digital solutions for growing companies. We specialize in high-performance web systems designed to drive your project forward. Your vision, built for the future.',
   viewport: 'width=device-width, initial-scale=1, maximum-scale=5',
   manifest: '/manifest.json',
   themeColor: '#0a0a0f',
+  robots: { index: true, follow: true },
   openGraph: {
     title: 'HohoSolutions – Our expertise, your success.',
     description: 'Expert development and scalable digital solutions for growing companies. We specialize in high-performance web systems designed to drive your project forward. Your vision, built for the future.',
