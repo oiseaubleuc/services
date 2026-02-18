@@ -9,7 +9,6 @@ import Analytics from '@/components/Analytics'
 import MetaLocale from '@/components/MetaLocale'
 import PWAInstallPrompt from '@/components/PWAInstallPrompt'
 import PWARegister from '@/components/PWARegister'
-import TechStackMarquee from '@/components/TechStackMarquee'
 
 const spaceGrotesk = Space_Grotesk({
   subsets: ['latin'],
@@ -90,7 +89,6 @@ export default function RootLayout({
           <main className="relative z-0 min-h-screen">
             {children}
           </main>
-          <TechStackMarquee />
           <Footer />
           <PWAInstallPrompt />
         </LanguageProvider>
