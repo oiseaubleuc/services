@@ -19,6 +19,8 @@
 
 html {
   overflow-x: hidden;
+  /* Safari: hauteur viewport cohérente (évite saut au scroll) */
+  min-height: -webkit-fill-available;
 }
 
 body {
@@ -28,30 +30,27 @@ body {
   position: relative;
   overflow-x: hidden;
   width: 100%;
+  min-height: -webkit-fill-available;
+  /* Harmonisation Safari / Chrome */
+  -webkit-text-size-adjust: 100%;
 }
 
 @layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
-  
+  .text-balance { text-wrap: balance; }
+  .smooth-scroll { scroll-behavior: smooth; }
   .glass-effect {
     background: rgba(10, 10, 15, 0.95);
     backdrop-filter: saturate(180%) blur(20px);
     -webkit-backdrop-filter: saturate(180%) blur(20px);
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   }
-
-  /* Fond clair au scroll : logo noir, texte sombre */
-  .glass-effect-light {
-    background: rgba(255, 255, 255, 0.95);
-    backdrop-filter: saturate(180%) blur(20px);
-    -webkit-backdrop-filter: saturate(180%) blur(20px);
-    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
-  }
-  
-  .smooth-scroll {
-    scroll-behavior: smooth;
+  .liquid-glass {
+    background: rgba(10, 10, 15, 0.3);
+    backdrop-filter: saturate(160%) blur(28px);
+    -webkit-backdrop-filter: saturate(160%) blur(28px);
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+    box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.05) inset, 0 8px 32px -8px rgba(0, 0, 0, 0.3);
   }
 }
 
@@ -99,16 +98,32 @@ body {
 }
 
 @keyframes marquee-tech {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-50%);
-  }
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
 }
 
 .animate-marquee-tech {
   animation: marquee-tech 60s linear infinite;
+}
+
+/* Une seule bande (liste non dupliquée) : défile puis reset */
+/* translate3d force GPU layer in Safari so animation runs */
+@keyframes marquee-tech-single {
+  0% { transform: translate3d(0, 0, 0); }
+  100% { transform: translate3d(-100%, 0, 0); }
+}
+
+@-webkit-keyframes marquee-tech-single {
+  0% { -webkit-transform: translate3d(0, 0, 0); transform: translate3d(0, 0, 0); }
+  100% { -webkit-transform: translate3d(-100%, 0, 0); transform: translate3d(-100%, 0, 0); }
+}
+
+.animate-marquee-tech-single {
+  -webkit-animation: marquee-tech-single 80s linear infinite;
+  animation: marquee-tech-single 80s linear infinite;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  will-change: transform;
 }
 
 @keyframes rotatePlanet {

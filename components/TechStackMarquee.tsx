@@ -55,20 +55,42 @@ export default function TechStackMarquee() {
   const { t } = useLanguage()
   const [iconErrors, setIconErrors] = useState<Set<number>>(new Set())
 
+  const label = t('services.techStack')
+
   return (
-    <div className="w-full bg-black border-y border-white/20 overflow-hidden">
-      <p className="text-center text-white text-sm sm:text-base font-medium py-4 sm:py-5 border-b border-white/20">
-        {t('services.techStack')}
+    <section
+      id="tech-stack-liquid-glass"
+      className="w-full overflow-hidden"
+      aria-label={label}
+      data-liquid-glass
+      style={{
+        background: 'rgba(10, 10, 15, 0.35)',
+        backdropFilter: 'saturate(160%) blur(28px)',
+        WebkitBackdropFilter: 'saturate(160%) blur(28px)',
+        borderTop: '1px solid rgba(255,255,255,0.12)',
+        borderBottom: '1px solid rgba(255,255,255,0.12)',
+        boxShadow: '0 0 0 1px rgba(255,255,255,0.06) inset',
+      }}
+    >
+      <p className="text-center text-white text-sm sm:text-base font-medium py-4 sm:py-5 border-b border-white/10">
+        {label}
       </p>
-      <div className="overflow-hidden py-6 sm:py-8">
-        <div className="flex animate-marquee-tech gap-8 sm:gap-10 md:gap-12 w-max">
-          {[...TECH_STACK, ...TECH_STACK].map((tech, index) => (
+      <div
+        className="overflow-hidden py-6 sm:py-8"
+        style={{
+          WebkitOverflowScrolling: 'touch',
+          transform: 'translateZ(0)',
+          isolation: 'isolate',
+        }}
+      >
+        <div className="flex animate-marquee-tech-single gap-8 sm:gap-10 md:gap-12 w-max flex-nowrap">
+          {TECH_STACK.map((tech, index) => (
             <div
               key={`${tech.name}-${index}`}
               className="flex flex-col items-center justify-center gap-2 flex-shrink-0 w-20 sm:w-24"
               title={tech.name}
             >
-              {iconErrors.has(index % TECH_STACK.length) ? (
+              {iconErrors.has(index) ? (
                 <span className="text-white/80 text-xs font-medium text-center">{tech.name}</span>
               ) : (
                 <>
@@ -80,7 +102,7 @@ export default function TechStackMarquee() {
                       height={48}
                       className="object-contain"
                       unoptimized
-                      onError={() => setIconErrors((prev) => new Set(prev).add(index % TECH_STACK.length))}
+                      onError={() => setIconErrors((prev) => new Set(prev).add(index))}
                     />
                   </div>
                   <span className="text-white text-[10px] sm:text-xs font-medium text-center truncate w-full">
@@ -92,6 +114,6 @@ export default function TechStackMarquee() {
           ))}
         </div>
       </div>
-    </div>
+    </section>
   )
 }
