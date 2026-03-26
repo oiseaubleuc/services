@@ -2,8 +2,8 @@ const sharp = require('sharp');
 const fs = require('fs');
 const path = require('path');
 
-// Logo clair (blanc) pour fond noir — icône app = fond noir + logo blanc
-const logoPath = path.join(__dirname, '../public/logos/logo_HS.png');
+// White logo on dark background for tab favicon
+const logoPath = path.join(__dirname, '../public/logos/logo_hss.png');
 const publicDir = path.join(__dirname, '../public');
 
 const BLACK_BG = { r: 10, g: 10, b: 15, alpha: 1 }; // #0a0a0f
@@ -31,7 +31,8 @@ async function generateFavicons() {
       const outputPath = path.join(publicDir, name);
       await sharp(logoPath)
         .resize(size, size, {
-          fit: 'contain',
+          fit: 'cover',
+          position: 'centre',
           background: BLACK_BG
         })
         .png()
@@ -41,7 +42,8 @@ async function generateFavicons() {
 
     const favicon16 = await sharp(logoPath)
       .resize(16, 16, {
-        fit: 'contain',
+        fit: 'cover',
+        position: 'centre',
         background: BLACK_BG
       })
       .png()
@@ -49,7 +51,8 @@ async function generateFavicons() {
 
     const favicon32 = await sharp(logoPath)
       .resize(32, 32, {
-        fit: 'contain',
+        fit: 'cover',
+        position: 'centre',
         background: BLACK_BG
       })
       .png()
