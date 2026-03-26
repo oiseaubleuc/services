@@ -30,6 +30,7 @@ export default function Contact() {
     starter: t('offer.packages.starter.name'),
     professional: t('offer.packages.professional.name'),
     enterprise: t('offer.packages.enterprise.name'),
+    custom: t('offer.packages.custom.name'),
   }
   
   // État pour le formulaire de contact

@@ -6,8 +6,9 @@ import FramerButton from './FramerButton'
 interface Package {
     id: string
     name: string
-    price: number
+    priceLabel: string
     description: string
+    highlight: string
     features: string[]
     popular?: boolean
     cta: string
@@ -20,8 +21,9 @@ export default function Offer() {
         {
             id: 'starter',
             name: t('offer.packages.starter.name'),
-            price: 890,
+            priceLabel: '990€',
             description: t('offer.packages.starter.description'),
+            highlight: t('offer.packages.starter.highlight'),
             features: [
                 t('offer.packages.starter.feature1'),
                 t('offer.packages.starter.feature2'),
@@ -35,8 +37,9 @@ export default function Offer() {
         {
             id: 'professional',
             name: t('offer.packages.professional.name'),
-            price: 1650,
+            priceLabel: '2490€',
             description: t('offer.packages.professional.description'),
+            highlight: t('offer.packages.professional.highlight'),
             features: [
                 t('offer.packages.professional.feature1'),
                 t('offer.packages.professional.feature2'),
@@ -53,8 +56,9 @@ export default function Offer() {
         {
             id: 'enterprise',
             name: t('offer.packages.enterprise.name'),
-            price: 2900,
+            priceLabel: '4990€',
             description: t('offer.packages.enterprise.description'),
+            highlight: t('offer.packages.enterprise.highlight'),
             features: [
                 t('offer.packages.enterprise.feature1'),
                 t('offer.packages.enterprise.feature2'),
@@ -68,6 +72,22 @@ export default function Offer() {
                 t('offer.packages.enterprise.feature10'),
             ],
             cta: t('offer.cta'),
+        },
+        {
+            id: 'custom',
+            name: t('offer.packages.custom.name'),
+            priceLabel: t('offer.packages.custom.priceLabel'),
+            description: t('offer.packages.custom.description'),
+            highlight: t('offer.packages.custom.highlight'),
+            features: [
+                t('offer.packages.custom.feature1'),
+                t('offer.packages.custom.feature2'),
+                t('offer.packages.custom.feature3'),
+                t('offer.packages.custom.feature4'),
+                t('offer.packages.custom.feature5'),
+                t('offer.packages.custom.feature6'),
+            ],
+            cta: t('offer.ctaProposal'),
         },
     ]
 
@@ -90,7 +110,7 @@ export default function Offer() {
                 </div>
 
                 {/* Packages Grid */}
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 lg:gap-10 mb-12">
+                <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6 sm:gap-8 lg:gap-10 mb-12">
                     {packages.map((pkg, index) => (
                         <div
                             key={pkg.id}
@@ -114,9 +134,12 @@ export default function Offer() {
                                 <h3 className="text-xl sm:text-2xl md:text-3xl font-semibold text-white mb-2">
                                     {pkg.name}
                                 </h3>
+                                <span className={`inline-block text-xs sm:text-sm font-medium rounded-full px-3 py-1 mb-3 ${pkg.popular ? 'bg-yellow-500/25 text-yellow-300 border border-yellow-500/40' : 'bg-white/10 text-gray-200 border border-white/20'}`}>
+                                    {pkg.highlight}
+                                </span>
                                 <div className="flex items-baseline gap-2 mb-4">
                                     <span className="text-3xl sm:text-4xl md:text-5xl font-bold text-white">
-                                        {pkg.price}€
+                                        {pkg.priceLabel}
                                     </span>
                                 </div>
                                 <p className="text-sm sm:text-base text-gray-300 font-light leading-relaxed">
@@ -157,6 +180,42 @@ export default function Offer() {
                             </FramerButton>
                         </div>
                     ))}
+                </div>
+
+                {/* Competitor comparison */}
+                <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl sm:rounded-3xl p-6 sm:p-8 md:p-10 mb-8 sm:mb-12">
+                    <div className="text-center mb-6 sm:mb-8">
+                        <h3 className="text-xl sm:text-2xl md:text-3xl font-semibold text-white mb-2">
+                            {t('offer.comparison.title')}
+                        </h3>
+                        <p className="text-sm sm:text-base text-gray-300 font-light">
+                            {t('offer.comparison.subtitle')}
+                        </p>
+                    </div>
+
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6">
+                        <div className="rounded-xl border border-white/10 bg-white/5 p-4 sm:p-5">
+                            <p className="text-xs uppercase tracking-wide text-gray-400 mb-2">{t('offer.packages.professional.name')}</p>
+                            <p className="text-sm text-gray-300 mb-1">{t('offer.comparison.competitorLabel')} {t('offer.comparison.professional.competitor')}</p>
+                            <p className="text-sm text-green-300 font-medium">{t('offer.comparison.yourOfferLabel')} 2490€</p>
+                        </div>
+
+                        <div className="rounded-xl border border-white/10 bg-white/5 p-4 sm:p-5">
+                            <p className="text-xs uppercase tracking-wide text-gray-400 mb-2">{t('offer.packages.enterprise.name')}</p>
+                            <p className="text-sm text-gray-300 mb-1">{t('offer.comparison.competitorLabel')} {t('offer.comparison.enterprise.competitor')}</p>
+                            <p className="text-sm text-green-300 font-medium">{t('offer.comparison.yourOfferLabel')} 4990€</p>
+                        </div>
+
+                        <div className="rounded-xl border border-yellow-500/30 bg-yellow-500/10 p-4 sm:p-5">
+                            <p className="text-xs uppercase tracking-wide text-yellow-300 mb-2">{t('offer.packages.custom.name')}</p>
+                            <p className="text-sm text-gray-300 mb-1">{t('offer.comparison.custom.competitor')}</p>
+                            <p className="text-sm text-yellow-200 font-medium">{t('offer.comparison.custom.yourProposal')}</p>
+                        </div>
+                    </div>
+
+                    <p className="text-xs sm:text-sm text-gray-400 mt-5 text-center">
+                        {t('offer.comparison.note')}
+                    </p>
                 </div>
 
                 {/* 12 Hours Principle */}

@@ -1,6 +1,7 @@
 'use client'
 
 import { useLanguage } from '@/contexts/LanguageContext'
+import AnimateOnScroll from '@/components/AnimateOnScroll'
 
 export default function ValueProposition() {
   const { t } = useLanguage()
@@ -40,10 +41,10 @@ export default function ValueProposition() {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 md:gap-10">
           {values.map((value, index) => (
-            <div
-              key={index}
-              className={`bg-gradient-to-br ${value.color} backdrop-blur-lg rounded-2xl sm:rounded-3xl p-6 sm:p-8 md:p-10 border border-white/20 relative overflow-hidden group hover:scale-105 transition-all duration-300`}
-            >
+            <AnimateOnScroll key={index} variant="fadeUp" delay={index * 100} threshold={0.1}>
+              <div
+                className={`bg-gradient-to-br ${value.color} backdrop-blur-lg rounded-2xl sm:rounded-3xl p-6 sm:p-8 md:p-10 border border-white/20 relative overflow-hidden group hover:scale-105 transition-all duration-300`}
+              >
               <div className="absolute top-0 right-0 w-32 h-32 bg-white/5 rounded-full -mr-16 -mt-16 group-hover:scale-150 transition-transform duration-500"></div>
               <div className="relative z-10">
                 <div className="text-5xl sm:text-6xl md:text-7xl font-bold text-white/20 mb-4 sm:mb-6">
@@ -57,6 +58,7 @@ export default function ValueProposition() {
                 </p>
               </div>
             </div>
+            </AnimateOnScroll>
           ))}
         </div>
       </div>

@@ -382,16 +382,35 @@ export default {
     subtitle: "Oplossingen aangepast aan uw behoeften, van eenvoudige creatie tot complete op maat gemaakte oplossing",
     popular: "Populair",
     cta: "Kies deze aanbieding",
+    ctaProposal: "Stuur je prijsvoorstel",
     contact: "Neem contact op",
     note: "Elk project krijgt een gedetailleerde offerte, lot per lot. De aangegeven prijzen zijn startprijzen.",
     guarantee: {
       title: "Behandelingstermijn",
       description: "Na uw aanvraag ontvangt u binnen 12 uur een gedetailleerde offerte, projectplanning en alle benodigde documentatie. Zo kunt u direct geïnformeerd beslissen en snel van start gaan."
     },
+    comparison: {
+      title: "Vergelijking met de markt",
+      subtitle: "Indicatieve vergelijking tussen gangbare bureauprijzen en onze voorstellen.",
+      competitorLabel: "Concurrenten:",
+      yourOfferLabel: "Ons voorstel:",
+      professional: {
+        competitor: "ongeveer 2.800€ – 4.200€"
+      },
+      enterprise: {
+        competitor: "ongeveer 5.500€ – 9.000€"
+      },
+      custom: {
+        competitor: "Complexe projecten worden meestal individueel geprijsd met hogere marges.",
+        yourProposal: "Bij ons kan u zelf een prijsvoorstel + scope doorsturen."
+      },
+      note: "Prijzen zijn indicatief en afhankelijk van scope, deadline, integraties en supportniveau."
+    },
     packages: {
       starter: {
         name: "Essentiële pakket",
         description: "Een eenvoudige, snelle en effectieve oplossing om een functionele website online te zetten.",
+        highlight: "Voor starters en kleine projecten",
         feature1: "Design op basis van een aangepaste template met uw kleuren",
         feature2: "Integratie van uw aangeleverde content (teksten & afbeeldingen)",
         feature3: "Basis SEO (structuur, tags, snelheid)",
@@ -402,6 +421,7 @@ export default {
       professional: {
         name: "Professionele pakket",
         description: "Een complete dienst om een professionele website op uw maat te creëren.",
+        highlight: "Voor groeiende bedrijven",
         feature1: "Uniek design, volledig op maat gemaakt",
         feature2: "Creatie van uw logo, kleurenpalet, typografieën",
         feature3: "Strategische herschrijving of redactie van uw content",
@@ -414,6 +434,7 @@ export default {
       enterprise: {
         name: "Enterprise pakket",
         description: "Een complete en schaalbare oplossing voor bedrijven die excellentie zoeken.",
+        highlight: "Voor geavanceerde platformen",
         feature1: "Uniek design en complete visuele identiteit",
         feature2: "Full stack architectuur op maat",
         feature3: "Geavanceerde backend en frontend ontwikkeling",
@@ -424,6 +445,18 @@ export default {
         feature8: "Geoptimaliseerde prestaties en schaalbaarheid",
         feature9: "Aangepast beheer dashboard",
         feature10: "Strategische begeleiding en consulting"
+      },
+      custom: {
+        name: "Project op maat",
+        priceLabel: "Op voorstel",
+        description: "U bepaalt budget en prioriteiten, wij bouwen een oplossing op maat met gefaseerde uitvoering.",
+        highlight: "Voor unieke of complexe noden",
+        feature1: "Klant stuurt zelf prijsvoorstel en scope door",
+        feature2: "Workshop om requirements en prioriteiten vast te leggen",
+        feature3: "Gefaseerde aanpak met duidelijke milestones",
+        feature4: "Dashboard + login/register modules mogelijk",
+        feature5: "API integraties en hostingopties op maat",
+        feature6: "Technische uitleg, documentatie en overdracht"
       }
     }
   }

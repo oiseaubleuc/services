@@ -82,6 +82,17 @@ const cv = {
       title: 'Tools',
       items: ['VS Code', 'Postman', 'GitHub', 'Figma', 'Microsoft 365'],
     },
+    {
+      title: 'Enterprise / CRM / BI',
+      items: [
+        'SAP (modules, reporting)',
+        'Salesforce (CRM, Sales Cloud)',
+        'Power BI (dashboards, reports, DAX)',
+        'ERP (processen, integraties)',
+        'CRM (pipeline, contacten, automatisering)',
+        'HubSpot, Zoho CRM',
+      ],
+    },
   ],
   skills: [
     'Problem solving',

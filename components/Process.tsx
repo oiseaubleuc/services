@@ -1,6 +1,7 @@
 'use client'
 
 import { useLanguage } from '@/contexts/LanguageContext'
+import AnimateOnScroll from '@/components/AnimateOnScroll'
 
 export default function Process() {
   const { t } = useLanguage()
@@ -49,10 +50,10 @@ export default function Process() {
           <div className="hidden lg:block absolute top-1/2 left-0 right-0 h-0.5 bg-gradient-to-r from-white/20 via-white/30 to-white/20 transform -translate-y-1/2" style={{ top: '50%' }}></div>
           
           {steps.map((step, index) => (
-            <div
-              key={index}
-              className={`relative bg-gradient-to-br ${step.color} backdrop-blur-lg rounded-2xl sm:rounded-3xl p-6 sm:p-8 md:p-10 border border-white/20 hover:scale-105 transition-all duration-300 group`}
-            >
+            <AnimateOnScroll key={index} variant="fadeUp" delay={index * 80} threshold={0.1}>
+              <div
+                className={`relative bg-gradient-to-br ${step.color} backdrop-blur-lg rounded-2xl sm:rounded-3xl p-6 sm:p-8 md:p-10 border border-white/20 hover:scale-105 transition-all duration-300 group`}
+              >
               {/* Connection dot for desktop */}
               <div className="hidden lg:block absolute top-1/2 -right-5 w-10 h-10 bg-white/20 rounded-full border-4 border-white/40 transform -translate-y-1/2 z-10 group-hover:bg-white/40 transition-all duration-300"></div>
               
@@ -68,6 +69,7 @@ export default function Process() {
                 </p>
               </div>
             </div>
+            </AnimateOnScroll>
           ))}
         </div>
       </div>

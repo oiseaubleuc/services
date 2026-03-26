@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Offerte — Enterprise pakket | HohoSolutions</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --color-bg: #0a0a0f;
+      --color-surface: #14141c;
+      --color-border: rgba(255,255,255,0.12);
+      --color-text: #f4f4f5;
+      --color-muted: #a1a1aa;
+      --color-accent: #3b82f6;
+      --font: 'Space Grotesk', system-ui, sans-serif;
+    }
+    * { box-sizing: border-box; }
+    body {
+      font-family: var(--font);
+      font-size: 0.9rem;
+      background: var(--color-bg);
+      color: var(--color-text);
+      line-height: 1.55;
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 2rem;
+    }
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      margin-bottom: 2.5rem;
+      padding-bottom: 1.5rem;
+      border-bottom: 1px solid var(--color-border);
+    }
+    .logo { font-size: 1.2rem; font-weight: 700; }
+    .meta { text-align: right; color: var(--color-muted); font-size: 0.8rem; }
+    .meta strong { color: var(--color-text); }
+    h1 {
+      font-size: 1.35rem;
+      font-weight: 600;
+      margin: 0 0 0.5rem 0;
+    }
+    .subtitle { color: var(--color-muted); margin: 0 0 2rem 0; font-size: 0.85rem; }
+    .client-block {
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: 12px;
+      padding: 1.25rem 1.5rem;
+      margin-bottom: 2rem;
+    }
+    .client-block h2 { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--color-muted); margin: 0 0 0.5rem 0; }
+    .client-block p { margin: 0; }
+    .package {
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: 12px;
+      padding: 1.5rem 1.75rem;
+      margin-bottom: 2rem;
+    }
+    .package-name { font-size: 1.05rem; font-weight: 600; margin: 0 0 0.5rem 0; }
+    .package-desc { color: var(--color-muted); font-size: 0.85rem; margin: 0 0 1rem 0; }
+    .price {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--color-accent);
+      margin-bottom: 1rem;
+    }
+    .price small { font-size: 0.8rem; font-weight: 400; color: var(--color-muted); }
+    ul.features {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    ul.features li {
+      padding: 0.3rem 0 0.3rem 1.5rem;
+      position: relative;
+      font-size: 0.875rem;
+    }
+    ul.features li::before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      color: #22c55e;
+      font-weight: bold;
+    }
+    .conditions {
+      font-size: 0.8rem;
+      color: var(--color-muted);
+      margin-top: 2rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--color-border);
+    }
+    .conditions p { margin: 0.35rem 0; }
+    .signature {
+      margin-top: 2.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    .contact {
+      font-size: 0.8rem;
+      color: var(--color-muted);
+    }
+    .contact a { color: var(--color-accent); text-decoration: none; }
+    @media print {
+      body {
+        font-family: var(--font);
+        background: #fff;
+        color: #111;
+        padding: 0;
+        max-width: 100%;
+      }
+      .header, .client-block, .package {
+        border-color: #ddd;
+        background: #fafafa;
+      }
+      .meta, .subtitle, .package-desc, .conditions, .contact { color: #374151; }
+      .price { color: #1d4ed8; }
+      ul.features li::before { color: #16a34a; }
+      .contact a { color: #1d4ed8; }
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <div>
+      <div class="logo">HohoSolutions</div>
+      <p style="margin: 0.25rem 0 0 0; color: var(--color-muted); font-size: 0.8rem;">Web development & digital solutions</p>
+    </div>
+    <div class="meta">
+      <p><strong>Offertenummer:</strong> 008</p>
+      <p><strong>Datum:</strong> 29 januari 2026</p>
+      <p><strong>Geldig tot:</strong> 28 februari 2026</p>
+    </div>
+  </div>
+
+  <h1>Offerte — Volledige webapplicatie</h1>
+  <p class="subtitle">Op maat gemaakte applicatie met dashboard, authenticatie en technische documentatie</p>
+
+  <div class="client-block">
+    <h2>Geadresseerde</h2>
+    <p><strong>Siggi Michiels</strong></p>
+    <p><a href="mailto:michielssiggi@gmail.com" style="color: var(--color-accent); text-decoration: none;">michielssiggi@gmail.com</a></p>
+  </div>
+
+  <div class="package">
+    <div class="package-name">Enterprise pakket — Volledige applicatie</div>
+    <p class="package-desc">Volledige webapplicatie met dashboard, inlog- en registratiecomponenten, API-integraties en technische uitleg van het werk. Hosting en eventuele bijkomende diensten kunnen apart worden toegevoegd.</p>
+    <div class="price">2.900 € <small>excl. BTW · startprijs</small></div>
+    <ul class="features">
+      <li>Volledige webapplicatie op maat</li>
+      <li>Dashboard voor beheer en overzichten</li>
+      <li>Login- en registratiecomponenten (authenticatie)</li>
+      <li>API-integraties (externe diensten en data)</li>
+      <li>Technische documentatie en uitleg van het werk</li>
+      <li>Uniek design en visuele identiteit</li>
+      <li>Geavanceerde backend en frontend ontwikkeling</li>
+      <li>Beveiliging en schaalbare architectuur</li>
+      <li>Training + ondersteuning (3 maanden)</li>
+      <li>Hosting en bijkomende diensten — apart te offereren / toe te voegen</li>
+    </ul>
+  </div>
+
+  <div class="conditions">
+    <p><strong>Algemene voorwaarden</strong></p>
+    <p>Deze offerte is geldig tot 28 februari 2026. Na akkoord ontvangt u een gedetailleerd projectplan, planning en technische specificaties. De prijs betreft de ontwikkeling van de applicatie (dashboard, login/register, API-integraties, technische documentatie); <strong>hosting en eventuele bijkomende diensten</strong> worden apart geoffreerd en toegevoegd.</p>
+    <p>Betaling: conform de in de opdrachtbevestiging vermelde voorwaarden (bijv. 30% bij opdracht, 40% bij oplevering ontwerp, 30% bij livegang).</p>
+  </div>
+
+  <div class="signature">
+    <div class="contact">
+      <p><strong>HohoSolutions</strong></p>
+      <p><a href="mailto:info@hohosolutions.com">info@hohosolutions.com</a></p>
+      <p><a href="https://hohosolutions.com">hohosolutions.com</a></p>
+    </div>
+    <p style="color: var(--color-muted); font-size: 0.8rem;">Wij kijken ernaar uit om uw project tot een succes te maken.</p>
+  </div>
+</body>
+</html>

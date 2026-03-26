@@ -382,16 +382,35 @@ export default {
         subtitle: "Solutions adaptées à vos besoins, de la création simple à la solution sur mesure complète",
         popular: "Populaire",
         cta: "Choisir cette offre",
+    ctaProposal: "Envoyer votre proposition de prix",
         contact: "Contactez-nous",
         note: "Chaque projet reçoit un devis détaillé, lot par lot. Les prix indiqués sont des prix de départ.",
         guarantee: {
             title: "Délai de traitement",
             description: "Suite à votre demande, vous recevrez dans les 12 heures un devis détaillé, une planification de projet et toute la documentation nécessaire. Cela vous permet de prendre une décision éclairée et de démarrer rapidement."
         },
+        comparison: {
+            title: "Comparaison avec le marché",
+            subtitle: "Comparaison indicative entre les tarifs d'agences et nos propositions.",
+            competitorLabel: "Concurrents :",
+            yourOfferLabel: "Notre proposition :",
+            professional: {
+                competitor: "environ 2.800€ – 4.200€"
+            },
+            enterprise: {
+                competitor: "environ 5.500€ – 9.000€"
+            },
+            custom: {
+                competitor: "Les projets complexes sont généralement chiffrés au cas par cas avec des marges plus élevées.",
+                yourProposal: "Chez nous, le client peut envoyer sa propre proposition de prix + périmètre."
+            },
+            note: "Les prix sont indicatifs et dépendent du périmètre, du délai, des intégrations et du niveau de support."
+        },
         packages: {
             starter: {
                 name: "Pack essentiel",
                 description: "Une solution simple, rapide et efficace pour mettre en ligne un site web fonctionnel.",
+                highlight: "Pour les startups et petits projets",
                 feature1: "Design basé sur un template personnalisé avec vos couleurs",
                 feature2: "Intégration de votre contenu fourni (textes & images)",
                 feature3: "SEO de base (structure, tags, vitesse)",
@@ -402,6 +421,7 @@ export default {
             professional: {
                 name: "Pack professionnel",
                 description: "Un service complet pour créer un site web professionnel à votre image.",
+                highlight: "Pour les entreprises en croissance",
                 feature1: "Design unique, entièrement sur mesure",
                 feature2: "Création de votre logo, palette de couleurs, typographies",
                 feature3: "Réécriture stratégique ou rédaction de votre contenu",
@@ -414,6 +434,7 @@ export default {
             enterprise: {
                 name: "Pack entreprise",
                 description: "Une solution complète et évolutive pour les entreprises recherchant l'excellence.",
+                highlight: "Pour des plateformes avancées",
                 feature1: "Design unique et identité visuelle complète",
                 feature2: "Architecture full stack sur mesure",
                 feature3: "Développement backend et frontend avancé",
@@ -424,6 +445,18 @@ export default {
                 feature8: "Performances et scalabilité optimisées",
                 feature9: "Tableau de bord d'administration personnalisé",
                 feature10: "Accompagnement stratégique et consulting"
+            },
+            custom: {
+                name: "Projet sur mesure",
+                priceLabel: "Sur proposition",
+                description: "Vous définissez le budget et les priorités, nous construisons une solution sur mesure par phases.",
+                highlight: "Pour les besoins uniques ou complexes",
+                feature1: "Le client envoie sa proposition de prix et de périmètre",
+                feature2: "Workshop pour cadrer les besoins et priorités",
+                feature3: "Approche en phases avec jalons clairs",
+                feature4: "Modules dashboard + login/register possibles",
+                feature5: "Intégrations API et options d'hébergement sur mesure",
+                feature6: "Explication technique, documentation et transfert"
             }
         }
     }

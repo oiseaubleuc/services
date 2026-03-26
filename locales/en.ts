@@ -382,16 +382,35 @@ export default {
         subtitle: "Solutions tailored to your needs, from simple creation to complete custom solution",
         popular: "Popular",
         cta: "Choose this offer",
+        ctaProposal: "Send your price proposal",
         contact: "Contact us",
         note: "Each project receives a detailed quote, lot by lot. The prices shown are starting prices.",
         guarantee: {
             title: "Processing time",
             description: "Following your request, you will receive within 12 hours a detailed quote, project planning, and all necessary documentation. This enables you to make an informed decision and get started quickly."
         },
+        comparison: {
+            title: "Market comparison",
+            subtitle: "Indicative comparison between typical agency pricing and our proposals.",
+            competitorLabel: "Competitors:",
+            yourOfferLabel: "Our proposal:",
+            professional: {
+                competitor: "around 2,800€ – 4,200€"
+            },
+            enterprise: {
+                competitor: "around 5,500€ – 9,000€"
+            },
+            custom: {
+                competitor: "Complex projects are usually priced case-by-case with higher margins.",
+                yourProposal: "With us, the client can send their own budget + scope proposal."
+            },
+            note: "Prices are indicative and depend on scope, timeline, integrations, and support level."
+        },
         packages: {
             starter: {
                 name: "Essential package",
                 description: "A simple, fast and effective solution to put a functional website online.",
+                highlight: "For startups and small projects",
                 feature1: "Design based on a customized template with your colors",
                 feature2: "Integration of your provided content (texts & images)",
                 feature3: "Basic SEO (structure, tags, speed)",
@@ -402,6 +421,7 @@ export default {
             professional: {
                 name: "Professional package",
                 description: "A complete service to create a professional website tailored to your image.",
+                highlight: "For growing businesses",
                 feature1: "Unique design, fully custom-made",
                 feature2: "Creation of your logo, color palette, typographies",
                 feature3: "Strategic rewriting or writing of your content",
@@ -414,6 +434,7 @@ export default {
             enterprise: {
                 name: "Enterprise package",
                 description: "A complete and scalable solution for companies seeking excellence.",
+                highlight: "For advanced platforms",
                 feature1: "Unique design and complete visual identity",
                 feature2: "Custom full stack architecture",
                 feature3: "Advanced backend and frontend development",
@@ -424,6 +445,18 @@ export default {
                 feature8: "Optimized performance and scalability",
                 feature9: "Custom administration dashboard",
                 feature10: "Strategic guidance and consulting"
+            },
+            custom: {
+                name: "Custom project",
+                priceLabel: "On proposal",
+                description: "You define budget and priorities, we deliver a tailored solution in structured phases.",
+                highlight: "For unique or complex needs",
+                feature1: "Client submits their own budget and scope proposal",
+                feature2: "Workshop to define requirements and priorities",
+                feature3: "Phased delivery with clear milestones",
+                feature4: "Dashboard + login/register modules available",
+                feature5: "API integrations and custom hosting options",
+                feature6: "Technical explanation, documentation, and handover"
             }
         }
     }

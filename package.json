@@ -7,7 +7,9 @@
         "build": "next build",
         "start": "next start",
         "lint": "next lint",
-        "generate-favicons": "node scripts/generate-favicons.js"
+        "generate-favicons": "node scripts/generate-favicons.js",
+        "generate-offerte-pdf": "node scripts/generate-offerte-pdf.mjs",
+        "generate-offerte-docx": "node scripts/generate-offerte-docx.mjs"
     },
     "dependencies": {
         "bcryptjs": "^3.0.3",
@@ -27,6 +29,7 @@
         "@types/react": "19.2.7",
         "@types/react-dom": "^19.2.3",
         "autoprefixer": "^10.4.22",
+        "docx": "^9.6.0",
         "eslint": "^9.0.0",
         "eslint-config-next": "^16.0.7",
         "playwright": "^1.58.0",
