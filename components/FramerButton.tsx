@@ -42,6 +42,7 @@ export default function FramerButton({
     return (
       <Link
         href={href}
+        onClick={onClick}
         className={`${baseStyles} ${variants[variant]} ${className} ${disabled ? 'opacity-50 cursor-not-allowed' : ''}`}
       >
         {buttonContent}

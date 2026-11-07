@@ -1,0 +1,458 @@
+{
+  "metadata": {
+    "title": "Création de sites web en Belgique | HohoSolutions — Dès 990€",
+    "description": "Sites web pour indépendants et PME en Belgique. Vitrine, e-commerce, sur mesure. Devis gratuit sous 12 h. Prix transparents dès 990 € HTVA.",
+    "keywords": "création site web belgique, site internet PME, webdesigner belgique, site vitrine prix, création e-commerce belgique"
+  },
+  "nav": {
+    "services": "Services",
+    "offer": "Offres",
+    "about": "À propos",
+    "contact": "Contact",
+    "quote": "Devis gratuit"
+  },
+  "hero": {
+    "title": "Création de sites web pour indépendants et PME en Belgique",
+    "subtitle": "Un site qui attire des clients — pas seulement une vitrine jolie.",
+    "tagline": "Dès 990 € HTVA · Devis gratuit en 12 h · Basé en Belgique",
+    "ctaPrimary": "Recevoir mon devis gratuit",
+    "ctaSecondary": "Discuter sur WhatsApp",
+    "reassurance": "Réponse sous 12 h · Sans engagement · Basé en Belgique"
+  },
+  "forWho": {
+    "title": "Pour qui ?",
+    "subtitle": "Le même métier, des problèmes différents. Voici comment on vous aide.",
+    "freelancers": {
+      "title": "Indépendants",
+      "problem": "On vous trouve difficilement en ligne, ou pas du tout.",
+      "solution": "Un site clair, un formulaire de contact, et une fiche Google qui travaille pour vous."
+    },
+    "businesses": {
+      "title": "Commerces & restos",
+      "problem": "Les clients cherchent horaires, menu et adresse — et tombent ailleurs.",
+      "solution": "Site avec horaires, localisation, menu ou catalogue, et prise de contact en un clic."
+    },
+    "companies": {
+      "title": "PME",
+      "problem": "Votre site n’amène pas de demandes, ou il n’existe pas.",
+      "solution": "Pages utiles, formulaires, et un parcours simple vers un devis ou un appel."
+    },
+    "ecommerce": {
+      "title": "E-commerce",
+      "problem": "Vous vendez déjà, mais pas (assez) en ligne.",
+      "solution": "Boutique avec paiements, stock et suivi de commandes, au prix d’un vrai projet — pas d’une usine à gaz."
+    }
+  },
+  "projects": {
+    "title": "Réalisations",
+    "subtitle": "Des projets concrets, avec un résultat mesurable.",
+    "cta": "Voir les réalisations",
+    "demo": "Projet démo"
+  },
+  "process": {
+    "title": "Comment ça se passe",
+    "subtitle": "Quatre étapes. Pas de jargon, un calendrier clair.",
+    "step1": {
+      "title": "On en parle",
+      "description": "Appel ou WhatsApp : vos clients, votre offre, ce que le site doit rapporter.",
+      "duration": "30–60 min"
+    },
+    "step2": {
+      "title": "Devis & planning",
+      "description": "Vous recevez un devis détaillé et un calendrier. Vous décidez ensuite, sans pression.",
+      "duration": "Sous 12 h"
+    },
+    "step3": {
+      "title": "On construit",
+      "description": "Vous voyez l’avancement. On ajuste les textes et le design avant la mise en ligne.",
+      "duration": "2–6 semaines"
+    },
+    "step4": {
+      "title": "En ligne & ensuite",
+      "description": "Mise en ligne, formation courte, et on reste joignable après la livraison.",
+      "duration": "Suivi"
+    }
+  },
+  "testimonials": {
+    "title": "Avis clients",
+    "subtitle": "Uniquement des retours réels."
+  },
+  "founder": {
+    "title": "Qui est derrière HohoSolutions",
+    "cta": "Parler directement"
+  },
+  "faq": {
+    "title": "Questions fréquentes",
+    "subtitle": "Les questions que l’on reçoit vraiment avant un devis.",
+    "q1": {
+      "question": "Combien coûte un site internet ?",
+      "answer": "À partir de 990 € HTVA pour un site vitrine. Le prix dépend du nombre de pages, des fonctions et du design. Vous recevez un devis gratuit et détaillé sous 12 h."
+    },
+    "q2": {
+      "question": "Quel est le délai de livraison ?",
+      "answer": "Un site vitrine simple : en général 2 à 3 semaines. Une boutique ou un projet plus large : 4 à 6 semaines. On fige le calendrier dans le devis, avant de commencer."
+    },
+    "q3": {
+      "question": "Qui gère l’hébergement ?",
+      "answer": "On peut héberger votre site sur un serveur rapide et sauvegardé, ou travailler avec l’hébergeur que vous avez déjà. C’est précisé dans le devis."
+    },
+    "q4": {
+      "question": "Puis-je modifier mon site moi-même ?",
+      "answer": "Oui. Vous pouvez changer textes et images sans coder. On vous montre comment, une fois le site livré."
+    },
+    "q5": {
+      "question": "Que se passe-t-il après la livraison ?",
+      "answer": "Un mois de support est inclus pour les questions et petits ajustements. Ensuite, une maintenance mensuelle est possible si vous le souhaitez."
+    },
+    "q6": {
+      "question": "Le nom de domaine m’appartient-il ?",
+      "answer": "Oui. Le nom de domaine et le contenu du site sont à vous. On ne garde aucun droit sur votre marque."
+    },
+    "q7": {
+      "question": "Les prix sont-ils HTVA ou TVAC ?",
+      "answer": "Tous les prix du site sont HTVA. La TVA belge de 21 % s’ajoute, sauf si vous êtes assujetti avec un numéro de TVA intracommunautaire valide."
+    },
+    "q8": {
+      "question": "Comment paie-t-on ?",
+      "answer": "En principe : 50 % à la commande, solde à la livraison, par virement. Un échéancier est possible au-delà de 3 000 € HTVA."
+    }
+  },
+  "cta": {
+    "final": {
+      "title": "Envoyez votre projet, recevez un devis sous 12 h",
+      "subtitle": "Gratuit, sans engagement. WhatsApp si vous préférez écrire plus vite.",
+      "button": "Recevoir mon devis gratuit"
+    }
+  },
+  "offersPreview": {
+    "title": "Des prix affichés, pas cachés",
+    "subtitle": "Trois formules + le sur-mesure. Tous les montants sont HTVA.",
+    "from": "dès",
+    "htva": "HTVA",
+    "cta": "Comparer les offres"
+  },
+  "services": {
+    "title": "Ce que l’on fait",
+    "subtitle": "Sites vitrine, boutiques, portfolios, refontes et applications — pour des indépendants et des PME en Belgique.",
+    "cta": "Voir cette offre",
+    "from": "À partir de",
+    "quote": "Sur devis",
+    "vitrine": {
+      "title": "Site vitrine",
+      "short": "Être trouvé, expliqué, contacté.",
+      "h1": "Création de site vitrine en Belgique",
+      "problem": "Sans site, vos clients comparent vos concurrents. Avec un site lent ou daté, ils raccrochent.",
+      "included": "Pages claires, mobile, formulaire, base SEO, mise en ligne.",
+      "faqQ": "Un site vitrine suffit-il ?",
+      "faqA": "Oui, si vous n’avez pas de catalogue à vendre en ligne. L’essentiel : qu’on comprenne ce que vous faites et qu’on puisse vous écrire en 30 secondes."
+    },
+    "ecommerce": {
+      "title": "Site e-commerce",
+      "short": "Vendre en ligne, sans usine à gaz.",
+      "h1": "Création de site e-commerce en Belgique",
+      "problem": "Vendre uniquement en magasin ou sur les réseaux, c’est rater les gens qui commandent le soir.",
+      "included": "Catalogue, panier, paiement, e-mails de commande, gestion simple.",
+      "faqQ": "Shopify, WooCommerce ou sur mesure ?",
+      "faqA": "On choisit l’outil selon votre volume et vos produits — pas selon la mode. L’objectif : que vous puissiez ajouter un produit sans nous appeler."
+    },
+    "portfolio": {
+      "title": "Site portfolio",
+      "short": "Montrer le travail, obtenir des missions.",
+      "h1": "Création de site portfolio",
+      "problem": "Un PDF ou Instagram ne remplacent pas une page à votre nom, que l’on peut googler.",
+      "included": "Galerie, à propos, contact, mobile, mise en ligne.",
+      "faqQ": "Est-ce adapté aux photographes et indépendants créatifs ?",
+      "faqA": "Oui. Le site sert à montrer 8 à 20 projets forts, pas à tout publier. On trie avec vous."
+    },
+    "custom-app": {
+      "title": "Application web sur mesure",
+      "short": "Un outil métier, pas un site vitrine.",
+      "h1": "Application web sur mesure en Belgique",
+      "problem": "Excel, e-mails et trois logiciels qui ne se parlent pas : c’est du temps perdu.",
+      "included": "Cadrage, accès utilisateurs, fonctions métier, hébergement, formation.",
+      "faqQ": "À partir de quel budget ?",
+      "faqA": "En général à partir de 4 990 € HTVA. On découpe en phases pour que vous payiez ce qui sert vraiment."
+    },
+    "refonte": {
+      "title": "Refonte de site",
+      "short": "Garder l’existant utile, jeter le reste.",
+      "h1": "Refonte de site web en Belgique",
+      "problem": "Votre site a 6 ans, il est lent, et Google ne le montre plus.",
+      "included": "Audit rapide, nouveau design, contenus repris, redirections, mise en ligne.",
+      "faqQ": "Faut-il tout recréer ?",
+      "faqA": "Pas forcément. On garde ce qui convertit (textes, avis, pages Google aime) et on change le reste."
+    },
+    "maintenance": {
+      "title": "Maintenance",
+      "short": "Mises à jour, sauvegardes, quelqu’un à appeler.",
+      "h1": "Maintenance de site web",
+      "problem": "Un site sans mises à jour finit par casser, se faire pirater, ou disparaître de Google.",
+      "included": "Sauvegardes, mises à jour, petites corrections, point de contact.",
+      "faqQ": "Est-ce obligatoire ?",
+      "faqA": "Non. Vous pouvez gérer vous-même. La maintenance sert si vous ne voulez pas y penser."
+    }
+  },
+  "local": {
+    "h1": "Création de site internet à {city}",
+    "subtitle": "Pour les indépendants et PME de {city} et alentours — devis sous 12 h.",
+    "why": "Pourquoi un site local compte",
+    "cta": "Demander un devis pour {city}",
+    "faqQ": "Intervenez-vous à {city} ?",
+    "faqA": "Oui. Le travail se fait à distance (visio, WhatsApp). Un échange en personne est possible selon le projet."
+  },
+  "offer": {
+    "title": "Offres de création de site web",
+    "subtitle": "Prix de départ, HTVA. Le devis précise le périmètre avant tout paiement.",
+    "popular": "Recommandé pour les PME",
+    "cta": "Choisir cette offre",
+    "ctaProposal": "Envoyer mon besoin",
+    "contact": "Poser une question",
+    "note": "Chaque projet a un devis lot par lot. Les prix ci-dessous sont des points de départ, pas des forfaits fermés si le besoin dépasse le cadre.",
+    "htva": "HTVA",
+    "vatNote": "TVA belge 21 % en sus, sauf autoliquidation si vous êtes assujetti.",
+    "delivery": "Délai de livraison",
+    "pages": "Pages incluses",
+    "revisions": "Allers-retours",
+    "notIncluded": "Non inclus",
+    "payment": "Paiement",
+    "compareTitle": "Comparer les formules",
+    "compare": {
+      "price": "Prix de départ",
+      "audience": "Pour qui",
+      "design": "Design",
+      "seo": "SEO",
+      "support": "Support après mise en ligne"
+    },
+    "guarantee": {
+      "title": "Devis sous 12 h",
+      "description": "Après votre message, vous recevez un devis détaillé et un planning. Pas de relance agressive. Vous décidez."
+    },
+    "packages": {
+      "essential": {
+        "name": "Essentiel",
+        "description": "Mettre en ligne un site clair, mobile, que l’on peut trouver et contacter.",
+        "highlight": "Indépendants et petits projets",
+        "feature1": "Design sur base d’un modèle, à vos couleurs",
+        "feature2": "Intégration de vos textes et images",
+        "feature3": "SEO de base (titres, vitesse, mobile)",
+        "feature4": "Mini formation pour modifier le contenu",
+        "feature5": "Site responsive et mentions RGPD de base",
+        "feature6": "Support 1 mois après la mise en ligne"
+      },
+      "professional": {
+        "name": "Professionnel",
+        "description": "Un site à votre image, pensé pour générer des demandes.",
+        "highlight": "PME qui veulent plus de contacts",
+        "feature1": "Design sur mesure",
+        "feature2": "Identité visuelle (logo, couleurs, typo) si besoin",
+        "feature3": "Aide à la rédaction des pages clés",
+        "feature4": "SEO soigné (structure, contenus, vitesse)",
+        "feature5": "Sauvegardes et bases de sécurité",
+        "feature6": "Formation + support 2 mois",
+        "feature7": "Site rapide, mobile, prêt à grandir",
+        "feature8": "Formulaires et fonctions avancées selon le devis"
+      },
+      "enterprise": {
+        "name": "Entreprise",
+        "description": "Plateforme plus large : espaces privés, outils, intégrations.",
+        "highlight": "Projets avec des fonctions métier",
+        "feature1": "Design et identité visuelle complets",
+        "feature2": "Architecture adaptée à votre outil (pas un thème)",
+        "feature3": "Développement front et back",
+        "feature4": "SEO et structure de contenus avancés",
+        "feature5": "Hébergement et sécurité renforcés",
+        "feature6": "Formation + support prioritaire 3 mois",
+        "feature7": "Connexions à d’autres logiciels si besoin",
+        "feature8": "Performances suivies après la mise en ligne",
+        "feature9": "Espace d’administration clair",
+        "feature10": "Cadrage et priorités avec vous, par phases"
+      },
+      "custom": {
+        "name": "Sur devis",
+        "priceLabel": "Sur devis",
+        "description": "Vous décrivez le besoin et le budget. On propose un plan par phases.",
+        "highlight": "Cas particuliers",
+        "feature1": "Vous envoyez votre cahier des charges ou vos contraintes",
+        "feature2": "Atelier de cadrage",
+        "feature3": "Découpage en phases avec jalons",
+        "feature4": "Comptes utilisateurs, tableau de bord si besoin",
+        "feature5": "API et hébergement selon le projet",
+        "feature6": "Documentation et transfert"
+      }
+    }
+  },
+  "about": {
+    "title": "À propos",
+    "subtitle": "Une petite structure en Belgique. Des sites pour des gens qui doivent gagner des clients, pas une vitrine pour agence.",
+    "story": {
+      "title": "Ce qu’on fait, concrètement",
+      "description": "HohoSolutions crée des sites et des applications pour indépendants et PME. On affiche les prix, on répond sous 12 h, et on parle de rendez-vous, d’appels et de ventes — pas de « solutions digitales »."
+    },
+    "how": {
+      "title": "Comment on travaille",
+      "item1": "Devis écrit avant de commencer",
+      "item2": "Vous restez propriétaire du nom de domaine et du site",
+      "item3": "Vous pouvez modifier textes et images après la livraison",
+      "item4": "On reste joignable (e-mail, téléphone, WhatsApp)"
+    },
+    "tech": {
+      "title": "Outils — ce que ça change pour vous",
+      "subtitle": "Peu d’outils, choisis pour un résultat : un site rapide que vous pouvez faire évoluer.",
+      "next": "Pages rapides, bon référencement de base",
+      "cms": "Vous changez un texte sans développeur",
+      "payments": "Paiements en ligne si vous vendez",
+      "hosting": "Mise en ligne et sauvegardes",
+      "analytics": "Savoir d’où viennent les visites, sans tracker tout le monde",
+      "seo": "Titres, vitesse, mobile : ce que Google regarde vraiment"
+    },
+    "cta": "Demander un devis",
+    "ctaSection": {
+      "title": "Un appel de 20 minutes suffit pour démarrer",
+      "description": "Expliquez ce que vous vendez. On vous dit si un site vitrine suffit, ou s’il faut autre chose.",
+      "button": "Écrire ou WhatsApp"
+    }
+  },
+  "contact": {
+    "title": "Demander un devis",
+    "subtitle": "Réponse sous 12 h ouvrées. Champs marqués * obligatoires.",
+    "tabs": {
+      "message": "Devis",
+      "appointment": "Rendez-vous"
+    },
+    "whatsappMessage": "Vous préférez WhatsApp ? Même numéro, souvent plus rapide.",
+    "phoneLabel": "Téléphone",
+    "emailLabel": "E-mail",
+    "responseTime": "Je vous réponds sous 12 h ouvrées.",
+    "form": {
+      "name": "Nom",
+      "namePlaceholder": "Votre nom",
+      "email": "E-mail",
+      "emailPlaceholder": "vous@entreprise.be",
+      "phone": "Téléphone",
+      "phoneOptional": "optionnel",
+      "phonePlaceholder": "+32 …",
+      "projectType": "Quel type de site ?",
+      "projectTypePlaceholder": "Choisir…",
+      "projectTypes": {
+        "vitrine": "Site vitrine",
+        "ecommerce": "Boutique en ligne",
+        "portfolio": "Portfolio",
+        "custom": "Application / outil métier",
+        "refonte": "Refonte d’un site existant",
+        "maintenance": "Maintenance",
+        "other": "Autre"
+      },
+      "budget": "Budget indicatif",
+      "budgetPlaceholder": "Facultatif",
+      "budgets": {
+        "under-1000": "Moins de 1 000 €",
+        "1000-2500": "1 000 – 2 500 €",
+        "2500-5000": "2 500 – 5 000 €",
+        "5000-plus": "Plus de 5 000 €",
+        "unknown": "Je ne sais pas encore"
+      },
+      "package": "Formule",
+      "packageNone": "Pas encore choisi",
+      "message": "Message",
+      "messagePlaceholder": "Quel est votre activité, et ce que le site doit apporter ?",
+      "siteUrl": "Adresse de votre site actuel",
+      "siteUrlPlaceholder": "https://…",
+      "gdpr": "J’accepte que mes données soient utilisées pour me recontacter au sujet de cette demande.",
+      "interestedIn": "Formule choisie :",
+      "submit": "Envoyer la demande",
+      "submitting": "Envoi…",
+      "success": "Bien reçu. Je vous réponds sous 12 h ouvrées.",
+      "error": "Envoi impossible. Réessayez, ou écrivez-nous / WhatsApp.",
+      "required": "Obligatoire"
+    }
+  },
+  "appointment": {
+    "title": "Prendre rendez-vous",
+    "subtitle": "Choisissez un créneau en semaine, 13 h – 19 h.",
+    "selectDate": "Date",
+    "selectTime": "Heure",
+    "contactInfo": "Vos coordonnées",
+    "message": "Message (optionnel)",
+    "messagePlaceholder": "En deux phrases : votre activité et ce que vous attendez du site.",
+    "confirm": "Confirmer le rendez-vous",
+    "submitting": "Réservation…",
+    "success": "Rendez-vous noté. Vous recevez un e-mail de confirmation.",
+    "error": "Réservation impossible. Réessayez ou passez par WhatsApp.",
+    "pickTime": "Choisissez encore une heure."
+  },
+  "audit": {
+    "title": "Audit gratuit de votre site",
+    "subtitle": "Envoyez l’URL. Sous 48 h, vous recevez un retour concret : clarté, mobile, contact, et 3 priorités.",
+    "cta": "Demander l’audit",
+    "success": "URL bien reçue. Retour sous 48 h ouvrées."
+  },
+  "footer": {
+    "description": "Création de sites web pour indépendants et PME en Belgique.",
+    "quickLinks": "Liens",
+    "contact": "Contact",
+    "email": "info@hohosolutions.com",
+    "whatsapp": "WhatsApp",
+    "legalNotice": "Mentions légales",
+    "privacy": "Confidentialité",
+    "terms": "Conditions",
+    "copyright": "Tous droits réservés."
+  },
+  "legal": {
+    "title": "Mentions légales",
+    "missing": "Les mentions d’identification de l’entreprise (adresse, BCE, TVA) seront publiées ici dès qu’elles sont fournies.",
+    "company": "Dénomination",
+    "address": "Siège",
+    "bce": "N° d’entreprise (BCE)",
+    "vat": "N° de TVA",
+    "email": "E-mail",
+    "phone": "Téléphone",
+    "hosting": "Hébergement",
+    "hostingValue": "Vercel Inc., 440 N Barranca Ave #4133, Covina, CA 91723, États-Unis — selon le déploiement en cours."
+  },
+  "privacy": {
+    "title": "Politique de confidentialité",
+    "lastUpdated": "Dernière mise à jour : novembre 2026",
+    "todo": "TODO(owner) : faire relire ce texte par un conseil si besoin. Structure RGPD, à compléter avec le responsable de traitement exact.",
+    "s1t": "1. Responsable",
+    "s1c": "HohoSolutions, contact : info@hohosolutions.com. L’identité complète (forme, adresse, BCE) figure dans les mentions légales dès qu’elle est publiée.",
+    "s2t": "2. Données collectées",
+    "s2c": "Via les formulaires : nom, e-mail, téléphone éventuellement, type de projet, budget, message, URL de site si vous la donnez. Journaux techniques minimaux (pages visitées) pour le suivi interne, sans publicité tierce.",
+    "s3t": "3. Finalités",
+    "s3c": "Répondre à votre demande de devis, d’audit ou de rendez-vous, exécuter un contrat si vous devenez client, et améliorer le site (pages utiles, taux de contact).",
+    "s4t": "4. Base légale",
+    "s4c": "Mesures précontractuelles à votre demande ; intérêt légitime pour le suivi statistique interne ; obligation légale (facturation) le cas échéant ; consentement pour le champ RGPD du formulaire.",
+    "s5t": "5. Durée et destinataires",
+    "s5c": "Les demandes sont conservées le temps du suivi commercial puis archivées selon les obligations comptables. Elles ne sont pas vendues. Prestataires techniques : e-mail (SMTP), hébergement, éventuellement agenda pour les rendez-vous.",
+    "s6t": "6. Vos droits",
+    "s6c": "Accès, rectification, effacement, limitation, opposition, portabilité. Écrivez à info@hohosolutions.com. Vous pouvez aussi saisir l’Autorité de protection des données (APD, Belgique)."
+  },
+  "terms": {
+    "title": "Conditions générales",
+    "lastUpdated": "Dernière mise à jour : novembre 2026",
+    "todo": "TODO(owner) : faire valider ces CGV. Squelette uniquement.",
+    "s1t": "1. Objet",
+    "s1c": "Ces conditions encadrent les prestations de création, refonte, hébergement ou maintenance de sites et d’applications proposées par HohoSolutions à des clients professionnels ou indépendants en Belgique.",
+    "s2t": "2. Devis et commande",
+    "s2c": "Un devis écrit précède le travail. La commande est ferme après acceptation du devis et, sauf accord contraire, paiement de l’acompte.",
+    "s3t": "3. Prix et TVA",
+    "s3c": "Les prix publics sont HTVA. La TVA belge applicable est ajoutée en facture, sauf régime d’autoliquidation.",
+    "s4t": "4. Livraison",
+    "s4c": "Les délais indiqués au devis sont indicatifs et courent après réception des contenus nécessaires (textes, logos, accès).",
+    "s5t": "5. Propriété",
+    "s5c": "Après paiement du solde, vous disposez des droits d’usage sur le site livré. Les outils, librairies et méthodes de HohoSolutions restent les siens.",
+    "s6t": "6. Droit applicable",
+    "s6c": "Droit belge. Litiges : tribunaux compétents du siège de HohoSolutions, sous réserve des règles impératives de protection du consommateur s’il y a lieu."
+  },
+  "notFound": {
+    "title": "Page introuvable",
+    "text": "Ce lien n’existe plus, ou l’adresse est incomplète.",
+    "home": "Retour à l’accueil",
+    "services": "Voir les services",
+    "contact": "Demander un devis"
+  },
+  "common": {
+    "learnMore": "En savoir plus",
+    "required": "*",
+    "close": "Fermer"
+  }
+}

@@ -4,7 +4,7 @@ import db from '@/lib/db'
 export async function POST(request: NextRequest) {
   try {
     const body = await request.json()
-    const { path, referer, userAgent } = body
+    const { path, referer, userAgent, event, packageId } = body
 
     // Get IP address
     const ip = request.headers.get('x-forwarded-for') || 
@@ -12,10 +12,11 @@ export async function POST(request: NextRequest) {
                'unknown'
 
     // Save page view
+    const storedPath = event ? `[${event}${packageId ? `:${packageId}` : ''}] ${path || '/'}` : path || '/'
     db.prepare(`
       INSERT INTO page_views (path, referer, user_agent, ip_address)
       VALUES (?, ?, ?, ?)
-    `).run(path || '/', referer || null, userAgent || null, ip)
+    `).run(storedPath, referer || null, userAgent || null, ip)
 
     return NextResponse.json({ success: true })
   } catch (error) {

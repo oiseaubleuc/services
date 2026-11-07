@@ -3,195 +3,146 @@
 import { useState } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
-import { useLanguage } from '@/contexts/LanguageContext'
+import { usePathname } from 'next/navigation'
+import { useLocale, useTranslations } from 'next-intl'
+import { localizedPath } from '@/lib/paths'
+import { getLocalPageBySlug, getServiceBySlug, localPages } from '@/content/services'
+import type { Locale } from '@/i18n'
 
 export default function Header() {
-    const [isMenuOpen, setIsMenuOpen] = useState(false)
-    const [isLangMenuOpen, setIsLangMenuOpen] = useState(false)
-    const { language, setLanguage, t } = useLanguage()
+  const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const [isLangMenuOpen, setIsLangMenuOpen] = useState(false)
+  const t = useTranslations()
+  const locale = useLocale()
+  const pathname = usePathname()
 
-    const languages = [
-        { code: 'fr' as const, name: 'Français' },
-        { code: 'en' as const, name: 'English' },
-        { code: 'nl' as const, name: 'Nederlands' },
-    ]
+  const languages = [
+    { code: 'fr', name: 'Français' },
+    { code: 'nl', name: 'Nederlands' },
+    { code: 'en', name: 'English' },
+  ]
+  const currentLang = languages.find((lang) => lang.code === locale) || languages[0]
 
-    const currentLang = languages.find(lang => lang.code === language) || languages[0]
+  const getPathnameWithoutLocale = () => pathname.replace(`/${locale}`, '') || '/'
 
-    // Header toujours en thème noir (pas de passage en blanc au scroll)
-    const logoSrc = '/logos/logo_HS.png'
-    const textClasses = 'text-white'
-    const linkClasses = 'text-gray-300 hover:text-white'
-    const menuButtonClass = 'text-white'
+  const hrefForLocale = (next: Locale) => {
+    const rest = getPathnameWithoutLocale()
+    const slug = rest.replace(/^\//, '')
+    const service = getServiceBySlug(locale as Locale, slug)
+    if (service) return `/${next}/${service.slugs[next]}`
+    const local = localPages.find((page) => page.slug[locale as Locale] === slug)
+    if (local?.slug[next]) return `/${next}/${local.slug[next]}`
+    return `/${next}${rest === '/' ? '' : rest}`
+  }
 
-    return (
-        <header className="fixed top-0 left-0 right-0 z-50 bg-black/20 backdrop-blur-sm transition-all duration-300">
-            <nav className="max-w-7xl mx-auto px-3 sm:px-4 md:px-6 lg:px-12 py-2.5 sm:py-3 md:py-4">
-                <div className="flex items-center justify-between gap-2 sm:gap-4">
-                    <Link
-                        href="/"
-                        className={`flex items-center gap-1.5 sm:gap-2 hover:opacity-80 transition-opacity min-w-0 ${textClasses}`}
-                    >
-                        <div className="relative w-12 h-12 xs:w-16 xs:h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 flex-shrink-0">
-                            <Image
-                                src={logoSrc}
-                                alt="HohoSolutions Logo"
-                                width={96}
-                                height={96}
-                                className="w-full h-full object-contain"
-                                priority
-                            />
-                        </div>
-                        <span className={`text-sm xs:text-base sm:text-lg md:text-xl font-semibold tracking-tight truncate ${textClasses}`}>
-                            HohoSolutions
-                        </span>
-                    </Link>
+  return (
+    <header className="fixed top-0 left-0 right-0 z-50 bg-black/40 backdrop-blur-md border-b border-white/10">
+      <nav className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-12 py-2.5 sm:py-3">
+        <div className="flex items-center justify-between gap-3">
+          <Link href={`/${locale}`} className="flex items-center gap-2 min-w-0 text-white hover:opacity-80">
+            <div className="relative w-10 h-10 sm:w-12 sm:h-12 flex-shrink-0">
+              <Image src="/logos/logo_HS.png" alt="HohoSolutions" width={48} height={48} className="object-contain" priority />
+            </div>
+            <span className="text-sm sm:text-lg font-semibold truncate">HohoSolutions</span>
+          </Link>
 
-                    {/* Desktop Menu */}
-                    <div className="hidden lg:flex items-center space-x-6 xl:space-x-8">
-                        <Link
-                            href="/services"
-                            className={`text-xs xl:text-sm transition-colors duration-200 font-medium whitespace-nowrap ${linkClasses}`}
-                        >
-                            {t('nav.services')}
-                        </Link>
-                        <Link
-                            href="/offer"
-                            className={`text-xs xl:text-sm transition-colors duration-200 font-medium whitespace-nowrap ${linkClasses}`}
-                        >
-                            Offer
-                        </Link>
-                        <Link
-                            href="/about"
-                            className={`text-xs xl:text-sm transition-colors duration-200 font-medium whitespace-nowrap ${linkClasses}`}
-                        >
-                            {t('nav.about')}
-                        </Link>
-                        <Link
-                            href="/contact"
-                            className={`text-xs xl:text-sm transition-colors duration-200 font-medium whitespace-nowrap ${linkClasses}`}
-                        >
-                            {t('nav.contact')}
-                        </Link>
+          <div className="hidden lg:flex items-center gap-6">
+            <Link href={localizedPath(locale, '/services')} className="text-sm text-gray-300 hover:text-white">
+              {t('nav.services')}
+            </Link>
+            <Link href={localizedPath(locale, '/offres')} className="text-sm text-gray-300 hover:text-white">
+              {t('nav.offer')}
+            </Link>
+            <Link href={localizedPath(locale, '/about')} className="text-sm text-gray-300 hover:text-white">
+              {t('nav.about')}
+            </Link>
+            <Link href={localizedPath(locale, '/contact')} className="text-sm text-gray-300 hover:text-white">
+              {t('nav.contact')}
+            </Link>
+            <Link
+              href={localizedPath(locale, '/contact')}
+              className="text-sm font-semibold bg-yellow-500 text-gray-900 px-4 py-2 rounded-full hover:bg-yellow-400"
+            >
+              {t('nav.quote')}
+            </Link>
+            <div className="relative">
+              <button
+                type="button"
+                onClick={() => setIsLangMenuOpen(!isLangMenuOpen)}
+                className="flex items-center gap-1 text-sm text-gray-300 hover:text-white"
+              >
+                {currentLang.name}
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                </svg>
+              </button>
+              {isLangMenuOpen && (
+                <>
+                  <div className="fixed inset-0 z-10" onClick={() => setIsLangMenuOpen(false)} />
+                  <div className="absolute right-0 mt-2 w-40 bg-white rounded-lg shadow-lg py-2 z-20">
+                    {languages.map((lang) => (
+                      <Link
+                        key={lang.code}
+                        href={hrefForLocale(lang.code as Locale)}
+                        onClick={() => setIsLangMenuOpen(false)}
+                        className={`block px-4 py-2 text-sm text-gray-800 hover:bg-gray-50 ${locale === lang.code ? 'font-semibold' : ''}`}
+                      >
+                        {lang.name}
+                      </Link>
+                    ))}
+                  </div>
+                </>
+              )}
+            </div>
+          </div>
 
-                        {/* Language Selector */}
-                        <div className="relative">
-                            <button
-                                onClick={() => setIsLangMenuOpen(!isLangMenuOpen)}
-                                className={`flex items-center space-x-1.5 text-xs xl:text-sm transition-colors duration-200 font-medium ${linkClasses}`}
-                            >
-                                <span className="whitespace-nowrap">{currentLang.name}</span>
-                                <svg className="w-3.5 h-3.5 xl:w-4 xl:h-4 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                                </svg>
-                            </button>
+          <div className="flex lg:hidden items-center gap-2">
+            <Link
+              href={localizedPath(locale, '/contact')}
+              className="text-xs font-semibold bg-yellow-500 text-gray-900 px-3 py-1.5 rounded-full"
+            >
+              {t('nav.quote')}
+            </Link>
+            <button type="button" className="p-1 text-white" onClick={() => setIsMenuOpen(!isMenuOpen)} aria-label="Menu">
+              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                {isMenuOpen ? <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M6 18L18 6M6 6l12 12" /> : <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M4 6h16M4 12h16M4 18h16" />}
+              </svg>
+            </button>
+          </div>
+        </div>
 
-                            {isLangMenuOpen && (
-                                <>
-                                    <div
-                                        className="fixed inset-0 z-10"
-                                        onClick={() => setIsLangMenuOpen(false)}
-                                    />
-                                    <div className="absolute right-0 mt-2 w-36 xl:w-40 bg-white rounded-lg shadow-lg border border-gray-200 py-2 z-20">
-                                        {languages.map((lang) => (
-                                            <button
-                                                key={lang.code}
-                                                onClick={() => {
-                                                    setLanguage(lang.code)
-                                                    setIsLangMenuOpen(false)
-                                                }}
-                                                className={`w-full text-left px-4 py-2 text-xs xl:text-sm hover:bg-gray-50 transition-colors ${language === lang.code ? 'bg-gray-50 font-medium' : ''
-                                                    }`}
-                                            >
-                                                <span>{lang.name}</span>
-                                            </button>
-                                        ))}
-                                    </div>
-                                </>
-                            )}
-                        </div>
-                    </div>
-
-                    {/* Tablet/Mobile Menu Button */}
-                    <button
-                        className={`lg:hidden p-1 hover:opacity-80 transition-opacity ${menuButtonClass}`}
-                        onClick={() => setIsMenuOpen(!isMenuOpen)}
-                        aria-label="Toggle menu"
-                    >
-                        <svg
-                            className="w-5 h-5 sm:w-6 sm:h-6"
-                            fill="none"
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth="1.5"
-                            viewBox="0 0 24 24"
-                            stroke="currentColor"
-                        >
-                            {isMenuOpen ? (
-                                <path d="M6 18L18 6M6 6l12 12" />
-                            ) : (
-                                <path d="M4 6h16M4 12h16M4 18h16" />
-                            )}
-                        </svg>
-                    </button>
-                </div>
-
-                {/* Mobile/Tablet Menu */}
-                {isMenuOpen && (
-                    <div className="lg:hidden mt-4 sm:mt-6 space-y-4 sm:space-y-6 pb-4 sm:pb-6 animate-fade-in-up border-t border-white/10 pt-4 sm:pt-6">
-                        <Link
-                            href="/services"
-                            className="block text-sm sm:text-base transition-colors font-medium py-1 text-white hover:text-gray-300"
-                            onClick={() => setIsMenuOpen(false)}
-                        >
-                            {t('nav.services')}
-                        </Link>
-                        <Link
-                            href="/offer"
-                            className="block text-sm sm:text-base transition-colors font-medium py-1 text-white hover:text-gray-300"
-                            onClick={() => setIsMenuOpen(false)}
-                        >
-                            Offer
-                        </Link>
-                        <Link
-                            href="/about"
-                            className="block text-sm sm:text-base transition-colors font-medium py-1 text-white hover:text-gray-300"
-                            onClick={() => setIsMenuOpen(false)}
-                        >
-                            {t('nav.about')}
-                        </Link>
-                        <Link
-                            href="/contact"
-                            className="block text-sm sm:text-base transition-colors font-medium py-1 text-white hover:text-gray-300"
-                            onClick={() => setIsMenuOpen(false)}
-                        >
-                            {t('nav.contact')}
-                        </Link>
-
-                        {/* Mobile Language Selector */}
-                        <div className="pt-3 sm:pt-4 border-t border-white/20">
-                            <div className="flex items-center flex-wrap gap-2 sm:gap-3">
-                                {languages.map((lang) => (
-                                    <button
-                                        key={lang.code}
-                                        onClick={() => {
-                                            setLanguage(lang.code)
-                                            setIsMenuOpen(false)
-                                        }}
-                                        className={`px-3 py-1.5 rounded-lg text-xs sm:text-sm transition-colors ${language === lang.code
-                                            ? 'bg-white text-gray-900 font-medium'
-                                            : 'bg-white/20 text-white hover:bg-white/30'
-                                            }`}
-                                    >
-                                        {lang.name}
-                                    </button>
-                                ))}
-                            </div>
-                        </div>
-                    </div>
-                )}
-            </nav>
-        </header>
-    )
+        {isMenuOpen && (
+          <div className="lg:hidden mt-4 space-y-4 border-t border-white/10 pt-4 pb-4">
+            {[
+              ['/services', 'nav.services'],
+              ['/offres', 'nav.offer'],
+              ['/about', 'nav.about'],
+              ['/contact', 'nav.contact'],
+            ].map(([path, key]) => (
+              <Link
+                key={path}
+                href={localizedPath(locale, path)}
+                className="block text-white"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                {t(key)}
+              </Link>
+            ))}
+            <div className="flex gap-2 pt-2">
+              {languages.map((lang) => (
+                <Link
+                  key={lang.code}
+                  href={hrefForLocale(lang.code as Locale)}
+                  onClick={() => setIsMenuOpen(false)}
+                  className={`px-3 py-1.5 rounded-lg text-sm ${locale === lang.code ? 'bg-white text-gray-900' : 'bg-white/20 text-white'}`}
+                >
+                  {lang.name}
+                </Link>
+              ))}
+            </div>
+          </div>
+        )}
+      </nav>
+    </header>
+  )
 }
-

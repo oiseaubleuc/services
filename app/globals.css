@@ -17,6 +17,11 @@
   box-sizing: border-box;
 }
 
+:focus-visible {
+  outline: 2px solid #eab308;
+  outline-offset: 2px;
+}
+
 html {
   overflow-x: hidden;
   /* Safari: hauteur viewport cohérente (évite saut au scroll) */
