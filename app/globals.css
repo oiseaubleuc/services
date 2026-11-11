@@ -26,6 +26,8 @@ html {
   overflow-x: hidden;
   /* Safari: hauteur viewport cohérente (évite saut au scroll) */
   min-height: -webkit-fill-available;
+  text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
 }
 
 body {

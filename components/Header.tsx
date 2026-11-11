@@ -7,6 +7,7 @@ import { usePathname } from 'next/navigation'
 import { useLocale, useTranslations } from 'next-intl'
 import { localizedPath } from '@/lib/paths'
 import { getLocalPageBySlug, getServiceBySlug, localPages } from '@/content/services'
+import { getPostBySlug } from '@/content/blog'
 import type { Locale } from '@/i18n'
 
 export default function Header() {
@@ -27,6 +28,13 @@ export default function Header() {
 
   const hrefForLocale = (next: Locale) => {
     const rest = getPathnameWithoutLocale()
+    if (rest === '/blog' || rest.startsWith('/blog/')) {
+      const blogSlug = rest.replace(/^\/blog\/?/, '')
+      if (!blogSlug) return `/${next}/blog`
+      const post = getPostBySlug(locale as Locale, blogSlug)
+      if (post) return `/${next}/blog/${post.slug[next]}`
+      return `/${next}/blog`
+    }
     const slug = rest.replace(/^\//, '')
     const service = getServiceBySlug(locale as Locale, slug)
     if (service) return `/${next}/${service.slugs[next]}`

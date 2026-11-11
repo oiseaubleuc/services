@@ -2,22 +2,16 @@
 
 import { site } from '@/content/site'
 import { whatsappLink } from '@/lib/paths'
+import { track } from '@/lib/track'
 
 export default function WhatsAppFloat() {
-  const track = () => {
-    fetch('/api/track', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ path: window.location.pathname, event: 'whatsapp_click' }),
-    }).catch(() => {})
-  }
 
   return (
     <a
       href={whatsappLink(site.whatsapp)}
       target="_blank"
       rel="noopener noreferrer"
-      onClick={track}
+      onClick={() => track('whatsapp_click')}
       className="fixed bottom-5 right-4 z-50 flex h-14 w-14 items-center justify-center rounded-full bg-[#25D366] text-white shadow-lg hover:scale-105 focus:outline-none focus-visible:ring-2 focus-visible:ring-white md:hidden"
       aria-label="WhatsApp"
     >

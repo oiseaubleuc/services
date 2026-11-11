@@ -2,8 +2,9 @@
 
 import Link from 'next/link'
 import { useLocale, useTranslations } from 'next-intl'
-import { hasLegalIdentity, site } from '@/content/site'
+import { hasFounder, hasLegalIdentity, site } from '@/content/site'
 import { localizedPath, telLink } from '@/lib/paths'
+import { track } from '@/lib/track'
 
 export default function Footer() {
   const t = useTranslations()
@@ -16,8 +17,11 @@ export default function Footer() {
           <div>
             <p className="text-lg font-semibold text-white mb-2">HohoSolutions</p>
             <p className="text-gray-400 text-sm font-light max-w-sm">{t('footer.description')}</p>
+            {hasFounder() && (
+              <p className="text-gray-500 text-xs mt-3">{site.founder.fullName}</p>
+            )}
             {hasLegalIdentity() && (
-              <p className="text-gray-500 text-xs mt-3">
+              <p className="text-gray-500 text-xs mt-2">
                 {site.legal.legalName}
                 <br />
                 {site.legal.streetAddress}, {site.legal.postalCode} {site.legal.city}
@@ -37,6 +41,9 @@ export default function Footer() {
             <Link href={localizedPath(locale, '/about')} className="text-gray-400 hover:text-white">
               {t('nav.about')}
             </Link>
+            <Link href={localizedPath(locale, '/blog')} className="text-gray-400 hover:text-white">
+              {t('footer.blog')}
+            </Link>
             <Link href={localizedPath(locale, '/contact')} className="text-gray-400 hover:text-white">
               {t('nav.contact')}
             </Link>
@@ -55,9 +62,23 @@ export default function Footer() {
             <a href={`mailto:${site.email}`} className="block text-gray-400 hover:text-white mb-1">
               {site.email}
             </a>
-            <a href={telLink(site.phone)} className="block text-gray-400 hover:text-white mb-1">
+            <a
+              href={telLink(site.phone)}
+              className="block text-gray-400 hover:text-white mb-1"
+              onClick={() => track('phone_click')}
+            >
               {site.phoneDisplay}
             </a>
+            {hasFounder() && (
+              <a
+                href={site.founder.github}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block text-gray-400 hover:text-white mb-1"
+              >
+                {t('footer.github')}
+              </a>
+            )}
             <p className="text-gray-500 text-xs mt-2">
               © {new Date().getFullYear()} HohoSolutions · {t('footer.copyright')}
             </p>

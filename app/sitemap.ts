@@ -1,6 +1,7 @@
 import type { MetadataRoute } from 'next'
-import { locales } from '@/i18n'
+import { locales, type Locale } from '@/i18n'
 import { allContentSlugs } from '@/content/services'
+import { posts } from '@/content/blog'
 
 const baseUrl = 'https://hohosolutions.com'
 
@@ -14,6 +15,7 @@ const staticPaths = [
   '/terms',
   '/mentions-legales',
   '/audit-gratuit',
+  '/blog',
 ]
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -41,6 +43,22 @@ export default function sitemap(): MetadataRoute.Sitemap {
         lastModified: new Date(),
         changeFrequency: 'monthly',
         priority: 0.7,
+      })
+    }
+    for (const post of posts) {
+      const path = `/blog/${post.slug[locale as Locale]}`
+      entries.push({
+        url: `${baseUrl}/${locale}${path}`,
+        lastModified: new Date(post.date),
+        changeFrequency: 'monthly',
+        priority: 0.6,
+        alternates: {
+          languages: {
+            'fr-BE': `${baseUrl}/fr/blog/${post.slug.fr}`,
+            'nl-BE': `${baseUrl}/nl/blog/${post.slug.nl}`,
+            en: `${baseUrl}/en/blog/${post.slug.en}`,
+          },
+        },
       })
     }
   }

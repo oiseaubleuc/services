@@ -3,6 +3,7 @@
 import { useTranslations } from 'next-intl'
 import { site } from '@/content/site'
 import { whatsappLink } from '@/lib/paths'
+import { track } from '@/lib/track'
 import LeadForm from './LeadForm'
 
 export default function FinalCTA() {
@@ -19,6 +20,9 @@ export default function FinalCTA() {
           <p className="text-base sm:text-lg text-gray-300 font-light mb-4">{t('subtitle')}</p>
           <a
             href={whatsappLink(site.whatsapp, tHero('title'))}
+            onClick={() => track('whatsapp_click')}
+            target="_blank"
+            rel="noopener noreferrer"
             className="inline-block text-sm text-yellow-300 hover:text-yellow-200 underline underline-offset-4"
           >
             {tHero('ctaSecondary')}
