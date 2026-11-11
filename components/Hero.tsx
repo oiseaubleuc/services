@@ -12,6 +12,19 @@ export default function Hero() {
 
   return (
     <section className="relative flex flex-col items-center justify-center pt-24 pb-16 sm:pt-28 sm:pb-20 md:pt-32 md:pb-24 min-h-[85vh] overflow-hidden">
+      <video
+        className="absolute inset-0 h-full w-full object-cover z-0 pointer-events-none"
+        autoPlay
+        muted
+        loop
+        playsInline
+        preload="metadata"
+        disablePictureInPicture
+        aria-hidden
+      >
+        <source src="/space.mp4" type="video/mp4" />
+      </video>
+      <div className="absolute inset-0 bg-black/45 z-[1]" aria-hidden />
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-12 text-center relative z-10 w-full">
         <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold text-white mb-5 tracking-tight leading-tight text-balance">
           {t('hero.title')}
