@@ -79,7 +79,8 @@
   },
   "founder": {
     "title": "Qui est derrière HohoSolutions",
-    "cta": "Parler directement"
+    "bio": "Je suis Houdaifa. Je construis des sites pour indépendants et PME en Belgique : devis sous 12 h, prix affichés, et un vrai soin du RGPD — j’ai aussi un parcours en droit.",
+    "cta": "En savoir plus"
   },
   "faq": {
     "title": "Questions fréquentes",
@@ -283,32 +284,45 @@
   },
   "about": {
     "title": "À propos",
-    "subtitle": "Une petite structure en Belgique. Des sites pour des gens qui doivent gagner des clients, pas une vitrine pour agence.",
+    "metaTitle": "Houdaifa Hamouchi — sites web Belgique",
+    "intro": "Je suis Houdaifa Hamouchi. Je développe des sites et des applications pour des indépendants et des PME en Belgique, sous le nom HohoSolutions.",
     "story": {
-      "title": "Ce qu’on fait, concrètement",
-      "description": "HohoSolutions crée des sites et des applications pour indépendants et PME. On affiche les prix, on répond sous 12 h, et on parle de rendez-vous, d’appels et de ventes — pas de « solutions digitales »."
+      "title": "Mon parcours",
+      "p1": "Je suis développeur full-stack : Next.js, React, TypeScript, Node.js, Laravel, Prisma. Je termine un Graduaat Programmeren à l’Erasmushogeschool Brussel (diplôme prévu en 2027).",
+      "p2": "Entre février et mai 2025, j’ai fait un stage de développeur backend chez Bpost : Node.js, TypeScript, CI/CD et revues de code en équipe. Je travaille en freelance via HohoSolutions depuis janvier 2026."
+    },
+    "legal": {
+      "title": "Pourquoi le juridique compte ici",
+      "description": "J’ai aussi un parcours en droit, avec des stages en cabinet d’avocats. Ça change ce que je livre : mentions légales, CGV et RGPD ne sont pas un copier-coller en bas de page. Votre site doit pouvoir être montré à un client, et à un contrôle."
+    },
+    "languages": {
+      "title": "FR, NL, EN",
+      "description": "Le français et le néerlandais sont mes langues maternelles ; l’anglais, professionnel. Vous n’avez pas à traduire votre brief : on avance dans la langue de votre entreprise."
     },
     "how": {
-      "title": "Comment on travaille",
+      "title": "Comment je travaille",
       "item1": "Devis écrit avant de commencer",
-      "item2": "Vous restez propriétaire du nom de domaine et du site",
+      "item2": "Le nom de domaine et le site restent à vous",
       "item3": "Vous pouvez modifier textes et images après la livraison",
-      "item4": "On reste joignable (e-mail, téléphone, WhatsApp)"
+      "item4": "Je reste joignable (e-mail, téléphone, WhatsApp)"
     },
     "tech": {
       "title": "Outils — ce que ça change pour vous",
       "subtitle": "Peu d’outils, choisis pour un résultat : un site rapide que vous pouvez faire évoluer.",
       "next": "Pages rapides, bon référencement de base",
+      "react": "Code maintenable, pas un thème figé",
       "cms": "Vous changez un texte sans développeur",
       "payments": "Paiements en ligne si vous vendez",
       "hosting": "Mise en ligne et sauvegardes",
+      "legal": "Mentions, cookies, consentement : le minimum sérieux",
       "analytics": "Savoir d’où viennent les visites, sans tracker tout le monde",
       "seo": "Titres, vitesse, mobile : ce que Google regarde vraiment"
     },
+    "github": "Code public sur GitHub",
     "cta": "Demander un devis",
     "ctaSection": {
       "title": "Un appel de 20 minutes suffit pour démarrer",
-      "description": "Expliquez ce que vous vendez. On vous dit si un site vitrine suffit, ou s’il faut autre chose.",
+      "description": "Expliquez ce que vous vendez. Je vous dis si un site vitrine suffit, ou s’il faut autre chose.",
       "button": "Écrire ou WhatsApp"
     }
   },
@@ -357,7 +371,7 @@
       "messagePlaceholder": "Quel est votre activité, et ce que le site doit apporter ?",
       "siteUrl": "Adresse de votre site actuel",
       "siteUrlPlaceholder": "https://…",
-      "gdpr": "J’accepte que mes données soient utilisées pour me recontacter au sujet de cette demande.",
+      "gdpr": "J’accepte que mes données soient utilisées pour me recontacter au sujet de cette demande (<privacy>politique de confidentialité</privacy>).",
       "interestedIn": "Formule choisie :",
       "submit": "Envoyer la demande",
       "submitting": "Envoi…",
@@ -395,7 +409,15 @@
     "legalNotice": "Mentions légales",
     "privacy": "Confidentialité",
     "terms": "Conditions",
+    "blog": "Blog",
+    "github": "GitHub",
     "copyright": "Tous droits réservés."
+  },
+  "blog": {
+    "title": "Blog",
+    "subtitle": "Des réponses concrètes, sans jargon, pour décider d’un site en Belgique.",
+    "read": "Lire l’article",
+    "back": "Tous les articles"
   },
   "legal": {
     "title": "Mentions légales",
@@ -414,7 +436,7 @@
     "lastUpdated": "Dernière mise à jour : novembre 2026",
     "todo": "TODO(owner) : faire relire ce texte par un conseil si besoin. Structure RGPD, à compléter avec le responsable de traitement exact.",
     "s1t": "1. Responsable",
-    "s1c": "HohoSolutions, contact : info@hohosolutions.com. L’identité complète (forme, adresse, BCE) figure dans les mentions légales dès qu’elle est publiée.",
+    "s1c": "Houdaifa Hamouchi, HohoSolutions, contact : info@hohosolutions.com. L’identité complète (forme, adresse, BCE) figure dans les mentions légales dès qu’elle est publiée.",
     "s2t": "2. Données collectées",
     "s2c": "Via les formulaires : nom, e-mail, téléphone éventuellement, type de projet, budget, message, URL de site si vous la donnez. Journaux techniques minimaux (pages visitées) pour le suivi interne, sans publicité tierce.",
     "s3t": "3. Finalités",

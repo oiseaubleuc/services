@@ -10,8 +10,8 @@ export async function generateMetadata({
   const { locale } = await params
   const t = await getTranslations({ locale, namespace: 'about' })
   return {
-    title: t('title'),
-    description: t('subtitle'),
+    title: t('metaTitle'),
+    description: t('intro'),
     alternates: { canonical: `https://hohosolutions.com/${locale}/about` },
   }
 }

@@ -46,13 +46,15 @@ export async function generateMetadata({
     description: t('description'),
     keywords: t('keywords'),
     robots: { index: true, follow: true },
+    metadataBase: new URL('https://hohosolutions.com'),
     openGraph: {
       title: t('title'),
       description: t('description'),
       url: `https://hohosolutions.com/${locale}`,
       siteName: 'HohoSolutions',
-      locale: locale,
+      locale: locale === 'fr' ? 'fr_BE' : locale === 'nl' ? 'nl_BE' : 'en',
       type: 'website',
+      images: [{ url: '/logos/logo_HS.png', alt: 'HohoSolutions' }],
     },
     alternates: {
       canonical: `https://hohosolutions.com/${locale}`,
@@ -81,7 +83,7 @@ export default async function LocaleLayout({
   const messages = await getMessages()
 
   return (
-    <html lang={locale} className="smooth-scroll">
+    <html lang={locale === 'fr' ? 'fr-BE' : locale === 'nl' ? 'nl-BE' : 'en'} className="smooth-scroll">
       <body className={`${spaceGrotesk.className} antialiased`}>
         <PWARegister />
         <NextIntlClientProvider locale={locale} messages={messages}>

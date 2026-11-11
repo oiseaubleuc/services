@@ -1,4 +1,4 @@
-import { site, hasLegalIdentity } from '@/content/site'
+import { site, hasLegalIdentity, hasFounder } from '@/content/site'
 
 type Faq = { question: string; answer: string }
 
@@ -33,6 +33,15 @@ export default function JsonLd({
       addressCountry: 'BE',
     }
     business.vatID = site.legal.vat
+  }
+
+  if (hasFounder()) {
+    business.founder = {
+      '@type': 'Person',
+      name: site.founder.fullName,
+      url: `${site.url}/${locale}/about`,
+      sameAs: [site.founder.github],
+    }
   }
 
   const faq =

@@ -1,23 +1,33 @@
 # À fournir par le propriétaire
 
-Rien de tout ceci n’est inventé dans le code. Tant qu’un champ est vide, la section correspondante est **masquée**.
+Rien de tout ceci n’est inventé dans le code. Tant qu’un champ est vide, la section correspondante est **masquée** (ou indiquée comme incomplète pour les mentions légales).
 
-## Identité légale (Belgique — obligatoire)
+## Déjà en ligne (ne pas remettre en TODO)
 
-- [ ] Dénomination sociale exacte
-- [ ] Forme juridique (SRL, indépendant, …)
+- Fondateur : Houdaifa Hamouchi (`content/site.ts` → `founder`)
+- WhatsApp / téléphone : +32 451 015 476
+- GitHub : https://github.com/oiseaubleuc
+- Prix publics : 990 / 2 490 / 4 990 € HTVA + sur devis
+- Promesse devis sous 12 h
+
+## Identité légale (Belgique — obligatoire pour les mentions)
+
+- [ ] Forme juridique (indépendant, SRL, …)
 - [ ] Adresse du siège (rue, code postal, ville)
 - [ ] Numéro d’entreprise BCE
 - [ ] Numéro de TVA (BE0…)
-- [ ] Nom du responsable / fondateur
 
-Fichier : `content/site.ts` → `legal` et `founder`.
+Fichier : `content/site.ts` → `legal` (`streetAddress`, `postalCode`, `city`, `bce`, `vat`).  
+Tant que ces champs sont vides, l’adresse et les n° BCE/TVA ne s’affichent pas (le nom Houdaifa Hamouchi — HohoSolutions reste visible).
 
-## Contact
+## Photo
 
-- [ ] Confirmer le numéro WhatsApp / téléphone affiché (`+32 451 01 54 76`)
-- [ ] Photo du fondateur (`public/founder.jpg`) + prénom + 2–3 phrases
-- [ ] URL Cal.com / Calendly si tu veux remplacer le formulaire de rendez-vous interne
+- [ ] Photo du fondateur : déposer `public/founder.jpg` et mettre le chemin dans `site.founder.photo`  
+  Tant que le champ est vide, **aucune photo n’est affichée** (pas de placeholder générique).
+
+## Rendez-vous
+
+- [ ] URL Cal.com / Calendly dans `site.calendlyUrl` si tu veux remplacer le formulaire de rendez-vous interne
 
 ## Offres
 
@@ -38,6 +48,8 @@ Bannière promo : uniquement si tu as une **remise réelle**, une **date de fin*
 - [ ] Avis Google / e-mails clients à coller dans `content/testimonials.ts`
 - [ ] Si un projet est une démo perso, le marquer `demo: true`
 
+Les sections Réalisations et Témoignages sont **masquées** tant que les tableaux sont vides. Ne pas inventer de clients.
+
 ## Pages locales SEO
 
 Une page Bruxelles est rédigée et publiée. Pour les autres, écrire un texte **différent** (pas un copier-coller) puis passer `published: true` dans `content/services.ts` :
@@ -51,17 +63,22 @@ Une page Bruxelles est rédigée et publiée. Pour les autres, écrire un texte 
 
 ## Traductions NL
 
-- [ ] **TODO(owner): relecture NL** des fichiers `messages/nl.json` par un natif (ton, termes belges : KMO, webshop, offerte, BTW)
+- [ ] **TODO(owner): relecture NL** des fichiers `messages/nl.json` et des 3 articles (`content/blog.ts`) par un natif (ton, termes belges : KMO, webshop, offerte, BTW)
 
-## Analytics
+## Légal
 
-- [ ] ID Plausible / Umami / autre (sans cookies de préférence) en variable d’environnement
-- [ ] Vérifier que les events `form_submit`, `whatsapp_click`, `phone_click`, `offer_select`, `audit_request` arrivent bien
+- [ ] Faire relire politique de confidentialité + CGV (squelettes FR/NL/EN)
+- [ ] Analytics sans cookies (Plausible / Umami) : ID en variable d’environnement — sinon pas de bannière cookies pour l’instant
+
+## Mesure
+
+- [ ] IDs d’events (form_submit, whatsapp_click, phone_click, offer_select, audit_request) en variables d’environnement / outil d’analytics
+- [ ] Vérifier que `/api/track` reçoit bien les clics
 
 ## Hors code (acquisition)
 
 - [ ] Google Search Console + soumettre `https://hohosolutions.com/sitemap.xml`
-- [ ] Fiche Google Business Profile
+- [ ] Fiche Google Business Profile (ville réelle, catégorie « Création de sites web »)
 - [ ] Demander un avis Google à chaque client satisfait
 - [ ] Annuaires : Sortlist, Clutch, Infobel / Gouden Gids
 - [ ] Page LinkedIn entreprise + lien vers le site

@@ -27,7 +27,7 @@ export default async function LegalPage({ params }: { params: Promise<{ locale: 
       <dl className="space-y-3">
         <div>
           <dt className="text-white font-medium">{t('company')}</dt>
-          <dd>{ok ? site.legal.legalName : site.name}</dd>
+          <dd>{site.legal.legalName}</dd>
         </div>
         {ok && (
           <>

@@ -4,12 +4,12 @@ export const site = {
   email: 'info@hohosolutions.com',
   whatsapp: '32451015476',
   phone: '+32451015476',
-  phoneDisplay: '+32 451 01 54 76',
+  phoneDisplay: '+32 451 015 476',
   country: 'Belgique',
   areaServed: ['BE'],
   priceRange: '€990–€4990+',
   legal: {
-    legalName: '', // TODO(owner)
+    legalName: 'Houdaifa Hamouchi — HohoSolutions',
     streetAddress: '', // TODO(owner)
     postalCode: '', // TODO(owner)
     city: '', // TODO(owner)
@@ -26,10 +26,11 @@ export const site = {
     eligibility: '',
   },
   founder: {
-    firstName: '', // TODO(owner)
-    role: '',
-    photo: '',
-    bio: '',
+    firstName: 'Houdaifa',
+    lastName: 'Hamouchi',
+    fullName: 'Houdaifa Hamouchi',
+    photo: '', // TODO(owner): public/founder.jpg
+    github: 'https://github.com/oiseaubleuc',
   },
   stats: {
     enabled: false,
@@ -45,14 +46,18 @@ export const site = {
 } as const
 
 export function hasLegalIdentity() {
-  const { legalName, streetAddress, city, bce, vat } = site.legal
-  return Boolean(legalName && streetAddress && city && bce && vat)
+  const { streetAddress, city, bce, vat } = site.legal
+  return Boolean(streetAddress && city && bce && vat)
 }
 
 export function hasFounder() {
-  return Boolean(site.founder.firstName && site.founder.bio)
+  return Boolean(site.founder.firstName)
 }
 
 export function hasPromo() {
   return Boolean(site.promo.enabled && site.promo.label && site.promo.discount && site.promo.endsAt)
+}
+
+export function hasFounderPhoto() {
+  return Boolean(site.founder.photo)
 }

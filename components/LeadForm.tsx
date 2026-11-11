@@ -1,9 +1,11 @@
 'use client'
 
 import { useEffect, useState } from 'react'
+import Link from 'next/link'
 import { useLocale, useTranslations } from 'next-intl'
 import { packages, resolvePackageId } from '@/content/packages'
 import { budgets, projectTypes } from '@/lib/validation'
+import { localizedPath } from '@/lib/paths'
 import FramerButton from './FramerButton'
 
 type Props = {
@@ -217,7 +219,14 @@ export default function LeadForm({ source = 'contact', showSiteUrl = false, comp
           className="mt-1 h-4 w-4 rounded border-white/40 bg-white/10 text-yellow-500 focus:ring-yellow-400"
         />
         <span>
-          {t('gdpr')} <span className="text-yellow-400">{t('required')}</span>
+          {t.rich('gdpr', {
+            privacy: (chunks) => (
+              <Link href={localizedPath(locale, '/privacy')} className="underline underline-offset-2 hover:text-white">
+                {chunks}
+              </Link>
+            ),
+          })}{' '}
+          <span className="text-yellow-400">{t('required')}</span>
         </span>
       </label>
 

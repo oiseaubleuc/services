@@ -7,7 +7,7 @@
   "nav": {
     "services": "Diensten",
     "offer": "Aanbiedingen",
-    "about": "Over ons",
+    "about": "Over mij",
     "contact": "Contact",
     "quote": "Gratis offerte"
   },
@@ -79,7 +79,8 @@
   },
   "founder": {
     "title": "Wie zit achter HohoSolutions",
-    "cta": "Rechtstreeks praten"
+    "bio": "Ik ben Houdaifa. Ik bouw websites voor zelfstandigen en KMO’s in België: offerte binnen 12 u, prijzen op de site, en GDPR die ik ernstig neem — ik heb ook een juridische achtergrond.",
+    "cta": "Meer over mij"
   },
   "faq": {
     "title": "Veelgestelde vragen",
@@ -282,33 +283,46 @@
     }
   },
   "about": {
-    "title": "Over ons",
-    "subtitle": "Een kleine structuur in België. Sites voor mensen die klanten nodig hebben — geen agency-theater.",
+    "title": "Over mij",
+    "metaTitle": "Houdaifa Hamouchi, webontwikkelaar in België",
+    "intro": "Ik ben Houdaifa Hamouchi. Ik ontwikkel websites en applicaties voor zelfstandigen en KMO’s in België, onder de naam HohoSolutions.",
     "story": {
-      "title": "Wat we concreet doen",
-      "description": "HohoSolutions maakt websites en apps voor zelfstandigen en KMO's. We tonen prijzen, antwoorden binnen 12 u, en praten over afspraken, telefoons en verkoop — niet over « digitale oplossingen »."
+      "title": "Mijn parcours",
+      "p1": "Ik ben full-stack ontwikkelaar: Next.js, React, TypeScript, Node.js, Laravel, Prisma. Ik rond een Graduaat Programmeren af aan de Erasmushogeschool Brussel (diploma voorzien in 2027).",
+      "p2": "Van februari tot mei 2025 liep ik stage als backend-ontwikkelaar bij Bpost: Node.js, TypeScript, CI/CD en code reviews in team. Sinds januari 2026 werk ik freelance via HohoSolutions."
+    },
+    "legal": {
+      "title": "Waarom het juridische hier telt",
+      "description": "Ik heb ook een juridische achtergrond, met stages in advocatenkantoren. Dat verandert wat ik oplever: wettelijke vermeldingen, voorwaarden en GDPR zijn geen copy-paste onderaan de pagina. Uw site moet standhouden bij een klant — en bij een controle."
+    },
+    "languages": {
+      "title": "NL, FR, EN",
+      "description": "Nederlands en Frans zijn mijn moedertalen; Engels is professioneel. U hoeft uw brief niet te vertalen: we werken in de taal van uw zaak."
     },
     "how": {
-      "title": "Hoe we werken",
+      "title": "Hoe ik werk",
       "item1": "Schriftelijke offerte vóór we starten",
-      "item2": "U blijft eigenaar van domein en site",
+      "item2": "Domein en site blijven van u",
       "item3": "U wijzigt teksten en beelden na oplevering",
-      "item4": "We blijven bereikbaar (mail, telefoon, WhatsApp)"
+      "item4": "Ik blijf bereikbaar (mail, telefoon, WhatsApp)"
     },
     "tech": {
       "title": "Tools — wat dat voor u verandert",
       "subtitle": "Weinig tools, gekozen voor een resultaat: een snelle site die u kunt laten groeien.",
       "next": "Snelle pagina's, stevige basis-SEO",
+      "react": "Onderhoudbare code, geen vastgeklikt thema",
       "cms": "Een tekst wijzigen zonder ontwikkelaar",
       "payments": "Online betalingen als u verkoopt",
       "hosting": "Live zetten en backups",
+      "legal": "Vermeldingen, cookies, toestemming: het ernstige minimum",
       "analytics": "Weten waar bezoek vandaan komt, zonder iedereen te tracken",
       "seo": "Titels, snelheid, mobiel: wat Google écht bekijkt"
     },
+    "github": "Publieke code op GitHub",
     "cta": "Offerte vragen",
     "ctaSection": {
       "title": "Een gesprek van 20 minuten volstaat om te starten",
-      "description": "Leg uit wat u verkoopt. Wij zeggen of een bedrijfswebsite volstaat, of u meer nodig hebt.",
+      "description": "Leg uit wat u verkoopt. Ik zeg of een bedrijfswebsite volstaat, of u meer nodig hebt.",
       "button": "Schrijven of WhatsApp"
     }
   },
@@ -357,7 +371,7 @@
       "messagePlaceholder": "Wat doet u, en wat moet de site opleveren?",
       "siteUrl": "Huidige website-URL",
       "siteUrlPlaceholder": "https://…",
-      "gdpr": "Ik ga akkoord dat mijn gegevens gebruikt worden om deze aanvraag te beantwoorden.",
+      "gdpr": "Ik ga akkoord dat mijn gegevens gebruikt worden om deze aanvraag te beantwoorden (<privacy>privacybeleid</privacy>).",
       "interestedIn": "Gekozen formule:",
       "submit": "Aanvraag versturen",
       "submitting": "Verzenden…",
@@ -395,7 +409,15 @@
     "legalNotice": "Wettelijke vermeldingen",
     "privacy": "Privacy",
     "terms": "Voorwaarden",
+    "blog": "Blog",
+    "github": "GitHub",
     "copyright": "Alle rechten voorbehouden."
+  },
+  "blog": {
+    "title": "Blog",
+    "subtitle": "Concrete antwoorden, zonder jargon, om te beslissen over een website in België.",
+    "read": "Artikel lezen",
+    "back": "Alle artikelen"
   },
   "legal": {
     "title": "Wettelijke vermeldingen",
@@ -414,7 +436,7 @@
     "lastUpdated": "Laatst bijgewerkt: november 2026",
     "todo": "TODO(owner): laat deze tekst desnoods nalezen. GDPR-skelet; vul de exacte verwerkingsverantwoordelijke in.",
     "s1t": "1. Verantwoordelijke",
-    "s1c": "HohoSolutions, contact: info@hohosolutions.com. Volledige identiteit (vorm, adres, KBO) staat in de wettelijke vermeldingen eens gepubliceerd.",
+    "s1c": "Houdaifa Hamouchi, HohoSolutions, contact: info@hohosolutions.com. Volledige identiteit (vorm, adres, KBO) staat in de wettelijke vermeldingen eens gepubliceerd.",
     "s2t": "2. Gegevens",
     "s2c": "Via formulieren: naam, e-mail, eventueel telefoon, type project, budget, bericht, site-URL als u die geeft. Minimale technische logs (bekeken pagina's) voor interne opvolging, geen externe ads.",
     "s3t": "3. Doelen",

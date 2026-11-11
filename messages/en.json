@@ -79,7 +79,8 @@
   },
   "founder": {
     "title": "Who is behind HohoSolutions",
-    "cta": "Talk directly"
+    "bio": "I’m Houdaifa. I build websites for freelancers and SMEs in Belgium: quotes within 12 hours, published prices, and GDPR taken seriously — I also have a legal background.",
+    "cta": "Read more"
   },
   "faq": {
     "title": "FAQ",
@@ -283,32 +284,45 @@
   },
   "about": {
     "title": "About",
-    "subtitle": "A small Belgian studio. Sites for people who need customers — not agency theatre.",
+    "metaTitle": "Houdaifa Hamouchi, web developer in Belgium",
+    "intro": "I’m Houdaifa Hamouchi. I build websites and applications for freelancers and SMEs in Belgium, under the name HohoSolutions.",
     "story": {
-      "title": "What we actually do",
-      "description": "HohoSolutions builds websites and apps for freelancers and SMEs. We show prices, reply within 12 hours, and talk about calls, bookings and sales — not “digital solutions”."
+      "title": "My background",
+      "p1": "I’m a full-stack developer: Next.js, React, TypeScript, Node.js, Laravel, Prisma. I’m completing a Graduaat Programmeren at Erasmushogeschool Brussel (degree expected in 2027).",
+      "p2": "From February to May 2025 I interned as a backend developer at Bpost: Node.js, TypeScript, CI/CD and team code reviews. I’ve been freelancing through HohoSolutions since January 2026."
+    },
+    "legal": {
+      "title": "Why the legal side matters here",
+      "description": "I also have a legal background, including internships at law firms. That changes what I deliver: legal notice, terms and GDPR are not a copy-paste in the footer. Your site should stand up to a client — and to a check."
+    },
+    "languages": {
+      "title": "FR, NL, EN",
+      "description": "French and Dutch are my native languages; English is professional. You don’t have to translate your brief: we work in the language of your business."
     },
     "how": {
-      "title": "How we work",
+      "title": "How I work",
       "item1": "Written quote before we start",
-      "item2": "You own the domain and the site",
+      "item2": "The domain and the site stay yours",
       "item3": "You can edit texts and images after delivery",
-      "item4": "We stay reachable (email, phone, WhatsApp)"
+      "item4": "I stay reachable (email, phone, WhatsApp)"
     },
     "tech": {
       "title": "Tools — what they change for you",
       "subtitle": "Few tools, chosen for a result: a fast site you can grow.",
       "next": "Fast pages, solid basic SEO",
+      "react": "Maintainable code, not a locked theme",
       "cms": "Change a text without a developer",
       "payments": "Online payments if you sell",
       "hosting": "Go-live and backups",
+      "legal": "Notices, cookies, consent: the serious minimum",
       "analytics": "See where visits come from, without tracking everyone",
       "seo": "Titles, speed, mobile: what Google actually looks at"
     },
+    "github": "Public code on GitHub",
     "cta": "Request a quote",
     "ctaSection": {
       "title": "A 20-minute call is enough to start",
-      "description": "Explain what you sell. We will say if a showcase site is enough, or if you need more.",
+      "description": "Explain what you sell. I’ll say if a showcase site is enough, or if you need more.",
       "button": "Write or WhatsApp"
     }
   },
@@ -357,7 +371,7 @@
       "messagePlaceholder": "What do you do, and what should the site achieve?",
       "siteUrl": "Current website URL",
       "siteUrlPlaceholder": "https://…",
-      "gdpr": "I agree that my details are used to reply to this request.",
+      "gdpr": "I agree that my details are used to reply to this request (<privacy>privacy policy</privacy>).",
       "interestedIn": "Selected package:",
       "submit": "Send request",
       "submitting": "Sending…",
@@ -395,7 +409,15 @@
     "legalNotice": "Legal notice",
     "privacy": "Privacy",
     "terms": "Terms",
+    "blog": "Blog",
+    "github": "GitHub",
     "copyright": "All rights reserved."
+  },
+  "blog": {
+    "title": "Blog",
+    "subtitle": "Straight answers, no jargon, to decide on a website in Belgium.",
+    "read": "Read the article",
+    "back": "All articles"
   },
   "legal": {
     "title": "Legal notice",
@@ -414,7 +436,7 @@
     "lastUpdated": "Last updated: November 2026",
     "todo": "TODO(owner): have this text reviewed if needed. GDPR skeleton; fill in the exact controller identity.",
     "s1t": "1. Controller",
-    "s1c": "HohoSolutions, contact: info@hohosolutions.com. Full identity (legal form, address, company number) appears in the legal notice once published.",
+    "s1c": "Houdaifa Hamouchi, HohoSolutions, contact: info@hohosolutions.com. Full identity (legal form, address, company number) appears in the legal notice once published.",
     "s2t": "2. Data we collect",
     "s2c": "Via forms: name, email, optional phone, project type, budget, message, site URL if you provide it. Minimal technical logs (pages viewed) for internal follow-up, no third-party ads.",
     "s3t": "3. Purposes",
