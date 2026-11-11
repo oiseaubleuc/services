@@ -1,0 +1,480 @@
+{
+  "metadata": {
+    "title": "Website laten maken in België | HohoSolutions — Vanaf €990",
+    "description": "Websites voor zelfstandigen en KMO's in België. Bedrijfswebsite, webshop, op maat. Gratis offerte binnen 12 u. Duidelijke prijzen vanaf €990 excl. BTW.",
+    "keywords": "website laten maken belgië, kmo website, webdesigner belgië, bedrijfswebsite prijs, webshop belgië"
+  },
+  "nav": {
+    "services": "Diensten",
+    "offer": "Aanbiedingen",
+    "about": "Over mij",
+    "contact": "Contact",
+    "quote": "Gratis offerte"
+  },
+  "hero": {
+    "title": "Website laten maken voor zelfstandigen en KMO's in België",
+    "subtitle": "Een site die klanten oplevert — niet alleen een mooie pagina.",
+    "tagline": "Vanaf €990 excl. BTW · Gratis offerte in 12 u · Gevestigd in België",
+    "ctaPrimary": "Ontvang mijn gratis offerte",
+    "ctaSecondary": "Chat op WhatsApp",
+    "reassurance": "Antwoord binnen 12 u · Vrijblijvend · Gevestigd in België"
+  },
+  "forWho": {
+    "title": "Voor wie?",
+    "subtitle": "Zelfde vak, andere problemen. Zo helpen we.",
+    "freelancers": {
+      "title": "Zelfstandigen",
+      "problem": "Men vindt u moeilijk of niet online.",
+      "solution": "Een duidelijke site, een contactformulier, en een Google-fiche die voor u werkt."
+    },
+    "businesses": {
+      "title": "Winkels & restaurants",
+      "problem": "Klanten zoeken uren, menu en adres — en landen ergens anders.",
+      "solution": "Site met openingsuren, locatie, menu of catalogus, en contact in één tik."
+    },
+    "companies": {
+      "title": "KMO's",
+      "problem": "Uw site levert geen aanvragen op, of u hebt er geen.",
+      "solution": "Nuttige pagina's, formulieren, en een eenvoudig pad naar een offerte of een belletje."
+    },
+    "ecommerce": {
+      "title": "E-commerce",
+      "problem": "U verkoopt al, maar niet (genoeg) online.",
+      "solution": "Webshop met betalingen, voorraad en orderopvolging — een écht project, geen opgeblazen platform."
+    }
+  },
+  "projects": {
+    "title": "Realisaties",
+    "subtitle": "Concrete projecten, met een meetbaar resultaat.",
+    "cta": "Alle realisaties",
+    "demo": "Demoproject"
+  },
+  "process": {
+    "title": "Hoe het werkt",
+    "subtitle": "Vier stappen. Geen jargon, een duidelijke planning.",
+    "step1": {
+      "title": "We praten",
+      "description": "Bel of WhatsApp: uw klanten, uw aanbod, wat de site moet opleveren.",
+      "duration": "30–60 min"
+    },
+    "step2": {
+      "title": "Offerte & planning",
+      "description": "U krijgt een gedetailleerde offerte en een kalender. Daarna beslist u, zonder druk.",
+      "duration": "Binnen 12 u"
+    },
+    "step3": {
+      "title": "We bouwen",
+      "description": "U ziet de voortgang. Teksten en design worden bijgestuurd voor de lancering.",
+      "duration": "2–6 weken"
+    },
+    "step4": {
+      "title": "Live & erna",
+      "description": "Online, korte uitleg, en we blijven bereikbaar na de oplevering.",
+      "duration": "Opvolging"
+    }
+  },
+  "testimonials": {
+    "title": "Klantenreviews",
+    "subtitle": "Alleen echte feedback."
+  },
+  "founder": {
+    "title": "Wie zit achter HohoSolutions",
+    "bio": "Ik ben Houdaifa. Ik bouw websites voor zelfstandigen en KMO’s in België: offerte binnen 12 u, prijzen op de site, en GDPR die ik ernstig neem — ik heb ook een juridische achtergrond.",
+    "cta": "Meer over mij"
+  },
+  "faq": {
+    "title": "Veelgestelde vragen",
+    "subtitle": "Vragen die we écht krijgen vóór een offerte.",
+    "q1": {
+      "question": "Hoeveel kost een website?",
+      "answer": "Vanaf €990 excl. BTW voor een bedrijfswebsite. De prijs hangt af van pagina's, functies en design. U krijgt binnen 12 u een gratis, gedetailleerde offerte."
+    },
+    "q2": {
+      "question": "Wat is de levertijd?",
+      "answer": "Een eenvoudige bedrijfswebsite: meestal 2–3 weken. Een webshop of groter project: 4–6 weken. De planning staat in de offerte, voor we starten."
+    },
+    "q3": {
+      "question": "Wie doet de hosting?",
+      "answer": "Wij kunnen de site hosten op een snelle server met backups, of werken met de host die u al hebt. Dat staat in de offerte."
+    },
+    "q4": {
+      "question": "Kan ik de site zelf aanpassen?",
+      "answer": "Ja. U wijzigt teksten en beelden zonder te coderen. We tonen hoe, eens de site live is."
+    },
+    "q5": {
+      "question": "Wat gebeurt er na de oplevering?",
+      "answer": "Eén maand support is inbegrepen voor vragen en kleine aanpassingen. Daarna is maandelijkse onderhoud optioneel."
+    },
+    "q6": {
+      "question": "Ben ik eigenaar van de domeinnaam?",
+      "answer": "Ja. Domein en inhoud zijn van u. Wij houden geen rechten op uw merk."
+    },
+    "q7": {
+      "question": "Zijn de prijzen excl. of incl. BTW?",
+      "answer": "Alle prijzen op de site zijn excl. BTW. Belgische BTW van 21% komt erbovenop, tenzij u btw-plichtig bent met een geldig intracommunautair nummer."
+    },
+    "q8": {
+      "question": "Hoe betaal ik?",
+      "answer": "In principe: 50% bij bestelling, saldo bij oplevering, via overschrijving. Spreiding is mogelijk boven €3.000 excl. BTW."
+    }
+  },
+  "cta": {
+    "final": {
+      "title": "Stuur uw project, ontvang een offerte binnen 12 u",
+      "subtitle": "Gratis, vrijblijvend. WhatsApp als u sneller wilt schrijven.",
+      "button": "Ontvang mijn gratis offerte"
+    }
+  },
+  "offersPreview": {
+    "title": "Prijzen op de pagina, niet achter een formulier",
+    "subtitle": "Drie formules plus maatwerk. Alle bedragen excl. BTW.",
+    "from": "vanaf",
+    "htva": "excl. BTW",
+    "cta": "Vergelijk de formules"
+  },
+  "services": {
+    "title": "Wat we doen",
+    "subtitle": "Bedrijfswebsites, webshops, portfolio's, herwerkingen en apps — voor zelfstandigen en KMO's in België.",
+    "cta": "Bekijk deze formule",
+    "from": "Vanaf",
+    "quote": "Op offerte",
+    "vitrine": {
+      "title": "Bedrijfswebsite",
+      "short": "Gevonden, begrepen, gecontacteerd.",
+      "h1": "Bedrijfswebsite laten maken in België",
+      "problem": "Zonder site vergelijken klanten uw concurrenten. Met een trage of verouderde site haken ze af.",
+      "included": "Duidelijke pagina's, mobiel, formulier, basis-SEO, live zetten.",
+      "faqQ": "Volstaat een bedrijfswebsite?",
+      "faqA": "Ja als u geen catalogus online verkoopt. Wat telt: men snapt wat u doet en kan u binnen 30 seconden mailen."
+    },
+    "ecommerce": {
+      "title": "Webshop",
+      "short": "Online verkopen, zonder gedoe.",
+      "h1": "Webshop laten maken in België",
+      "problem": "Alleen in de winkel of op socials verkopen mist mensen die 's avonds bestellen.",
+      "included": "Catalogus, winkelmand, betaling, ordermails, eenvoudig beheer.",
+      "faqQ": "Shopify, WooCommerce of maatwerk?",
+      "faqA": "We kiezen het tool bij uw volume en producten — niet bij de hype. Doel: u voegt een product toe zonder ons te bellen."
+    },
+    "portfolio": {
+      "title": "Portfolio-site",
+      "short": "Werk tonen, opdrachten binnenhalen.",
+      "h1": "Portfolio-website laten maken",
+      "problem": "Een PDF of Instagram is geen pagina op uw naam die men kan googelen.",
+      "included": "Galerie, over ons, contact, mobiel, live zetten.",
+      "faqQ": "Ook voor fotografen en creatieven?",
+      "faqA": "Ja. De site toont 8 tot 20 sterke projecten, niet alles. We selecteren samen."
+    },
+    "custom-app": {
+      "title": "Webapp op maat",
+      "short": "Een business-tool, geen brochure.",
+      "h1": "Webapplicatie op maat in België",
+      "problem": "Excel, mails en drie programma's die niet praten: verloren tijd.",
+      "included": "Kadering, gebruikers, businessfuncties, hosting, opleiding.",
+      "faqQ": "Vanaf welk budget?",
+      "faqA": "Meestal vanaf €4.990 excl. BTW. We splitsen in fases zodat u betaalt wat u echt gebruikt."
+    },
+    "refonte": {
+      "title": "Website vernieuwen",
+      "short": "Houden wat werkt, de rest weg.",
+      "h1": "Website laten vernieuwen in België",
+      "problem": "Uw site is zes jaar oud, traag, en Google toont hem nauwelijks.",
+      "included": "Snelle audit, nieuw design, hergebruikte inhoud, redirects, live.",
+      "faqQ": "Moet alles opnieuw?",
+      "faqA": "Niet altijd. We houden wat converteert (teksten, reviews, pagina's die Google mag) en veranderen de rest."
+    },
+    "maintenance": {
+      "title": "Onderhoud",
+      "short": "Updates, backups, iemand om te bellen.",
+      "h1": "Website-onderhoud",
+      "problem": "Een site zonder updates crasht, wordt gehackt, of zakt in Google.",
+      "included": "Backups, updates, kleine fixes, een aanspreekpunt.",
+      "faqQ": "Is het verplicht?",
+      "faqA": "Nee. U kunt het zelf. Onderhoud is voor wie er niet aan wil denken."
+    }
+  },
+  "local": {
+    "h1": "Website laten maken in {city}",
+    "subtitle": "Voor zelfstandigen en KMO's in {city} en omgeving — offerte binnen 12 u.",
+    "why": "Waarom een lokale site telt",
+    "cta": "Offerte vragen voor {city}",
+    "faqQ": "Werken jullie in {city}?",
+    "faqA": "Ja. Het werk is op afstand (video, WhatsApp). Een gesprek ter plaatse kan, afhankelijk van het project."
+  },
+  "offer": {
+    "title": "Formules website laten maken",
+    "subtitle": "Startprijzen, excl. BTW. De offerte legt de scope vast vóór elke betaling.",
+    "popular": "Aanbevolen voor KMO's",
+    "cta": "Kies deze formule",
+    "ctaProposal": "Stuur mijn briefing",
+    "contact": "Stel een vraag",
+    "note": "Elk project krijgt een offerte per lot. Onderstaande prijzen zijn startpunten, geen gesloten forfaits als de nood groter is.",
+    "htva": "excl. BTW",
+    "vatNote": "Belgische BTW 21% extra, tenzij verlegging van heffing.",
+    "delivery": "Levertijd",
+    "pages": "Pagina's inbegrepen",
+    "revisions": "Correctierondes",
+    "notIncluded": "Niet inbegrepen",
+    "payment": "Betaling",
+    "compareTitle": "Formules vergelijken",
+    "compare": {
+      "price": "Startprijs",
+      "audience": "Voor wie",
+      "design": "Design",
+      "seo": "SEO",
+      "support": "Support na livegang"
+    },
+    "guarantee": {
+      "title": "Offerte binnen 12 u",
+      "description": "Na uw bericht krijgt u een gedetailleerde offerte en een planning. Geen agressieve opvolging. U beslist."
+    },
+    "packages": {
+      "essential": {
+        "name": "Essentieel",
+        "description": "Een duidelijke, mobiele site live — vindbaar en makkelijk te contacteren.",
+        "highlight": "Zelfstandigen en kleine projecten",
+        "feature1": "Design op basis van een template, in uw kleuren",
+        "feature2": "Uw teksten en beelden geïntegreerd",
+        "feature3": "Basis-SEO (titels, snelheid, mobiel)",
+        "feature4": "Korte opleiding om inhoud te wijzigen",
+        "feature5": "Responsive site en basis-GDPR-vermeldingen",
+        "feature6": "1 maand support na livegang"
+      },
+      "professional": {
+        "name": "Professioneel",
+        "description": "Een site in uw beeld, gebouwd om aanvragen te genereren.",
+        "highlight": "KMO's die meer contacten willen",
+        "feature1": "Design op maat",
+        "feature2": "Visuele identiteit (logo, kleuren, typo) indien nodig",
+        "feature3": "Hulp bij het schrijven van kernpagina's",
+        "feature4": "Zorgvuldige SEO (structuur, inhoud, snelheid)",
+        "feature5": "Backups en basisbeveiliging",
+        "feature6": "Opleiding + 2 maanden support",
+        "feature7": "Snel, mobiel, klaar om te groeien",
+        "feature8": "Formulieren en extra functies volgens offerte"
+      },
+      "enterprise": {
+        "name": "Onderneming",
+        "description": "Een groter platform: privé-zones, tools, koppelingen.",
+        "highlight": "Projecten met businessfuncties",
+        "feature1": "Volledig design en visuele identiteit",
+        "feature2": "Architectuur voor uw tool, geen thema",
+        "feature3": "Front-end- en back-end-ontwikkeling",
+        "feature4": "Geavanceerde SEO en contentstructuur",
+        "feature5": "Versterkte hosting en beveiliging",
+        "feature6": "Opleiding + 3 maanden prioritaire support",
+        "feature7": "Koppelingen met andere software indien nodig",
+        "feature8": "Performantie opgevolgd na livegang",
+        "feature9": "Duidelijke beheeromgeving",
+        "feature10": "In fases gekaderd met u"
+      },
+      "custom": {
+        "name": "Op offerte",
+        "priceLabel": "Op offerte",
+        "description": "U beschrijft nood en budget. Wij stellen een plan in fases voor.",
+        "highlight": "Bijzondere gevallen",
+        "feature1": "U stuurt een briefing of beperkingen",
+        "feature2": "Kaderingsworkshop",
+        "feature3": "Oplevering in fases met mijlpalen",
+        "feature4": "Gebruikersaccounts en dashboard indien nodig",
+        "feature5": "API's en hosting volgens project",
+        "feature6": "Documentatie en overdracht"
+      }
+    }
+  },
+  "about": {
+    "title": "Over mij",
+    "metaTitle": "Houdaifa Hamouchi, webontwikkelaar in België",
+    "intro": "Ik ben Houdaifa Hamouchi. Ik ontwikkel websites en applicaties voor zelfstandigen en KMO’s in België, onder de naam HohoSolutions.",
+    "story": {
+      "title": "Mijn parcours",
+      "p1": "Ik ben full-stack ontwikkelaar: Next.js, React, TypeScript, Node.js, Laravel, Prisma. Ik rond een Graduaat Programmeren af aan de Erasmushogeschool Brussel (diploma voorzien in 2027).",
+      "p2": "Van februari tot mei 2025 liep ik stage als backend-ontwikkelaar bij Bpost: Node.js, TypeScript, CI/CD en code reviews in team. Sinds januari 2026 werk ik freelance via HohoSolutions."
+    },
+    "legal": {
+      "title": "Waarom het juridische hier telt",
+      "description": "Ik heb ook een juridische achtergrond, met stages in advocatenkantoren. Dat verandert wat ik oplever: wettelijke vermeldingen, voorwaarden en GDPR zijn geen copy-paste onderaan de pagina. Uw site moet standhouden bij een klant — en bij een controle."
+    },
+    "languages": {
+      "title": "NL, FR, EN",
+      "description": "Nederlands en Frans zijn mijn moedertalen; Engels is professioneel. U hoeft uw brief niet te vertalen: we werken in de taal van uw zaak."
+    },
+    "how": {
+      "title": "Hoe ik werk",
+      "item1": "Schriftelijke offerte vóór we starten",
+      "item2": "Domein en site blijven van u",
+      "item3": "U wijzigt teksten en beelden na oplevering",
+      "item4": "Ik blijf bereikbaar (mail, telefoon, WhatsApp)"
+    },
+    "tech": {
+      "title": "Tools — wat dat voor u verandert",
+      "subtitle": "Weinig tools, gekozen voor een resultaat: een snelle site die u kunt laten groeien.",
+      "next": "Snelle pagina's, stevige basis-SEO",
+      "react": "Onderhoudbare code, geen vastgeklikt thema",
+      "cms": "Een tekst wijzigen zonder ontwikkelaar",
+      "payments": "Online betalingen als u verkoopt",
+      "hosting": "Live zetten en backups",
+      "legal": "Vermeldingen, cookies, toestemming: het ernstige minimum",
+      "analytics": "Weten waar bezoek vandaan komt, zonder iedereen te tracken",
+      "seo": "Titels, snelheid, mobiel: wat Google écht bekijkt"
+    },
+    "github": "Publieke code op GitHub",
+    "cta": "Offerte vragen",
+    "ctaSection": {
+      "title": "Een gesprek van 20 minuten volstaat om te starten",
+      "description": "Leg uit wat u verkoopt. Ik zeg of een bedrijfswebsite volstaat, of u meer nodig hebt.",
+      "button": "Schrijven of WhatsApp"
+    }
+  },
+  "contact": {
+    "title": "Offerte vragen",
+    "subtitle": "Antwoord binnen 12 werkuren. Velden met * zijn verplicht.",
+    "tabs": {
+      "message": "Offerte",
+      "appointment": "Afspraak"
+    },
+    "whatsappMessage": "Liever WhatsApp? Zelfde nummer, vaak sneller.",
+    "phoneLabel": "Telefoon",
+    "emailLabel": "E-mail",
+    "responseTime": "Ik antwoord binnen 12 werkuren.",
+    "form": {
+      "name": "Naam",
+      "namePlaceholder": "Uw naam",
+      "email": "E-mail",
+      "emailPlaceholder": "u@bedrijf.be",
+      "phone": "Telefoon",
+      "phoneOptional": "optioneel",
+      "phonePlaceholder": "+32 …",
+      "projectType": "Welk type site?",
+      "projectTypePlaceholder": "Kiezen…",
+      "projectTypes": {
+        "vitrine": "Bedrijfswebsite",
+        "ecommerce": "Webshop",
+        "portfolio": "Portfolio",
+        "custom": "Applicatie / business-tool",
+        "refonte": "Herwerking van een bestaande site",
+        "maintenance": "Onderhoud",
+        "other": "Andere"
+      },
+      "budget": "Indicatief budget",
+      "budgetPlaceholder": "Optioneel",
+      "budgets": {
+        "under-1000": "Onder €1.000",
+        "1000-2500": "€1.000 – €2.500",
+        "2500-5000": "€2.500 – €5.000",
+        "5000-plus": "Meer dan €5.000",
+        "unknown": "Nog niet zeker"
+      },
+      "package": "Formule",
+      "packageNone": "Nog niet gekozen",
+      "message": "Bericht",
+      "messagePlaceholder": "Wat doet u, en wat moet de site opleveren?",
+      "siteUrl": "Huidige website-URL",
+      "siteUrlPlaceholder": "https://…",
+      "gdpr": "Ik ga akkoord dat mijn gegevens gebruikt worden om deze aanvraag te beantwoorden (<privacy>privacybeleid</privacy>).",
+      "interestedIn": "Gekozen formule:",
+      "submit": "Aanvraag versturen",
+      "submitting": "Verzenden…",
+      "success": "Ontvangen. Ik antwoord binnen 12 werkuren.",
+      "error": "Verzenden mislukt. Probeer opnieuw, of mail / WhatsApp.",
+      "required": "Verplicht"
+    }
+  },
+  "appointment": {
+    "title": "Afspraak maken",
+    "subtitle": "Weekdagen, 13 u – 19 u.",
+    "selectDate": "Datum",
+    "selectTime": "Uur",
+    "contactInfo": "Uw gegevens",
+    "message": "Bericht (optioneel)",
+    "messagePlaceholder": "In twee zinnen: uw activiteit en wat u van de site verwacht.",
+    "confirm": "Afspraak bevestigen",
+    "submitting": "Boeken…",
+    "success": "Afspraak genoteerd. U krijgt een bevestigingsmail.",
+    "error": "Boeken mislukt. Probeer opnieuw of WhatsApp.",
+    "pickTime": "Kies ook nog een uur."
+  },
+  "audit": {
+    "title": "Gratis website-audit",
+    "subtitle": "Stuur de URL. Binnen 48 u krijgt u een concreet verslag: duidelijkheid, mobiel, contact, en 3 prioriteiten.",
+    "cta": "Audit aanvragen",
+    "success": "URL ontvangen. Feedback binnen 48 werkuren."
+  },
+  "footer": {
+    "description": "Websites voor zelfstandigen en KMO's in België.",
+    "quickLinks": "Links",
+    "contact": "Contact",
+    "email": "info@hohosolutions.com",
+    "whatsapp": "WhatsApp",
+    "legalNotice": "Wettelijke vermeldingen",
+    "privacy": "Privacy",
+    "terms": "Voorwaarden",
+    "blog": "Blog",
+    "github": "GitHub",
+    "copyright": "Alle rechten voorbehouden."
+  },
+  "blog": {
+    "title": "Blog",
+    "subtitle": "Concrete antwoorden, zonder jargon, om te beslissen over een website in België.",
+    "read": "Artikel lezen",
+    "back": "Alle artikelen"
+  },
+  "legal": {
+    "title": "Wettelijke vermeldingen",
+    "missing": "De identificatie van de onderneming (adres, KBO, BTW) wordt hier gepubliceerd zodra ze is bezorgd.",
+    "company": "Benaming",
+    "address": "Zetel",
+    "bce": "Ondernemingsnummer (KBO)",
+    "vat": "BTW-nummer",
+    "email": "E-mail",
+    "phone": "Telefoon",
+    "hosting": "Hosting",
+    "hostingValue": "Vercel Inc., 440 N Barranca Ave #4133, Covina, CA 91723, VS — volgens de huidige deployment."
+  },
+  "privacy": {
+    "title": "Privacybeleid",
+    "lastUpdated": "Laatst bijgewerkt: november 2026",
+    "todo": "TODO(owner): laat deze tekst desnoods nalezen. GDPR-skelet; vul de exacte verwerkingsverantwoordelijke in.",
+    "s1t": "1. Verantwoordelijke",
+    "s1c": "Houdaifa Hamouchi, HohoSolutions, contact: info@hohosolutions.com. Volledige identiteit (vorm, adres, KBO) staat in de wettelijke vermeldingen eens gepubliceerd.",
+    "s2t": "2. Gegevens",
+    "s2c": "Via formulieren: naam, e-mail, eventueel telefoon, type project, budget, bericht, site-URL als u die geeft. Minimale technische logs (bekeken pagina's) voor interne opvolging, geen externe ads.",
+    "s3t": "3. Doelen",
+    "s3c": "Uw offerte-, audit- of afspraakaanvraag beantwoorden, een contract uitvoeren als u klant wordt, en de site verbeteren (nuttige pagina's, contactgraad).",
+    "s4t": "4. Rechtsgrond",
+    "s4c": "Precontractuele stappen op uw verzoek; gerechtvaardigd belang voor interne statistiek; wettelijke verplichting (facturatie) waar van toepassing; toestemming voor de GDPR-checkbox.",
+    "s5t": "5. Bewaring en ontvangers",
+    "s5c": "Aanvragen worden bewaard voor commerciële opvolging en daarna gearchiveerd volgens boekhoudregels. Ze worden niet verkocht. Verwerkers: e-mail (SMTP), hosting, eventueel agenda voor afspraken.",
+    "s6t": "6. Uw rechten",
+    "s6c": "Inzage, rectificatie, wissing, beperking, bezwaar, overdraagbaarheid. Schrijf naar info@hohosolutions.com. U kunt ook de Gegevensbeschermingsautoriteit (GBA, België) contacteren."
+  },
+  "terms": {
+    "title": "Algemene voorwaarden",
+    "lastUpdated": "Laatst bijgewerkt: november 2026",
+    "todo": "TODO(owner): laat deze AV valideren. Alleen een skelet.",
+    "s1t": "1. Voorwerp",
+    "s1c": "Deze voorwaarden dekken het maken, herwerken, hosten of onderhouden van sites en apps door HohoSolutions voor professionele klanten in België.",
+    "s2t": "2. Offerte en bestelling",
+    "s2c": "Schriftelijke offerte vóór het werk. De bestelling is vast na aanvaarding van de offerte en, tenzij anders afgesproken, betaling van het voorschot.",
+    "s3t": "3. Prijzen en BTW",
+    "s3c": "Publieke prijzen zijn excl. BTW. Toepasselijke Belgische BTW wordt op de factuur toegevoegd, tenzij verlegging.",
+    "s4t": "4. Levering",
+    "s4c": "Termijnen in de offerte zijn indicatief en lopen na ontvangst van de nodige inhoud (teksten, logo's, toegangen).",
+    "s5t": "5. Eigendom",
+    "s5c": "Na betaling van het saldo hebt u gebruiksrechten op de geleverde site. Tools, libraries en methodes van HohoSolutions blijven van ons.",
+    "s6t": "6. Toepasselijk recht",
+    "s6c": "Belgisch recht. Geschillen: bevoegde rechtbanken van de zetel van HohoSolutions, onverminderd dwingende consumentenregels waar die gelden."
+  },
+  "notFound": {
+    "title": "Pagina niet gevonden",
+    "text": "Deze link bestaat niet meer, of het adres is onvolledig.",
+    "home": "Terug naar home",
+    "services": "Diensten bekijken",
+    "contact": "Offerte vragen"
+  },
+  "common": {
+    "learnMore": "Meer info",
+    "required": "*",
+    "close": "Sluiten"
+  }
+}

@@ -1,0 +1,480 @@
+{
+  "metadata": {
+    "title": "Website creation in Belgium | HohoSolutions — From €990",
+    "description": "Websites for freelancers and SMEs in Belgium. Showcase, e-commerce, custom. Free quote within 12 hours. Clear prices from €990 excl. VAT.",
+    "keywords": "website creation belgium, SME website, web designer belgium, showcase site price, e-commerce belgium"
+  },
+  "nav": {
+    "services": "Services",
+    "offer": "Offers",
+    "about": "About",
+    "contact": "Contact",
+    "quote": "Free quote"
+  },
+  "hero": {
+    "title": "Website creation for freelancers and SMEs in Belgium",
+    "subtitle": "A site that brings in customers — not just a pretty page.",
+    "tagline": "From €990 excl. VAT · Free quote in 12 hours · Based in Belgium",
+    "ctaPrimary": "Get my free quote",
+    "ctaSecondary": "Chat on WhatsApp",
+    "reassurance": "Reply within 12 hours · No obligation · Based in Belgium"
+  },
+  "forWho": {
+    "title": "Who is this for?",
+    "subtitle": "Same craft, different problems. Here is how we help.",
+    "freelancers": {
+      "title": "Freelancers",
+      "problem": "People cannot find you online — or not easily.",
+      "solution": "A clear site, a contact form, and a Google listing that works for you."
+    },
+    "businesses": {
+      "title": "Shops & restaurants",
+      "problem": "Customers look for hours, the menu and the address — and land somewhere else.",
+      "solution": "A site with hours, location, menu or catalogue, and one-tap contact."
+    },
+    "companies": {
+      "title": "SMEs",
+      "problem": "Your site does not generate enquiries, or you have none.",
+      "solution": "Useful pages, forms, and a simple path to a quote or a call."
+    },
+    "ecommerce": {
+      "title": "E-commerce",
+      "problem": "You already sell, but not (enough) online.",
+      "solution": "A shop with payments, stock and order tracking — a real project, not bloat."
+    }
+  },
+  "projects": {
+    "title": "Work",
+    "subtitle": "Real projects, with a measurable result.",
+    "cta": "See all work",
+    "demo": "Demo project"
+  },
+  "process": {
+    "title": "How it works",
+    "subtitle": "Four steps. No jargon, a clear timeline.",
+    "step1": {
+      "title": "We talk",
+      "description": "Call or WhatsApp: your customers, your offer, what the site must bring in.",
+      "duration": "30–60 min"
+    },
+    "step2": {
+      "title": "Quote & plan",
+      "description": "You get a detailed quote and a schedule. You decide after that, no pressure.",
+      "duration": "Within 12 hours"
+    },
+    "step3": {
+      "title": "We build",
+      "description": "You see progress. Copy and design are adjusted before launch.",
+      "duration": "2–6 weeks"
+    },
+    "step4": {
+      "title": "Live & after",
+      "description": "Launch, a short walkthrough, and we stay reachable after delivery.",
+      "duration": "Follow-up"
+    }
+  },
+  "testimonials": {
+    "title": "Client reviews",
+    "subtitle": "Real feedback only."
+  },
+  "founder": {
+    "title": "Who is behind HohoSolutions",
+    "bio": "I’m Houdaifa. I build websites for freelancers and SMEs in Belgium: quotes within 12 hours, published prices, and GDPR taken seriously — I also have a legal background.",
+    "cta": "Read more"
+  },
+  "faq": {
+    "title": "FAQ",
+    "subtitle": "Questions we actually get before a quote.",
+    "q1": {
+      "question": "How much does a website cost?",
+      "answer": "From €990 excl. VAT for a showcase site. Price depends on pages, features and design. You get a free, detailed quote within 12 hours."
+    },
+    "q2": {
+      "question": "How long does delivery take?",
+      "answer": "A simple showcase site: usually 2–3 weeks. A shop or larger project: 4–6 weeks. The schedule is fixed in the quote before we start."
+    },
+    "q3": {
+      "question": "Who handles hosting?",
+      "answer": "We can host the site on a fast, backed-up server, or work with the host you already have. It is stated in the quote."
+    },
+    "q4": {
+      "question": "Can I edit the site myself?",
+      "answer": "Yes. You can change texts and images without coding. We show you how once the site is live."
+    },
+    "q5": {
+      "question": "What happens after delivery?",
+      "answer": "One month of support is included for questions and small tweaks. Monthly maintenance is optional after that."
+    },
+    "q6": {
+      "question": "Do I own the domain name?",
+      "answer": "Yes. The domain and the site content are yours. We keep no rights to your brand."
+    },
+    "q7": {
+      "question": "Are prices excl. or incl. VAT?",
+      "answer": "All prices on this site are excl. VAT. Belgian VAT at 21% is added, unless you are VAT-registered with a valid intra-Community number."
+    },
+    "q8": {
+      "question": "How do I pay?",
+      "answer": "As a rule: 50% on order, balance on delivery, by bank transfer. Instalments are possible above €3,000 excl. VAT."
+    }
+  },
+  "cta": {
+    "final": {
+      "title": "Send your project, get a quote within 12 hours",
+      "subtitle": "Free, no obligation. WhatsApp if you prefer to write faster.",
+      "button": "Get my free quote"
+    }
+  },
+  "offersPreview": {
+    "title": "Prices on the page, not behind a form",
+    "subtitle": "Three packages plus custom work. All amounts excl. VAT.",
+    "from": "from",
+    "htva": "excl. VAT",
+    "cta": "Compare offers"
+  },
+  "services": {
+    "title": "What we do",
+    "subtitle": "Showcase sites, shops, portfolios, redesigns and apps — for freelancers and SMEs in Belgium.",
+    "cta": "See this offer",
+    "from": "From",
+    "quote": "On quote",
+    "vitrine": {
+      "title": "Showcase website",
+      "short": "Be found, understood, contacted.",
+      "h1": "Showcase website creation in Belgium",
+      "problem": "Without a site, customers compare your competitors. With a slow or dated one, they leave.",
+      "included": "Clear pages, mobile, form, basic SEO, go-live.",
+      "faqQ": "Is a showcase site enough?",
+      "faqA": "Yes if you do not sell a catalogue online. What matters: people understand what you do and can write to you in 30 seconds."
+    },
+    "ecommerce": {
+      "title": "E-commerce",
+      "short": "Sell online without bloat.",
+      "h1": "E-commerce website creation in Belgium",
+      "problem": "Selling only in-store or on social media misses people who order in the evening.",
+      "included": "Catalogue, cart, payment, order emails, simple admin.",
+      "faqQ": "Shopify, WooCommerce or custom?",
+      "faqA": "We pick the tool for your volume and products — not for the trend. Goal: you can add a product without calling us."
+    },
+    "portfolio": {
+      "title": "Portfolio site",
+      "short": "Show the work, get the jobs.",
+      "h1": "Portfolio website creation",
+      "problem": "A PDF or Instagram is not a page in your name that people can Google.",
+      "included": "Gallery, about, contact, mobile, go-live.",
+      "faqQ": "Is this for photographers and creatives?",
+      "faqA": "Yes. The site should show 8–20 strong projects, not everything. We edit with you."
+    },
+    "custom-app": {
+      "title": "Custom web app",
+      "short": "A business tool, not a brochure.",
+      "h1": "Custom web application in Belgium",
+      "problem": "Spreadsheets, email and three tools that do not talk: that is lost time.",
+      "included": "Scoping, user access, business features, hosting, training.",
+      "faqQ": "From which budget?",
+      "faqA": "Usually from €4,990 excl. VAT. We split the work into phases so you pay for what you actually use."
+    },
+    "refonte": {
+      "title": "Website redesign",
+      "short": "Keep what works, drop the rest.",
+      "h1": "Website redesign in Belgium",
+      "problem": "Your site is six years old, slow, and Google barely shows it.",
+      "included": "Quick audit, new design, reused content, redirects, go-live.",
+      "faqQ": "Do we have to start from scratch?",
+      "faqA": "Not always. We keep what converts (copy, reviews, pages Google likes) and change the rest."
+    },
+    "maintenance": {
+      "title": "Maintenance",
+      "short": "Updates, backups, someone to call.",
+      "h1": "Website maintenance",
+      "problem": "A site with no updates eventually breaks, gets hacked, or drops in Google.",
+      "included": "Backups, updates, small fixes, a contact point.",
+      "faqQ": "Is it mandatory?",
+      "faqA": "No. You can run it yourself. Maintenance is for when you do not want to think about it."
+    }
+  },
+  "local": {
+    "h1": "Website creation in {city}",
+    "subtitle": "For freelancers and SMEs in {city} and nearby — quote within 12 hours.",
+    "why": "Why a local site matters",
+    "cta": "Request a quote for {city}",
+    "faqQ": "Do you work in {city}?",
+    "faqA": "Yes. Work is remote (video, WhatsApp). An in-person meeting is possible depending on the project."
+  },
+  "offer": {
+    "title": "Website packages",
+    "subtitle": "Starting prices, excl. VAT. The quote locks the scope before any payment.",
+    "popular": "Recommended for SMEs",
+    "cta": "Choose this offer",
+    "ctaProposal": "Send my brief",
+    "contact": "Ask a question",
+    "note": "Every project gets a line-by-line quote. Prices below are starting points, not closed packages if the need is larger.",
+    "htva": "excl. VAT",
+    "vatNote": "Belgian VAT 21% extra, unless reverse charge applies.",
+    "delivery": "Delivery time",
+    "pages": "Pages included",
+    "revisions": "Revision rounds",
+    "notIncluded": "Not included",
+    "payment": "Payment",
+    "compareTitle": "Compare packages",
+    "compare": {
+      "price": "Starting price",
+      "audience": "Best for",
+      "design": "Design",
+      "seo": "SEO",
+      "support": "Support after launch"
+    },
+    "guarantee": {
+      "title": "Quote within 12 hours",
+      "description": "After your message you get a detailed quote and a schedule. No hard follow-up. You decide."
+    },
+    "packages": {
+      "essential": {
+        "name": "Essential",
+        "description": "Get a clear, mobile site live — findable and easy to contact.",
+        "highlight": "Freelancers and small projects",
+        "feature1": "Template-based design in your colours",
+        "feature2": "Your copy and images integrated",
+        "feature3": "Basic SEO (titles, speed, mobile)",
+        "feature4": "Short training to edit content",
+        "feature5": "Responsive site and basic GDPR mentions",
+        "feature6": "1 month of support after launch"
+      },
+      "professional": {
+        "name": "Professional",
+        "description": "A site in your image, built to generate enquiries.",
+        "highlight": "SMEs that want more contacts",
+        "feature1": "Custom design",
+        "feature2": "Visual identity (logo, colours, type) if needed",
+        "feature3": "Help writing key pages",
+        "feature4": "Careful SEO (structure, content, speed)",
+        "feature5": "Backups and security basics",
+        "feature6": "Training + 2 months of support",
+        "feature7": "Fast, mobile, ready to grow",
+        "feature8": "Forms and extra features as quoted"
+      },
+      "enterprise": {
+        "name": "Business",
+        "description": "A larger platform: private areas, tools, integrations.",
+        "highlight": "Projects with business features",
+        "feature1": "Full design and visual identity",
+        "feature2": "Architecture for your tool, not a theme",
+        "feature3": "Front-end and back-end development",
+        "feature4": "Advanced SEO and content structure",
+        "feature5": "Hardened hosting and security",
+        "feature6": "Training + 3 months priority support",
+        "feature7": "Connections to other software if needed",
+        "feature8": "Performance followed after launch",
+        "feature9": "Clear admin area",
+        "feature10": "Scoped in phases with you"
+      },
+      "custom": {
+        "name": "Custom quote",
+        "priceLabel": "On quote",
+        "description": "You describe the need and budget. We propose a phased plan.",
+        "highlight": "Special cases",
+        "feature1": "You send a brief or constraints",
+        "feature2": "Scoping workshop",
+        "feature3": "Phased delivery with milestones",
+        "feature4": "User accounts and dashboard if needed",
+        "feature5": "APIs and hosting as required",
+        "feature6": "Docs and handover"
+      }
+    }
+  },
+  "about": {
+    "title": "About",
+    "metaTitle": "Houdaifa Hamouchi, web developer in Belgium",
+    "intro": "I’m Houdaifa Hamouchi. I build websites and applications for freelancers and SMEs in Belgium, under the name HohoSolutions.",
+    "story": {
+      "title": "My background",
+      "p1": "I’m a full-stack developer: Next.js, React, TypeScript, Node.js, Laravel, Prisma. I’m completing a Graduaat Programmeren at Erasmushogeschool Brussel (degree expected in 2027).",
+      "p2": "From February to May 2025 I interned as a backend developer at Bpost: Node.js, TypeScript, CI/CD and team code reviews. I’ve been freelancing through HohoSolutions since January 2026."
+    },
+    "legal": {
+      "title": "Why the legal side matters here",
+      "description": "I also have a legal background, including internships at law firms. That changes what I deliver: legal notice, terms and GDPR are not a copy-paste in the footer. Your site should stand up to a client — and to a check."
+    },
+    "languages": {
+      "title": "FR, NL, EN",
+      "description": "French and Dutch are my native languages; English is professional. You don’t have to translate your brief: we work in the language of your business."
+    },
+    "how": {
+      "title": "How I work",
+      "item1": "Written quote before we start",
+      "item2": "The domain and the site stay yours",
+      "item3": "You can edit texts and images after delivery",
+      "item4": "I stay reachable (email, phone, WhatsApp)"
+    },
+    "tech": {
+      "title": "Tools — what they change for you",
+      "subtitle": "Few tools, chosen for a result: a fast site you can grow.",
+      "next": "Fast pages, solid basic SEO",
+      "react": "Maintainable code, not a locked theme",
+      "cms": "Change a text without a developer",
+      "payments": "Online payments if you sell",
+      "hosting": "Go-live and backups",
+      "legal": "Notices, cookies, consent: the serious minimum",
+      "analytics": "See where visits come from, without tracking everyone",
+      "seo": "Titles, speed, mobile: what Google actually looks at"
+    },
+    "github": "Public code on GitHub",
+    "cta": "Request a quote",
+    "ctaSection": {
+      "title": "A 20-minute call is enough to start",
+      "description": "Explain what you sell. I’ll say if a showcase site is enough, or if you need more.",
+      "button": "Write or WhatsApp"
+    }
+  },
+  "contact": {
+    "title": "Request a quote",
+    "subtitle": "Reply within 12 business hours. Fields marked * are required.",
+    "tabs": {
+      "message": "Quote",
+      "appointment": "Appointment"
+    },
+    "whatsappMessage": "Prefer WhatsApp? Same number, often faster.",
+    "phoneLabel": "Phone",
+    "emailLabel": "Email",
+    "responseTime": "I reply within 12 business hours.",
+    "form": {
+      "name": "Name",
+      "namePlaceholder": "Your name",
+      "email": "Email",
+      "emailPlaceholder": "you@company.be",
+      "phone": "Phone",
+      "phoneOptional": "optional",
+      "phonePlaceholder": "+32 …",
+      "projectType": "What kind of site?",
+      "projectTypePlaceholder": "Choose…",
+      "projectTypes": {
+        "vitrine": "Showcase site",
+        "ecommerce": "Online shop",
+        "portfolio": "Portfolio",
+        "custom": "App / business tool",
+        "refonte": "Redesign of an existing site",
+        "maintenance": "Maintenance",
+        "other": "Other"
+      },
+      "budget": "Indicative budget",
+      "budgetPlaceholder": "Optional",
+      "budgets": {
+        "under-1000": "Under €1,000",
+        "1000-2500": "€1,000 – €2,500",
+        "2500-5000": "€2,500 – €5,000",
+        "5000-plus": "Over €5,000",
+        "unknown": "Not sure yet"
+      },
+      "package": "Package",
+      "packageNone": "Not chosen yet",
+      "message": "Message",
+      "messagePlaceholder": "What do you do, and what should the site achieve?",
+      "siteUrl": "Current website URL",
+      "siteUrlPlaceholder": "https://…",
+      "gdpr": "I agree that my details are used to reply to this request (<privacy>privacy policy</privacy>).",
+      "interestedIn": "Selected package:",
+      "submit": "Send request",
+      "submitting": "Sending…",
+      "success": "Received. I will reply within 12 business hours.",
+      "error": "Could not send. Try again, or use email / WhatsApp.",
+      "required": "Required"
+    }
+  },
+  "appointment": {
+    "title": "Book a call",
+    "subtitle": "Weekday slots, 1 pm – 7 pm.",
+    "selectDate": "Date",
+    "selectTime": "Time",
+    "contactInfo": "Your details",
+    "message": "Message (optional)",
+    "messagePlaceholder": "In two sentences: your activity and what you need from the site.",
+    "confirm": "Confirm appointment",
+    "submitting": "Booking…",
+    "success": "Appointment noted. You will get a confirmation email.",
+    "error": "Could not book. Try again or use WhatsApp.",
+    "pickTime": "Please pick a time as well."
+  },
+  "audit": {
+    "title": "Free website audit",
+    "subtitle": "Send the URL. Within 48 hours you get a concrete review: clarity, mobile, contact, and 3 priorities.",
+    "cta": "Request the audit",
+    "success": "URL received. Feedback within 48 business hours."
+  },
+  "footer": {
+    "description": "Website creation for freelancers and SMEs in Belgium.",
+    "quickLinks": "Links",
+    "contact": "Contact",
+    "email": "info@hohosolutions.com",
+    "whatsapp": "WhatsApp",
+    "legalNotice": "Legal notice",
+    "privacy": "Privacy",
+    "terms": "Terms",
+    "blog": "Blog",
+    "github": "GitHub",
+    "copyright": "All rights reserved."
+  },
+  "blog": {
+    "title": "Blog",
+    "subtitle": "Straight answers, no jargon, to decide on a website in Belgium.",
+    "read": "Read the article",
+    "back": "All articles"
+  },
+  "legal": {
+    "title": "Legal notice",
+    "missing": "Company identification (address, company number, VAT) will be published here as soon as it is provided.",
+    "company": "Legal name",
+    "address": "Registered office",
+    "bce": "Company number",
+    "vat": "VAT number",
+    "email": "Email",
+    "phone": "Phone",
+    "hosting": "Hosting",
+    "hostingValue": "Vercel Inc., 440 N Barranca Ave #4133, Covina, CA 91723, USA — depending on current deployment."
+  },
+  "privacy": {
+    "title": "Privacy policy",
+    "lastUpdated": "Last updated: November 2026",
+    "todo": "TODO(owner): have this text reviewed if needed. GDPR skeleton; fill in the exact controller identity.",
+    "s1t": "1. Controller",
+    "s1c": "Houdaifa Hamouchi, HohoSolutions, contact: info@hohosolutions.com. Full identity (legal form, address, company number) appears in the legal notice once published.",
+    "s2t": "2. Data we collect",
+    "s2c": "Via forms: name, email, optional phone, project type, budget, message, site URL if you provide it. Minimal technical logs (pages viewed) for internal follow-up, no third-party ads.",
+    "s3t": "3. Purposes",
+    "s3c": "To answer your quote, audit or appointment request, to perform a contract if you become a client, and to improve the site (useful pages, contact rate).",
+    "s4t": "4. Legal basis",
+    "s4c": "Pre-contractual steps at your request; legitimate interest for internal stats; legal obligation (invoicing) where applicable; consent for the GDPR checkbox.",
+    "s5t": "5. Retention and recipients",
+    "s5c": "Enquiries are kept for commercial follow-up then archived per accounting rules. They are not sold. Processors: email (SMTP), hosting, possibly calendar for appointments.",
+    "s6t": "6. Your rights",
+    "s6c": "Access, rectification, erasure, restriction, objection, portability. Write to info@hohosolutions.com. You may also contact the Belgian Data Protection Authority (APD)."
+  },
+  "terms": {
+    "title": "Terms of service",
+    "lastUpdated": "Last updated: November 2026",
+    "todo": "TODO(owner): have these terms validated. Skeleton only.",
+    "s1t": "1. Scope",
+    "s1c": "These terms cover website and application design, redesign, hosting or maintenance by HohoSolutions for professional clients in Belgium.",
+    "s2t": "2. Quote and order",
+    "s2c": "Written quote before work. The order is firm after quote acceptance and, unless agreed otherwise, payment of the deposit.",
+    "s3t": "3. Prices and VAT",
+    "s3c": "Public prices are excl. VAT. Applicable Belgian VAT is added on the invoice, unless reverse charge applies.",
+    "s4t": "4. Delivery",
+    "s4c": "Times in the quote are indicative and start after we have the needed content (copy, logos, access).",
+    "s5t": "5. Ownership",
+    "s5c": "After the balance is paid, you have usage rights on the delivered site. HohoSolutions tools, libraries and methods remain ours.",
+    "s6t": "6. Governing law",
+    "s6c": "Belgian law. Disputes: courts of HohoSolutions’ registered office, without prejudice to mandatory consumer rules where they apply."
+  },
+  "notFound": {
+    "title": "Page not found",
+    "text": "This link no longer exists, or the address is incomplete.",
+    "home": "Back to home",
+    "services": "See services",
+    "contact": "Request a quote"
+  },
+  "common": {
+    "learnMore": "Learn more",
+    "required": "*",
+    "close": "Close"
+  }
+}

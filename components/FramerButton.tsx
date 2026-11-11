@@ -39,11 +39,22 @@ export default function FramerButton({
   )
 
   if (href && !disabled) {
+    const classNames = `${baseStyles} ${variants[variant]} ${className}`
+    const external = href.startsWith('http') || href.startsWith('mailto:') || href.startsWith('tel:')
+    if (external) {
+      return (
+        <a
+          href={href}
+          onClick={onClick}
+          className={classNames}
+          {...(href.startsWith('http') ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
+        >
+          {buttonContent}
+        </a>
+      )
+    }
     return (
-      <Link
-        href={href}
-        className={`${baseStyles} ${variants[variant]} ${className} ${disabled ? 'opacity-50 cursor-not-allowed' : ''}`}
-      >
+      <Link href={href} onClick={onClick} className={classNames}>
         {buttonContent}
       </Link>
     )

@@ -1,3 +1,7 @@
+const createNextIntlPlugin = require('next-intl/plugin')
+
+const withNextIntl = createNextIntlPlugin()
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
@@ -10,6 +14,11 @@ const nextConfig = {
   // Configure Turbopack root to fix permission issues
   turbopack: {
     root: __dirname,
+  },
+  async redirects() {
+    return [
+      { source: '/:locale/offer', destination: '/:locale/offres', permanent: true },
+    ]
   },
   // Ensure proper caching headers
   async headers() {
@@ -35,6 +44,4 @@ const nextConfig = {
   },
 }
 
-module.exports = nextConfig
-
-
+module.exports = withNextIntl(nextConfig)

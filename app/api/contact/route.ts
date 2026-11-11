@@ -1,215 +1,117 @@
 import { NextRequest, NextResponse } from 'next/server'
 import nodemailer from 'nodemailer'
 import db from '@/lib/db'
+import { contactSchema, normalizePackage } from '@/lib/validation'
+import { rateLimit } from '@/lib/rate-limit'
+import { site } from '@/content/site'
 
 export async function POST(request: NextRequest) {
   try {
+    const ip =
+      request.headers.get('x-forwarded-for')?.split(',')[0]?.trim() ||
+      request.headers.get('x-real-ip') ||
+      'unknown'
+
+    const limited = rateLimit(`contact:${ip}`, 8, 15 * 60 * 1000)
+    if (!limited.ok) {
+      return NextResponse.json({ error: 'Trop de tentatives. Réessayez dans 15 minutes.' }, { status: 429 })
+    }
+
     const body = await request.json()
-    const { name, email, phone, projectType, message } = body
-
-    // Validation
-    if (!name || !email || !projectType || !message) {
-      return NextResponse.json(
-        { error: 'Tous les champs sont requis' },
-        { status: 400 }
-      )
+    const parsed = contactSchema.safeParse(body)
+    if (!parsed.success) {
+      return NextResponse.json({ error: 'Veuillez vérifier les champs requis.' }, { status: 400 })
     }
 
-    // Validation du format email
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
-    if (!emailRegex.test(email)) {
-      return NextResponse.json(
-        { error: 'Format d\'email invalide' },
-        { status: 400 }
-      )
+    const data = parsed.data
+    if (data.website) {
+      return NextResponse.json({ success: true })
     }
 
-    // Configuration email Gmail
-    const recipientEmail = process.env.CONTACT_EMAIL || 'info@hohosolutions.com'
-    const smtpUser = process.env.SMTP_USER || 'info@hohosolutions.com'
+    if (data.source === 'audit' && !data.siteUrl) {
+      return NextResponse.json({ error: 'L’URL du site est requise pour l’audit.' }, { status: 400 })
+    }
+
+    const name = data.name
+    const email = data.email
+    const phone = data.phone || ''
+    const projectType = data.projectType || 'other'
+    const message = [
+      data.message,
+      data.budget ? `Budget: ${data.budget}` : '',
+      data.siteUrl ? `Site: ${data.siteUrl}` : '',
+      data.source ? `Source: ${data.source}` : '',
+    ]
+      .filter(Boolean)
+      .join('\n')
+    const packageInterest = normalizePackage(data.packageId)
+
+    const recipientEmail = process.env.CONTACT_EMAIL || site.email
+    const smtpUser = process.env.SMTP_USER || site.email
     const smtpPassword = process.env.SMTP_PASSWORD
 
     if (!smtpPassword) {
       console.error('SMTP_PASSWORD n\'est pas configuré')
       return NextResponse.json(
-        { error: 'Configuration email manquante. Veuillez contacter l\'administrateur.' },
+        { error: 'Configuration email manquante. Écrivez-nous directement.' },
         { status: 500 }
       )
     }
-
-    // Configuration du transporteur Gmail
-    // Nettoyer le mot de passe (enlever les espaces)
-    const cleanPassword = smtpPassword.trim().replace(/\s+/g, '')
 
     const transporter = nodemailer.createTransport({
       service: 'gmail',
       auth: {
         user: smtpUser,
-        pass: cleanPassword,
+        pass: smtpPassword.trim().replace(/\s+/g, ''),
       },
     })
 
-    // Préparer le contenu de l'email style Apple
-    const emailSubject = `Nouveau contact HohoSolutions: ${projectType}`
     const emailHtml = `
 <!DOCTYPE html>
-<html lang="fr">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-</head>
-<body style="margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'SF Pro Text', 'Helvetica Neue', Helvetica, Arial, sans-serif; background-color: #ffffff;">
-  <table role="presentation" style="width: 100%; border-collapse: collapse; background-color: #ffffff;">
-    <tr>
-      <td align="center" style="padding: 60px 20px;">
-        <table role="presentation" style="max-width: 680px; width: 100%; border-collapse: collapse;">
-          <!-- Header minimaliste -->
-          <tr>
-            <td style="padding: 0 0 48px 0; text-align: center;">
-              <h1 style="margin: 0; color: #1d1d1f; font-size: 32px; font-weight: 600; letter-spacing: -0.5px; line-height: 1.1;">
-                Nouveau message
-              </h1>
-            </td>
-          </tr>
-          
-          <!-- Contenu principal -->
-          <tr>
-            <td>
-              <!-- Informations -->
-              <table role="presentation" style="width: 100%; border-collapse: collapse; margin-bottom: 48px;">
-                <tr>
-                  <td style="padding: 0 0 24px 0;">
-                    <div style="color: #86868b; font-size: 12px; font-weight: 400; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 8px;">
-                      Nom
-                    </div>
-                    <div style="color: #1d1d1f; font-size: 17px; font-weight: 400; line-height: 1.47;">
-                      ${name}
-                    </div>
-                  </td>
-                </tr>
-                <tr>
-                  <td style="padding: 0 0 24px 0;">
-                    <div style="color: #86868b; font-size: 12px; font-weight: 400; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 8px;">
-                      Email
-                    </div>
-                    <div style="color: #1d1d1f; font-size: 17px; font-weight: 400; line-height: 1.47;">
-                      <a href="mailto:${email}" style="color: #0071e3; text-decoration: none;">${email}</a>
-                    </div>
-                  </td>
-                </tr>
-                ${phone ? `
-                <tr>
-                  <td style="padding: 0 0 24px 0;">
-                    <div style="color: #86868b; font-size: 12px; font-weight: 400; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 8px;">
-                      Téléphone
-                    </div>
-                    <div style="color: #1d1d1f; font-size: 17px; font-weight: 400; line-height: 1.47;">
-                      <a href="tel:${phone}" style="color: #0071e3; text-decoration: none;">${phone}</a>
-                    </div>
-                  </td>
-                </tr>
-                ` : ''}
-                <tr>
-                  <td style="padding: 0 0 24px 0;">
-                    <div style="color: #86868b; font-size: 12px; font-weight: 400; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 8px;">
-                      Type de projet
-                    </div>
-                    <div style="color: #1d1d1f; font-size: 17px; font-weight: 400; line-height: 1.47;">
-                      ${projectType}
-                    </div>
-                  </td>
-                </tr>
-              </table>
-              
-              <!-- Message -->
-              <div style="border-top: 1px solid #d2d2d7; padding-top: 48px; margin-top: 48px;">
-                <div style="color: #86868b; font-size: 12px; font-weight: 400; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 8px;">
-                  Message
-                </div>
-                <div style="color: #1d1d1f; font-size: 17px; font-weight: 400; line-height: 1.47; white-space: pre-wrap; margin-top: 16px;">
-${message}
-                </div>
-              </div>
-            </td>
-          </tr>
-          
-          <!-- Footer minimaliste -->
-          <tr>
-            <td style="padding-top: 80px; border-top: 1px solid #d2d2d7; margin-top: 80px;">
-              <table role="presentation" style="width: 100%; border-collapse: collapse;">
-                <tr>
-                  <td style="padding: 0 0 8px 0;">
-                    <div style="color: #86868b; font-size: 13px; font-weight: 400; line-height: 1.38;">
-                      ${new Date().toLocaleString('fr-FR', { day: '2-digit', month: '2-digit', year: 'numeric', hour: '2-digit', minute: '2-digit' })}
-                    </div>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    <div style="color: #86868b; font-size: 13px; font-weight: 400; line-height: 1.38;">
-                      HohoSolutions
-                    </div>
-                  </td>
-                </tr>
-              </table>
-            </td>
-          </tr>
-        </table>
-      </td>
-    </tr>
-  </table>
-</body>
-</html>
-    `
+<html lang="fr"><body style="font-family:sans-serif;color:#1d1d1f">
+  <h1>Nouvelle demande HohoSolutions</h1>
+  <p><strong>Nom</strong> ${name}</p>
+  <p><strong>Email</strong> <a href="mailto:${email}">${email}</a></p>
+  ${phone ? `<p><strong>Téléphone</strong> <a href="tel:${phone}">${phone}</a></p>` : ''}
+  <p><strong>Type</strong> ${projectType}</p>
+  ${packageInterest ? `<p><strong>Formule</strong> ${packageInterest}</p>` : ''}
+  <pre style="white-space:pre-wrap">${message}</pre>
+</body></html>`
 
-    // Envoi de l'email
     await transporter.sendMail({
       from: `"HohoSolutions Contact" <${smtpUser}>`,
       to: recipientEmail,
       replyTo: email,
-      subject: emailSubject,
+      subject: `Nouveau contact HohoSolutions: ${projectType}${packageInterest ? ` / ${packageInterest}` : ''}`,
       html: emailHtml,
     })
 
-    // Save to database
     try {
-      const packageInterest = message.includes('Pack') || message.includes('pack') 
-        ? (message.match(/Pack\s+(Essentiel|Professionnel|Entreprise|Essential|Professional|Enterprise)/i)?.[0] || null)
-        : null
+      await transporter.sendMail({
+        from: `"HohoSolutions" <${smtpUser}>`,
+        to: email,
+        subject: 'Nous avons bien reçu votre demande — HohoSolutions',
+        html: `<p>Bonjour ${name},</p><p>Votre message est bien arrivé. Réponse sous 12 h ouvrées.</p><p>HohoSolutions<br/><a href="mailto:${site.email}">${site.email}</a> · ${site.phoneDisplay}</p>`,
+      })
+    } catch (confirmError) {
+      console.error('Confirmation email failed', confirmError)
+    }
 
+    try {
       db.prepare(`
         INSERT INTO contacts (name, email, phone, project_type, message, package_interest)
         VALUES (?, ?, ?, ?, ?, ?)
       `).run(name, email, phone || null, projectType, message, packageInterest)
     } catch (dbError) {
       console.error('Error saving contact to database:', dbError)
-      // Don't fail the request if DB save fails
     }
 
-    return NextResponse.json(
-      { success: true, message: 'Message envoyé avec succès' },
-      { status: 200 }
-    )
-  } catch (error: any) {
+    return NextResponse.json({ success: true }, { status: 200 })
+  } catch (error: unknown) {
     console.error('Erreur lors de l\'envoi du formulaire:', error)
-
-    // Message d'erreur plus détaillé
-    let errorMessage = 'Erreur lors de l\'envoi du message. Veuillez réessayer plus tard.'
-    if (error.code === 'EAUTH') {
-      errorMessage = 'Erreur d\'authentification email. Veuillez contacter l\'administrateur.'
-    } else if (error.code === 'ECONNECTION' || error.code === 'ETIMEDOUT') {
-      errorMessage = 'Erreur de connexion. Vérifiez votre connexion internet et réessayez.'
-    }
-
-    // Log détaillé en développement uniquement
-    if (process.env.NODE_ENV === 'development') {
-      console.error('Détails de l\'erreur:', error)
-    }
-
     return NextResponse.json(
-      { error: errorMessage },
+      { error: 'Erreur lors de l\'envoi du message. Réessayez ou contactez-nous directement.' },
       { status: 500 }
     )
   }
 }
-

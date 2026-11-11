@@ -1,184 +1,41 @@
 'use client'
 
-import { useState } from 'react'
-import ServiceCard from './ServiceCard'
-import { useLanguage } from '@/contexts/LanguageContext'
+import Link from 'next/link'
+import { useLocale, useTranslations } from 'next-intl'
+import { formatPrice } from '@/content/packages'
+import { services as serviceDefs } from '@/content/services'
+import { localizedPath } from '@/lib/paths'
+import type { Locale } from '@/i18n'
 
 export default function Services() {
-  const { t } = useLanguage()
-  const [activeTab, setActiveTab] = useState<'individual' | 'business'>('individual')
-
-  const individualServices = [
-    {
-      id: 'website',
-      titleKey: 'services.individual.website.title',
-      shortDescriptionKey: 'services.individual.website.shortDescription',
-      detailsKey: 'services.individual.website.details',
-    },
-    {
-      id: 'portfolio',
-      titleKey: 'services.individual.portfolio.title',
-      shortDescriptionKey: 'services.individual.portfolio.shortDescription',
-      detailsKey: 'services.individual.portfolio.details',
-    },
-    {
-      id: 'ecommerce',
-      titleKey: 'services.individual.ecommerce.title',
-      shortDescriptionKey: 'services.individual.ecommerce.shortDescription',
-      detailsKey: 'services.individual.ecommerce.details',
-    },
-  ]
-
-  const businessServices = [
-    {
-      id: 'frontend',
-      titleKey: 'services.frontend.title',
-      shortDescriptionKey: 'services.frontend.shortDescription',
-      detailsKey: 'services.frontend.details',
-    },
-    {
-      id: 'backend',
-      titleKey: 'services.backend.title',
-      shortDescriptionKey: 'services.backend.shortDescription',
-      detailsKey: 'services.backend.details',
-    },
-    {
-      id: 'database',
-      titleKey: 'services.database.title',
-      shortDescriptionKey: 'services.database.shortDescription',
-      detailsKey: 'services.database.details',
-    },
-    {
-      id: 'devops',
-      titleKey: 'services.devops.title',
-      shortDescriptionKey: 'services.devops.shortDescription',
-      detailsKey: 'services.devops.details',
-    },
-    {
-      id: 'architecture',
-      titleKey: 'services.architecture.title',
-      shortDescriptionKey: 'services.architecture.shortDescription',
-      detailsKey: 'services.architecture.details',
-    },
-    {
-      id: 'consulting',
-      titleKey: 'services.consulting.title',
-      shortDescriptionKey: 'services.consulting.shortDescription',
-      detailsKey: 'services.consulting.details',
-    },
-  ]
+  const t = useTranslations('services')
+  const locale = useLocale() as Locale
 
   return (
-    <section className="py-12 sm:py-16 md:py-20 lg:py-24 xl:py-32 relative">
-      <div className="max-w-7xl mx-auto px-3 sm:px-4 md:px-6 lg:px-12 relative z-10">
-        <div className="text-center mb-8 sm:mb-12 md:mb-16">
-          <h2 className="text-2xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold text-white mb-3 sm:mb-4 md:mb-6 tracking-tight px-2 sm:px-4">
-            {t('services.title')}
-          </h2>
-          <p className="text-sm xs:text-base sm:text-lg md:text-xl lg:text-2xl text-gray-300 max-w-2xl mx-auto font-light mb-6 sm:mb-8 md:mb-12 px-4">
-            {t('services.subtitle')}
-          </p>
-          
-          {/* Tabs de filtrage style Apple */}
-          <div className="inline-flex items-center bg-white/5 backdrop-blur-sm rounded-full p-0.5 sm:p-1 md:p-1.5 border border-white/10">
-            <button
-              onClick={() => setActiveTab('individual')}
-              className={`px-3 xs:px-4 sm:px-5 md:px-6 py-1.5 sm:py-2 md:py-2.5 rounded-full text-xs sm:text-sm font-medium transition-all duration-200 ${
-                activeTab === 'individual'
-                  ? 'bg-white text-gray-900 shadow-sm'
-                  : 'text-gray-300 hover:text-white'
-              }`}
-            >
-              {t('services.tabs.individual')}
-            </button>
-            <button
-              onClick={() => setActiveTab('business')}
-              className={`px-3 xs:px-4 sm:px-5 md:px-6 py-1.5 sm:py-2 md:py-2.5 rounded-full text-xs sm:text-sm font-medium transition-all duration-200 ${
-                activeTab === 'business'
-                  ? 'bg-white text-gray-900 shadow-sm'
-                  : 'text-gray-300 hover:text-white'
-              }`}
-            >
-              {t('services.tabs.business')}
-            </button>
-          </div>
+    <section className="py-16 sm:py-20 md:py-24 relative">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
+        <div className="text-center mb-12">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-semibold text-white mb-4 tracking-tight">{t('title')}</h1>
+          <p className="text-base sm:text-lg text-gray-300 max-w-2xl mx-auto font-light">{t('subtitle')}</p>
         </div>
-        
-        {/* Section Particuliers */}
-        {activeTab === 'individual' && (
-          <div className="animate-fade-in-up">
-            <div className="text-center mb-8 sm:mb-12 md:mb-16">
-              <h3 className="text-xl xs:text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold text-white mb-2 sm:mb-3 md:mb-4 tracking-tight px-2 sm:px-4">
-                {t('services.individual.title')}
-              </h3>
-              <p className="text-sm xs:text-base sm:text-lg md:text-xl text-gray-300 max-w-2xl mx-auto font-light px-4">
-                {t('services.individual.subtitle')}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          {serviceDefs.map((service) => (
+            <Link
+              key={service.id}
+              href={localizedPath(locale, `/${service.slugs[locale]}`)}
+              className="rounded-2xl border border-white/10 bg-white/5 p-6 hover:border-yellow-500/40 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-yellow-400"
+            >
+              <h2 className="text-xl font-semibold text-white mb-2">{t(`${service.id}.title`)}</h2>
+              <p className="text-sm text-gray-300 mb-4 leading-relaxed">{t(`${service.id}.short`)}</p>
+              <p className="text-sm text-yellow-300">
+                {service.fromPrice != null
+                  ? `${t('from')} ${formatPrice(service.fromPrice, locale)} HTVA`
+                  : t('quote')}
               </p>
-            </div>
-            
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8 lg:gap-12">
-              {individualServices.map((service) => (
-                <ServiceCard
-                  key={service.id}
-                  title={t(service.titleKey)}
-                  shortDescription={t(service.shortDescriptionKey)}
-                  details={t(service.detailsKey)}
-                  serviceId={service.id}
-                  learnMoreText={t('services.learnMore')}
-                  showLessText={t('services.showLess')}
-                />
-              ))}
-              {/* Carte "More" */}
-              <ServiceCard
-                title={t('services.individual.more.title')}
-                shortDescription={t('services.individual.more.shortDescription')}
-                details={t('services.individual.more.details')}
-                serviceId="more-individual"
-                learnMoreText={t('services.learnMore')}
-                showLessText={t('services.showLess')}
-              />
-            </div>
-          </div>
-        )}
-
-        {/* Section Sociétés */}
-        {activeTab === 'business' && (
-          <div className="animate-fade-in-up">
-            <div className="text-center mb-8 sm:mb-12 md:mb-16">
-              <h3 className="text-xl xs:text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold text-white mb-2 sm:mb-3 md:mb-4 tracking-tight px-2 sm:px-4">
-                {t('services.business.title')}
-              </h3>
-              <p className="text-sm xs:text-base sm:text-lg md:text-xl text-gray-300 max-w-2xl mx-auto font-light px-4">
-                {t('services.business.subtitle')}
-              </p>
-            </div>
-            
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8 lg:gap-12">
-              {businessServices.map((service) => (
-                <ServiceCard
-                  key={service.id}
-                  title={t(service.titleKey)}
-                  shortDescription={t(service.shortDescriptionKey)}
-                  details={t(service.detailsKey)}
-                  serviceId={service.id}
-                  learnMoreText={t('services.learnMore')}
-                  showLessText={t('services.showLess')}
-                />
-              ))}
-              {/* Carte "More" */}
-              <ServiceCard
-                title={t('services.business.more.title')}
-                shortDescription={t('services.business.more.shortDescription')}
-                details={t('services.business.more.details')}
-                serviceId="more-business"
-                learnMoreText={t('services.learnMore')}
-                showLessText={t('services.showLess')}
-              />
-            </div>
-          </div>
-        )}
+            </Link>
+          ))}
+        </div>
       </div>
     </section>
   )
 }
-
