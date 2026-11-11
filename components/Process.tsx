@@ -3,12 +3,6 @@
 import { useTranslations } from 'next-intl'
 
 const steps = ['step1', 'step2', 'step3', 'step4'] as const
-const colors = [
-  'from-blue-500/20 to-cyan-500/20',
-  'from-purple-500/20 to-pink-500/20',
-  'from-green-500/20 to-emerald-500/20',
-  'from-orange-500/20 to-red-500/20',
-]
 
 export default function Process() {
   const t = useTranslations('process')
@@ -26,7 +20,7 @@ export default function Process() {
           {steps.map((step, index) => (
             <li
               key={step}
-              className={`bg-gradient-to-br ${colors[index]} backdrop-blur-lg rounded-2xl p-6 sm:p-8 border border-white/20`}
+              className="bg-white/5 rounded-2xl p-6 sm:p-8 border border-white/10"
             >
               <p className="text-4xl font-bold text-white/25 mb-3">{String(index + 1).padStart(2, '0')}</p>
               <h3 className="text-xl sm:text-2xl font-semibold text-white mb-2">{t(`${step}.title`)}</h3>
